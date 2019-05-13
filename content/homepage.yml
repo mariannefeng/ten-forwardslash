@@ -1,2 +1,11 @@
 title: Marianne
-intro: is number one
+titleTagline: this is a smaller call to action
+ctaButton:
+  ctaButtonLink: 'https://www.google.com'
+  ctaButtonText: hi
+ctaOne: Testing testing
+blocks:
+  - image: /images/uploads/pinball.jpg
+    name: Workshops
+    text: Working
+ctaTwo: final cta
