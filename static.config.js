@@ -3,7 +3,7 @@ import axios from 'axios'
 import fs from 'fs'
 import klaw from 'klaw'
 import yaml from 'js-yaml'
-
+import React from 'react'
 
 
 function getPageFields() {
@@ -39,8 +39,6 @@ function getPageFields() {
 
   return getFields()
 }
-
-
 
 
 export default {
@@ -102,4 +100,25 @@ export default {
     require.resolve('react-static-plugin-reach-router'),
     require.resolve('react-static-plugin-sitemap'),
   ],
+
+  Document: ({
+               Html,
+               Head,
+               Body,
+               children,
+             }) => (
+      <Html>
+        <Head>
+          <meta charset="utf-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <title>Hello Bulma!</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+        </Head>
+        <Body>
+          <section class="section">
+            {children}
+          </section>
+        </Body>
+      </Html>
+  )
 }
