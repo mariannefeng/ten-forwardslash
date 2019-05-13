@@ -8,4 +8,7 @@ blocks:
   - image: /images/uploads/pinball.jpg
     name: Workshops
     text: Working
+  - image: /images/uploads/pinball.jpg
+    name: Consulting
+    text: this is where information about consulting goes
 ctaTwo: final cta
