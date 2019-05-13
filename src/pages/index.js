@@ -8,7 +8,6 @@ export default () => {
 
     return (
         <div>
-
             <Hero color="info" size="medium">
                 <Hero.Body>
                     <Container>
