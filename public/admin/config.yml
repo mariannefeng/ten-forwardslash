@@ -40,47 +40,40 @@ collections:
         file: "content/about.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
+          - {label: Mission, name: mission, widget: markdown}
+          - {label: Vision, name: vision, widget: markdown}
+          - {label: History, name: history, widget: markdown}
+          - {label: About Title, name: aboutTitle, widget: string}
           - label: Team
             name: team
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Position, name: position, widget: string}
-              - {label: Photo, name: photo, widget: image}
+              - {label: Image, name: image, widget: image}
       - label: "Services Page"
         name: "services"
         file: "content/services.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
-          - label: Locations
-            name: locations
+          - {label: Services Header, name: servicesHeader, widget: string}
+          - label: Services Sections
+            name: serviceSections
             widget: list
             fields:
               - {label: Name, name: name, widget: string}
-              - {label: Address, name: address, widget: string}
+              - {label: Tagline, name: tagline, widget: text}
+              - {label: Content, name: content, widget: markdown}
+              - {label: Image, name: image, widget: image}
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.yml"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
-          - label: Locations
-            name: locations
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Address, name: address, widget: string}
+          - {label: Footer, name: footer, widget: markdown}
       - label: "Donate Page"
         name: "donate"
         file: "content/donate.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
-          - label: Locations
-            name: locations
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Address, name: address, widget: string}

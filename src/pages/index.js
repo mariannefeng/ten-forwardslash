@@ -8,9 +8,14 @@ export default () => {
         <div>
             <h1>{data.title}</h1>
             <p>{data.titleTagline}</p>
-            <p>{data.ctaButton}</p>
+            <p>{data.ctaButton ? data.ctaButton.ctaButtonLink : 'no button link'}</p>
+            <p>{data.ctaButton ? data.ctaButton.ctaButtonText : 'no button text'}</p>
             <p>{data.ctaOne}</p>
-            <p>{data.blocks}</p>
+            <hr/>
+            <p>{data.blocks.map((block, i) => {
+                return (<span key={i}>{block.name}</span>)
+            })}</p>
+            <hr/>
             <p>{data.ctaTwo}</p>
         </div>
     )
