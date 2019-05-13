@@ -2,6 +2,7 @@
 * make it so that site is configured via config file
 * Add validation for link button
 * Create template for at least one page
+* why is netlify so slow to save page updates?
 
 ### Done
 * Hook up react-static site into netlifycms (just means pull data)
