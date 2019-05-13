@@ -42,7 +42,8 @@ function getPageFields() {
 
 
 export default {
-  getSiteData: () => ({
+  //TODO: site data should live in a config file somewhere, not hard coded in here
+  getSiteData:  async ({ }) => ({
     title: 'Ten-Forward Website',
   }),
 
@@ -106,18 +107,17 @@ export default {
                Head,
                Body,
                children,
+               siteData,
              }) => (
       <Html>
         <Head>
-          <meta charset="utf-8" />
+          <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>Hello Bulma!</title>
+          <title>WHAT THE FUUUUCk</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
         </Head>
         <Body>
-          <section class="section">
-            {children}
-          </section>
+          {children}
         </Body>
       </Html>
   )
