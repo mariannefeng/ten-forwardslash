@@ -5,6 +5,8 @@ import { Link } from 'components/Router'
 
 export default function Blog() {
   const { posts } = useRouteData()
+    console.log('BLOG PAGE', posts);
+
   return (
     <div>
       <h1>It's blog time.</h1>

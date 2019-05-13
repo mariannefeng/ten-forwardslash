@@ -1,7 +1,13 @@
 import React from 'react'
+import { useRouteData } from 'react-static'
 
-export default () => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>Welcome to React-Static</h1>
-  </div>
-)
+export default () => {
+    const { data } = useRouteData()
+
+    return (
+        <div>
+            <h1>{data.title}</h1>
+            <p>{data.intro}</p>
+        </div>
+    )
+}

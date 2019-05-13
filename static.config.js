@@ -1,25 +1,93 @@
 import path from 'path'
 import axios from 'axios'
+import fs from 'fs'
+import klaw from 'klaw'
+import yaml from 'js-yaml'
+
+
+
+function getPageFields() {
+  const fieldMap = {}
+
+  const getFields = () => new Promise(resolve => {
+    // Check if content directory exists //
+    if (fs.existsSync('./content')) {
+      klaw('./content')
+          .on('data', item => {
+            // Filter function to retrieve .md files //
+            if (path.extname(item.path) === '.yml') {
+              // read content from yml file and load fields into map
+              const data = fs.readFileSync(item.path, 'utf8')
+              const fileName = path.parse(item.path).name
+              const fieldObj = yaml.safeLoad(data)
+              fieldMap[fileName] = fieldObj
+            }
+          })
+          .on('error', e => {
+            console.log(e)
+          })
+          .on('end', () => {
+            // Resolve promise for async getRoutes request //
+            // posts = items for below routes //
+            resolve(fieldMap)
+          })
+    } else {
+      // If content directory doesn't exist, return items as empty dict //
+      resolve(fieldMap)
+    }
+  })
+
+  return getFields()
+}
+
+
+
 
 export default {
+  getSiteData: () => ({
+    title: 'Ten-Forward Website',
+  }),
+
   getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
+    // const { data: posts } = await axios.get(
+    //     'https://jsonplaceholder.typicode.com/posts'
+    // )
+    //
+    // console.log('just finished getting data from json placeholder', posts)
+
+    const fields = await getPageFields()
+    console.log('fieldsssss', fields)
 
     return [
       {
-        path: '/blog',
+        path: '/',
         getData: () => ({
-          posts,
+          data: fields['homepage']
         }),
-        children: posts.map(post => ({
-          path: `/post/${post.id}`,
-          template: 'src/containers/Post',
-          getData: () => ({
-            post,
-          }),
-        })),
+      },
+      {
+        path: '/about',
+        getData: () => ({
+          data: fields['about']
+        }),
+      },
+      {
+        path: '/donate',
+        getData: () => ({
+          data: fields['about']
+        }),
+      },
+      {
+        path: '/services',
+        getData: () => ({
+          data: fields['about']
+        }),
+      },
+      {
+        path: '/contact',
+        getData: () => ({
+          data: fields['about']
+        }),
       },
     ]
   },
