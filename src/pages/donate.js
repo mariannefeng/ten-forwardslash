@@ -6,7 +6,8 @@ export default () => {
 
     return (
         <div>
-            <p>React Static is a progressive static site generator for React.</p>
+            {data.title}
+            {data.content}
         </div>
     )
 }
