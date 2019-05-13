@@ -8,7 +8,7 @@ export default () => {
         <div>
             <h1>{data.title}</h1>
             <p>{data.titleTagline}</p>
-            <p>{data.ctaButton.ctaButtonText}</p>
+            <p>{data.ctaButton}</p>
             <p>{data.ctaOne}</p>
             <p>{data.blocks}</p>
             <p>{data.ctaTwo}</p>
