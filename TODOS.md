@@ -1,4 +1,5 @@
 ## Things that still needs to be done
+* make it so that site is configured via config file
 * Add validation for link button
 * Create template for at least one page
 

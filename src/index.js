@@ -19,7 +19,9 @@ if (typeof document !== 'undefined') {
   const render = Comp => {
     renderMethod(
       <AppContainer>
-        <Comp />
+          <React.Suspense fallback={<em>Think fast!</em>}>
+            <Comp />
+          </React.Suspense>
       </AppContainer>,
       target
     )

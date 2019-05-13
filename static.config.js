@@ -1,11 +1,13 @@
 import path from 'path'
-import axios from 'axios'
 import fs from 'fs'
 import klaw from 'klaw'
 import yaml from 'js-yaml'
 import React from 'react'
 
+//TODO: error handle this properly, if we can't read site yml then give up
+const siteConfig = yaml.safeLoad(fs.readFileSync('site.yml', 'utf8'))
 
+//retrieves page fields based on generated yml from netlifycms
 function getPageFields() {
   const fieldMap = {}
 
@@ -14,7 +16,7 @@ function getPageFields() {
     if (fs.existsSync('./content')) {
       klaw('./content')
           .on('data', item => {
-            // Filter function to retrieve .md files //
+            // Filter function to retrieve .yml files //
             if (path.extname(item.path) === '.yml') {
               // read content from yml file and load fields into map
               const data = fs.readFileSync(item.path, 'utf8')
@@ -28,7 +30,6 @@ function getPageFields() {
           })
           .on('end', () => {
             // Resolve promise for async getRoutes request //
-            // posts = items for below routes //
             resolve(fieldMap)
           })
     } else {
@@ -42,57 +43,29 @@ function getPageFields() {
 
 
 export default {
-  //TODO: site data should live in a config file somewhere, not hard coded in here
-  getSiteData:  async ({ }) => ({
-    title: 'Ten-Forward Website',
+  getSiteData:  async () => ({
+    title: siteConfig.title,
+    description: siteConfig.description,
+    content: siteConfig.content
   }),
 
   getRoutes: async () => {
-    // const { data: posts } = await axios.get(
-    //     'https://jsonplaceholder.typicode.com/posts'
-    // )
-    //
-    // console.log('just finished getting data from json placeholder', posts)
+      const fields = await getPageFields()
 
-    const fields = await getPageFields()
-    console.log('fieldsssss', fields)
+      //iterates over all site content and hooks up yml data to static pages
+      return siteConfig.content.map((page) => {
+          return {
+              path: page.path,
+              getData: () => ({data: fields[page.key]})
+          }
+      })
 
-    //TODO: make this a loopy function that creates correct routes?
-    return [
-      {
-        path: '/',
-        getData: () => ({
-          data: fields['homepage']
-        }),
-      },
-      {
-        path: '/about',
-        getData: () => ({
-          data: fields['about']
-        }),
-      },
-      {
-        path: '/donate',
-        getData: () => ({
-          data: fields['donate']
-        }),
-      },
-      {
-        path: '/services',
-        getData: () => ({
-          data: fields['services']
-        }),
-      },
-      {
-        path: '/contact',
-        getData: () => ({
-          data: fields['contact']
-        }),
-      },
-    ]
+      return []
   },
+
   plugins: [
     [
+      //automagically creates path -> url mappings by looking at files under src/pages
       require.resolve('react-static-plugin-source-filesystem'),
       {
         location: path.resolve('./src/pages'),
@@ -107,13 +80,12 @@ export default {
                Head,
                Body,
                children,
-               siteData,
              }) => (
       <Html>
         <Head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>WHAT THE FUUUUCk</title>
+          <title>{siteConfig.titleHome}</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
         </Head>
         <Body>
