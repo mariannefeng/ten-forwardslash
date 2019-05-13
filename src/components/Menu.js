@@ -1,11 +1,10 @@
-import {withSiteData} from "react-static";
 import React from 'react'
 import { Link } from 'components/Router'
 
 //TODO: code review - finally settle once and for all how we want to declare React components
 export default (props) => {
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-warning" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <Link className="navbar-item" to="/">
                     <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"/>

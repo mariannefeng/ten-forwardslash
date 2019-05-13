@@ -9,7 +9,6 @@ publish_mode: editorial_workflow
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
-
 collections:
   - label: "Pages"
     name: "pages"
@@ -26,6 +25,7 @@ collections:
             fields:
               - {label: "Button Text", name: "ctaButtonText", widget: "string"}
               - {label: "Button Link", name: "ctaButtonLink", widget: "string"}
+          - {label: CTA Image, name: ctaImage, widget: image}
           - {label: CTA One, name: ctaOne, widget: string}
           - label: Homepage Blocks
             name: blocks

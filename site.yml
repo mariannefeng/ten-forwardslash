@@ -1,30 +1,12 @@
-url: https://peaceful-gates-58e765.netlify.com/
-
-title: Ten-Forward
-
-repo: https://github.com/tenforwardslash/ten-forwardslash
-
-titleHome: Ten-Forward | The next generation of nonprofits
-
-description: Ten-Forward is a small nonprofit with big dreams
-
 content:
-  - path: /
-    key: homepage
-    label: Home
-
-  - path: /about
-    key: about
-    label: About
-
-  - path: /services
-    key: services
-    label: Services
-
-  - path: /contact
-    key: contact
-    label: Contact
-
-  - path: /donate
-    key: donate
-    label: Donate
+  - { path: /, key: homepage, label: Home }
+  - { path: /about, key: about, label: About }
+  - { path: /services, key: services, label: Services }
+  - { path: /contact, key: contact, label: Contact }
+  - { path: /donate, key: donate, label: Donate }
+description: Ten-Forward is a small nonprofit with big dreams
+logoUrl:
+repo: https://github.com/tenforwardslash/ten-forwardslash
+title: Ten-Forward
+titleHome: Ten-Forward | The next generation of nonprofits
+url: https://peaceful-gates-58e765.netlify.com/
