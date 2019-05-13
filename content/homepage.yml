@@ -3,6 +3,7 @@ titleTagline: this is a smaller call to action
 ctaButton:
   ctaButtonLink: 'https://www.google.com'
   ctaButtonText: hi
+ctaImage: /images/uploads/sitting-6-2x.png
 ctaOne: Testing testing
 blocks:
   - image: /images/uploads/pinball.jpg
