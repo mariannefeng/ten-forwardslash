@@ -1,3 +1,4 @@
-# React-Static - Basic Template
+# Ten-Forward Website
 
-To use this template, run `react-static create` and use the `basic` template.
+* run in development mode: `npm run start`
+* build: `npm run build`
