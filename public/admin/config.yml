@@ -25,7 +25,7 @@ collections:
             widget: "object"
             fields:
               - {label: "Button Text", name: "ctaButtonText", widget: "string"}
-              - {label: "Button Link", name: "ctaButtonLink", widget: "string"} //TODO: this can take in validation field to check for valid url
+              - {label: "Button Link", name: "ctaButtonLink", widget: "string"}
           - {label: CTA One, name: ctaOne, widget: string}
           - label: Homepage Blocks
             name: blocks
