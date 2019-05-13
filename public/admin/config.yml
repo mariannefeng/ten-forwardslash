@@ -15,7 +15,7 @@ collections:
     files:
       - label: "About Page"
         name: "about"
-        file: "site/content/about.yml"
+        file: "content/about.yml"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
@@ -28,7 +28,7 @@ collections:
               - {label: Photo, name: photo, widget: image}
       - label: "Locations Page"
         name: "locations"
-        file: "site/content/locations.yml"
+        file: "content/locations.yml"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
