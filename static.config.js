@@ -58,6 +58,7 @@ export default {
     const fields = await getPageFields()
     console.log('fieldsssss', fields)
 
+    //TODO: make this a loopy function that creates correct routes?
     return [
       {
         path: '/',
@@ -74,19 +75,19 @@ export default {
       {
         path: '/donate',
         getData: () => ({
-          data: fields['about']
+          data: fields['donate']
         }),
       },
       {
         path: '/services',
         getData: () => ({
-          data: fields['about']
+          data: fields['services']
         }),
       },
       {
         path: '/contact',
         getData: () => ({
-          data: fields['about']
+          data: fields['contact']
         }),
       },
     ]

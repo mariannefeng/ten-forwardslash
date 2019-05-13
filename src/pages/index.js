@@ -7,7 +7,11 @@ export default () => {
     return (
         <div>
             <h1>{data.title}</h1>
-            <p>{data.intro}</p>
+            <p>{data.titleTagline}</p>
+            <p>{data.ctaButton.ctaButtonText}</p>
+            <p>{data.ctaOne}</p>
+            <p>{data.blocks}</p>
+            <p>{data.ctaTwo}</p>
         </div>
     )
 }
