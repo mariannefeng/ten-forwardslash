@@ -8,7 +8,6 @@ export default () => {
     return (
         <div>
             <h1>{data.title}</h1>
-            <h1>{data.content}</h1>
             <div>
                 <ReactMarkdown source={data.content} />
             </div>
