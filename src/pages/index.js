@@ -1,7 +1,13 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from 'components/Router'
-import { Section, Hero, Columns, Container, Image, Heading } from 'react-bulma-components';
+import { Section, Hero, Columns, Container, Image, Heading } from 'react-bulma-components'
+import styled from 'styled-components'
+
+const HeroImgWrapper = styled.figure`
+    max-width: 60vh
+`
+
 
 export default () => {
     const { data } = useRouteData()
@@ -21,7 +27,9 @@ export default () => {
                                 </Link>
                             </Columns.Column>
                             <Columns.Column>
-                                <Image src={data.ctaImage} size="is-square"/>
+                                <HeroImgWrapper className="image">
+                                    <img src={data.ctaImage} />
+                                </HeroImgWrapper>
                             </Columns.Column>
                         </Columns>
                     </Container>
