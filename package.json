@@ -1,5 +1,5 @@
 {
-  "name": "react-static-example-basic",
+  "name": "ten-forwardslash",
   "private": true,
   "scripts": {
     "start": "react-static start",

@@ -5,7 +5,9 @@ import { Section, Hero, Columns, Container, Image, Heading } from 'react-bulma-c
 import styled from 'styled-components'
 
 const HeroImgWrapper = styled.figure`
-    max-width: 60vh
+    max-width: 60%; 
+    margin-left: auto !important;
+    margin-right: auto !important; 
 `
 
 
