@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData } from "react-static"
 import ReactMarkdown from "react-markdown"
 
-export default () => {
+function Donate() {
     const { data } = useRouteData()
 
     return (
@@ -15,3 +15,5 @@ export default () => {
 
     )
 }
+
+export default Donate

@@ -1,12 +1,14 @@
 import React from 'react'
 import { useRouteData } from "react-static";
 
-export default () => {
+function Services() {
     const { data } = useRouteData()
 
     return (
         <div>
-            <p>React Static is a progressive static site generator for React.</p>
+            <p>this is a services page</p>
         </div>
     )
 }
+
+export default Services

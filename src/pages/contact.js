@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouteData } from "react-static";
 
-export default () => {
+function Contact() {
     const { data } = useRouteData()
 
     return (
@@ -10,3 +10,5 @@ export default () => {
         </div>
     )
 }
+
+export default Contact

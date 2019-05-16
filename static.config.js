@@ -66,7 +66,7 @@ export default {
 
     plugins: [
         [
-            //automagically creates path -> url mappings by looking at files under src/pages
+            //automagically creates url->page mappings by looking at files under src/pages
             require.resolve('react-static-plugin-source-filesystem'),
             {
                 location: path.resolve('./src/pages'),

@@ -11,7 +11,7 @@ const HeroImgWrapper = styled.figure`
 `
 
 
-export default () => {
+function Homepage() {
     const { data } = useRouteData()
 
     return (
@@ -66,3 +66,5 @@ export default () => {
         </div>
     )
 }
+
+export default Homepage
