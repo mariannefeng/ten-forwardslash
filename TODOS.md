@@ -1,4 +1,5 @@
 ## Things that still needs to be done
+* Remove react-bulma-components, and import + override default vars and compile to css file (reference this inside of static.config.js)
 * Add validation for link button
 * why is netlify slow to save page updates?
 * how to create template for collection definition of 'files' type in netlifycms?   
