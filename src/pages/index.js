@@ -14,7 +14,7 @@ const HeroImgWrapper = styled.figure`
 
 function Homepage() {
     const { data } = useRouteData()
-
+    console.log('homepaaage', data)
     return (
         <div>
             <Section bg='minty'>
@@ -42,7 +42,7 @@ function Homepage() {
             </Section>
             <Section bg='teal'>
                 <Flex flexDirection='column' alignItems='center'>
-                    <Heading mb={3} color='teal' fontSize={5}>{data.ctaOne}</Heading>
+                    <Heading mb={3} color='darkblue' fontSize={5}>{data.elevatorPitch}</Heading>
                 </Flex>
             </Section>
             <Section bg='lightgray'>

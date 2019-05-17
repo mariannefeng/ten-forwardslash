@@ -25,6 +25,7 @@ collections:
             fields:
               - {label: "Button Text", name: "ctaButtonText", widget: "string"}
               - {label: "Button Link", name: "ctaButtonLink", widget: "string"}
+          - {label: Elevator Pitch, name: elevatorPitch, widget: string}
           - {label: CTA Image, name: ctaImage, widget: image}
           - {label: CTA One, name: ctaOne, widget: string}
           - label: Homepage Blocks

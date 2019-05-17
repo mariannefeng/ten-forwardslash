@@ -22,7 +22,7 @@ function Menu(props) {
             <Text p={2} fontWeight='bold'>ten-forward</Text>
             <Box mx='auto' />
             {props.content.map((c, i) => (
-                <Box pl={3}>
+                <Box pl={3} key={i}>
                     <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
                 </Box>
             ))}
