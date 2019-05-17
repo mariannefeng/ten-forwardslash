@@ -2,8 +2,9 @@ import React from 'react'
 import { Link } from 'components/Router'
 import { Navbar } from 'react-bulma-components';
 
-//TODO: code review - finally settle once and for all how we want to declare React components
-export default (props) => {
+//menu is a dumb component that takes in a map of navbar items
+//currently, this data comes from our site.yml. See App.js for usage
+function Menu(props) {
     return (
         <Navbar>
             <Navbar.Brand>
@@ -21,3 +22,5 @@ export default (props) => {
         </Navbar>
     )
 }
+
+export default Menu

@@ -7,7 +7,7 @@ import React from 'react'
 //TODO: error handle this properly, if we can't read site yml then give up
 const siteConfig = yaml.safeLoad(fs.readFileSync('site.yml', 'utf8'))
 
-//retrieves page fields based on generated yml from netlifycms
+//retrieves page fields based on generated yml from netlifycms, keyed on yaml file name
 function getPageFields() {
     const fieldMap = {}
 
@@ -43,6 +43,8 @@ function getPageFields() {
 
 
 export default {
+
+    //static data available to all static components (if they need it, see App.js for usage)
     getSiteData: async () => ({
         title: siteConfig.title,
         description: siteConfig.description,
@@ -53,15 +55,13 @@ export default {
     getRoutes: async () => {
         const fields = await getPageFields()
 
-        //iterates over all site content and hooks up yml data to static pages
+        //iterates over all site content and hooks up yml data to paths defined in site.yaml's content block
         return siteConfig.content.map((page) => {
             return {
                 path: page.path,
                 getData: () => ({data: fields[page.key]})
             }
         })
-
-        return []
     },
 
     plugins: [
