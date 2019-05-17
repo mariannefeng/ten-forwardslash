@@ -38,7 +38,11 @@ function Homepage() {
                             borderRadius={8}
                         />
                     </Flex>
-
+                </Flex>
+            </Section>
+            <Section bg='teal'>
+                <Flex flexDirection='column' alignItems='center'>
+                    <Heading mb={3} color='teal' fontSize={5}>{data.ctaOne}</Heading>
                 </Flex>
             </Section>
             <Section bg='lightgray'>
