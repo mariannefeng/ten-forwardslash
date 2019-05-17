@@ -16,7 +16,6 @@
     "klaw": "^3.0.0",
     "netlify-cms": "^2.9.1",
     "react": "^16.8.2",
-    "react-bulma-components": "^2.3.0",
     "react-dom": "^16.8.2",
     "react-markdown": "^4.0.8",
     "react-static": "^7.0.0",

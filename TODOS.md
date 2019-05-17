@@ -14,6 +14,7 @@ J * Donate
 
 ### Done
 * Hook up react-static site into netlifycms (just means pull data)
+~~* Remove react-bulma-components, and swap to using rebass + styled-components~~
 * Hook up react site to bulma 
 * make it so that site is configured via config file
 * Create template for at least one page
