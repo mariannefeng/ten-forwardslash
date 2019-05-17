@@ -2,12 +2,13 @@
 
 export const colors = {
     orange: '#FCB606',
-    minty: '#d0fef0',
-    darkteal: '#04c88d',
+    minty: '#F2F9F4',
+    teal: '#04c88d',
     cyan: '#c5f3fe',
-    lightgray: '#f9f9f8',
+    lightgray: '#eeeeed',
     darkgray: '#433e34',
-    white: "#ffffff",
+    white: '#ffffff',
+    indigo: '#190276'
 }
 
 export default {

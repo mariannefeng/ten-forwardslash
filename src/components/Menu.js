@@ -10,7 +10,6 @@ text-decoration: none;
 }
 `
 
-
 //menu is a dumb component that takes in a map of navbar items
 //currently, this data comes from our site.yml. See App.js for usage
 function Menu(props) {
