@@ -4,7 +4,7 @@ import { Link } from 'components/Router'
 import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
 import styled from 'styled-components'
 
-import { Section, FullHeightFlex } from 'components/rebass';
+import { Section, FullHeightFlex, ClickableButton } from 'components/rebass';
 
 const HeroImgWrapper = styled.figure`
     max-width: 60%; 
@@ -24,7 +24,9 @@ function Homepage() {
                             <div>
                                 <Heading fontSize={6} fontWeight='bold' mb={3}>{data.title}</Heading>
                                 <Heading fontSize={2} fontFamily='mono' mb={4}>{data.titleTagline}</Heading>
-                                <Link to={data.ctaButton.ctaButtonLink}><Button variant='accent'>{data.ctaButton.ctaButtonText}</Button></Link>
+                                <Link to={data.ctaButton.ctaButtonLink}>
+                                    <ClickableButton variant='accent'>{data.ctaButton.ctaButtonText}</ClickableButton>
+                                </Link>
                             </div>
                         </Flex>
                     </Box>
