@@ -2,6 +2,7 @@ import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from 'components/Router'
 import { Section, Hero, Columns, Container, Image, Heading } from 'react-bulma-components'
+import { Box } from 'rebass'
 import styled from 'styled-components'
 
 const HeroImgWrapper = styled.figure`
@@ -16,6 +17,9 @@ function Homepage() {
 
     return (
         <div>
+            <Box bg='orange' color='white'>
+                hi
+            </Box>
             <Hero color="info" size="medium">
                 <Hero.Body>
                     <Container>

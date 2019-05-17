@@ -10,30 +10,30 @@ export default App
 
 // Render your app
 if (typeof document !== 'undefined') {
-  const target = document.getElementById('root')
+    const target = document.getElementById('root')
 
-  const renderMethod = target.hasChildNodes()
-    ? ReactDOM.hydrate
-    : ReactDOM.render
+    const renderMethod = target.hasChildNodes()
+        ? ReactDOM.hydrate
+        : ReactDOM.render
 
-  const render = Comp => {
-    renderMethod(
-      <AppContainer>
-          <React.Suspense fallback={<em>Think fast!</em>}>
-            <Comp />
-          </React.Suspense>
-      </AppContainer>,
-      target
-    )
-  }
+    const render = Comp => {
+        renderMethod(
+            <AppContainer>
+                <React.Suspense fallback={<em>Think fast!</em>}>
+                    <Comp />
+                </React.Suspense>
+            </AppContainer>,
+            target
+        )
+    }
 
-  // Render!
-  render(App)
+    // Render!
+    render(App)
 
-  // Hot Module Replacement
-  if (module && module.hot) {
-    module.hot.accept('./App', () => {
-      render(App)
-    })
-  }
+    // Hot Module Replacement
+    if (module && module.hot) {
+        module.hot.accept('./App', () => {
+            render(App)
+        })
+    }
 }
