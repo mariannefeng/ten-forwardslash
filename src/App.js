@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: Helvetica, Arial, sans-serif;
         color: ${colors.darkgray};
+        margin: 0;
     }
     input, select, textarea, button {
         font-family:inherit;
