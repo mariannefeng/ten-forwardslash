@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from 'components/Router'
 // import { Section, Hero, Columns, Container, Image } from 'react-bulma-components'
-import { Box, Flex, Heading, Image } from 'rebass'
+import { Box, Flex, Heading, Image, Button } from 'rebass'
 import styled from 'styled-components'
 
 const HeroImgWrapper = styled.figure`
@@ -17,12 +17,15 @@ function Homepage() {
 
     return (
         <div>
-            <Box bg='darkteal'>
+            <Box bg='darkteal' py={[2, 4]}>
                 <Flex flexWrap='wrap'>
                     <Box width={[1, 1/2]} pt={3}>
-                        <Flex flexDirection='column' m={3} justifyContent='space-around' css={{height: "70%"}}>
-                            <Heading fontSize={5} fontFamily='sans' color='white' fontWeight='bold'>{data.title}</Heading>
-                            <Heading fontSize={3} fontFamily='mono' color='white'>{data.titleTagline}</Heading>
+                        <Flex css={{height: '100%'}} alignItems='flex-end' p={4}>
+                            <div>
+                                <Heading fontSize={5} color='white' fontWeight='bold' mb={3}>{data.title}</Heading>
+                                <Heading fontSize={2} fontFamily='mono' color='white' mb={4}>{data.titleTagline}</Heading>
+                                <Link to={data.ctaButton.ctaButtonLink}><Button variant='outline'>{data.ctaButton.ctaButtonText}</Button></Link>
+                            </div>
                         </Flex>
                     </Box>
                     <Box width={[1, 1/2]}>
@@ -36,29 +39,10 @@ function Homepage() {
                         </Flex>
                     </Box>
                 </Flex>
-
             </Box>
-            {/*<Hero color="info" size="medium">*/}
-                {/*<Hero.Body>*/}
-                    {/*<Container>*/}
-                        {/*<Columns>*/}
-                            {/*<Columns.Column>*/}
-                                {/*<Heading>{data.title}</Heading>*/}
-                                {/*<Heading subtitle>{data.titleTagline}</Heading>*/}
-                                {/*<Link className="button is-large"*/}
-                                      {/*to={data.ctaButton.ctaButtonLink}>*/}
-                                    {/*{data.ctaButton.ctaButtonText}*/}
-                                {/*</Link>*/}
-                            {/*</Columns.Column>*/}
-                            {/*<Columns.Column>*/}
-                                {/*<HeroImgWrapper className="image">*/}
-                                    {/*<img src={data.ctaImage} />*/}
-                                {/*</HeroImgWrapper>*/}
-                            {/*</Columns.Column>*/}
-                        {/*</Columns>*/}
-                    {/*</Container>*/}
-                {/*</Hero.Body>*/}
-            {/*</Hero>*/}
+            <Box bg='lightgray' py={[2, 4]}>
+                <Heading mx='auto'>{data.ctaOne}</Heading>
+            </Box>
 
             {/*<Hero color="success" size="medium">*/}
                 {/*<Hero.Body>*/}

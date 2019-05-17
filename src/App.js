@@ -1,6 +1,7 @@
 import React from 'react'
-import {ThemeProvider} from 'styled-components'
-import theme from './theme'
+import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import theme, { colors } from './theme'
+
 import {Root, Routes, addPrefetchExcludes, withSiteData} from 'react-static'
 //
 import {Link, Router} from 'components/Router'
@@ -10,11 +11,24 @@ import Menu from "./components/Menu";
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
+// todo: load the fonts we want in here as well
+const GlobalStyles = createGlobalStyle`
+    body {
+        font-family: Helvetica, Arial, sans-serif;
+        color: ${colors.darkgray};
+    }
+    input, select, textarea, button {
+        font-family:inherit;
+    }
+`
+
+
 function App(siteData) {
     //TODO: make mobile collapse/uncollapse menu work
     return (
         <ThemeProvider theme={theme}>
             <Root>
+                <GlobalStyles/>
                 <Menu content={siteData.content}/>
                 <div className="content">
                     <React.Suspense fallback={<em>Loading...</em>}>
@@ -30,3 +44,8 @@ function App(siteData) {
 }
 
 export default withSiteData(App)
+
+
+//body{font: normal 10px Helvetica, Arial, sans-serif;}
+//input, select, textarea, button{font-family:inherit;}
+//
