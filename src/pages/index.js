@@ -20,10 +20,10 @@ function Homepage() {
             <Box bg='darkteal'>
                 <Flex flexWrap='wrap'>
                     <Box width={[1, 1/2]} pt={3}>
-                        <Flex flexDirection='column' alignItems='center' m={3} justifyContent='space-around' css={{height: "100%"}}>
+                        <Flex flexDirection='column' m={3} justifyContent='space-around' css={{height: "70%"}}>
                             <Heading fontSize={5} fontFamily='sans' color='white' fontWeight='bold'>{data.title}</Heading>
                             <Heading fontSize={3} fontFamily='mono' color='white'>{data.titleTagline}</Heading>
-                        </Flex >
+                        </Flex>
                     </Box>
                     <Box width={[1, 1/2]}>
                         <Flex alignItems='center'>
