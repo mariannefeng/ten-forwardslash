@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex } from 'rebass'
+import { Box, Flex, Button } from 'rebass'
 
 const Section = props =>
     <Box
@@ -13,4 +13,10 @@ const FullHeightFlex = props =>
         css={{height: "100%"}}
     />
 
-export { Section, FullHeightFlex };
+const ClickableButton = props =>
+    <Button
+        {...props}
+        css={{cursor: "pointer"}}
+    />
+
+export { Section, FullHeightFlex, ClickableButton };
