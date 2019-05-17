@@ -1,5 +1,5 @@
 ## Things that still needs to be done
-* Remove react-bulma-components, and swap to using rebass + styled-components
+~~* Remove react-bulma-components, and swap to using rebass + styled-components~~
 * Add validation for link button
 * why is netlify slow to save page updates?
 * how to create template for collection definition of 'files' type in netlifycms?   
