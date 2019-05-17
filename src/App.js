@@ -7,8 +7,6 @@ import {Link, Router} from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
 
-import 'react-bulma-components/dist/react-bulma-components.min.css';
-
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 

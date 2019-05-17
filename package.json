@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "babel-eslint": "9.x",
+    "babel-plugin-styled-components": "^1.10.0",
     "eslint": "5.x",
     "eslint-config-react-app": "^3.0.8",
     "eslint-config-react-tools": "1.x.x",
