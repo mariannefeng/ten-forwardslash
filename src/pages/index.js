@@ -55,7 +55,7 @@ function Homepage() {
                     </Flex>
                 </Flex>
             </Section>
-            <Section bg='indigo'>
+            <Section bg='darkblue'>
                 <FullHeightFlex justifyContent='center'>
                     <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
                 </FullHeightFlex>

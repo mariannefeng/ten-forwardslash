@@ -8,7 +8,7 @@ export const colors = {
     lightgray: '#eeeeed',
     darkgray: '#433e34',
     white: '#ffffff',
-    indigo: '#190276'
+    darkblue: '#026178'
 }
 
 export default {
