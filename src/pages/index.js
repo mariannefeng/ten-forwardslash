@@ -19,7 +19,7 @@ const ButtonWrapper = styled(Box)`
 function Homepage() {
     const {data} = useRouteData()
 
-    const PrimaryHero = (<FlexContent flexWrap='wrap'>
+    const PrimaryHero = (<FlexContent flexWrap='wrap' ml={[1,3,0]}>
         <Box width={[1, 1 / 2]} pt={3}>
             <FullHeightFlexContent
                 flexDirection='column'
