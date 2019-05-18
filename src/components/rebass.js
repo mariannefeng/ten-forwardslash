@@ -11,8 +11,8 @@ const FlexContent = props => {
     let css = {maxWidth: '900px'}
     if (props.hasOwnProperty('css')) {
         css = {...css, ...props.css}
+        delete props.css
     }
-    console.log("css", css)
     return <Flex
         {...props}
         m='auto'
