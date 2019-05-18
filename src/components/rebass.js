@@ -28,7 +28,9 @@ const FullHeightFlexContent = props => {
 }
 
 const ClickableButton = props => {
-    let css = checkProps(props, {cursor: 'pointer'})
+    let css = checkProps(props, {
+        cursor: 'pointer'
+    })
 
     return <Button
         {...props}
