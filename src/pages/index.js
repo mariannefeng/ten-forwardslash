@@ -28,7 +28,7 @@ function Homepage() {
                         <Image
                             mx='auto'
                             src={data.ctaImage}
-                            width={[3/4, 2/3, 1/2]}
+                            width={[3/4, 2/3, 1]}
                             borderRadius={8}
                         />
                     </Flex>
