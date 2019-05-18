@@ -40,7 +40,7 @@ function Homepage() {
 
             <Section bg='teal'>
                 <FlexContent flexDirection='column' alignItems='center'>
-                    <Heading mb={3} color='darkblue' fontSize={4} fontWeight='normal' px={5} textAlign='center'>{data.elevatorPitch}</Heading>
+                    <Heading mb={3} color='darkblue' fontSize={4} fontWeight='normal' px={5}>{data.elevatorPitch}</Heading>
                 </FlexContent>
             </Section>
             <Section bg='lightgray'>

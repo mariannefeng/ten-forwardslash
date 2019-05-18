@@ -2,12 +2,14 @@ import React from 'react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 import theme, { colors } from './theme'
 
-import {Root, Routes, addPrefetchExcludes, withSiteData} from 'react-static'
+import { Root, Routes, addPrefetchExcludes, withSiteData } from 'react-static'
 //
-import {Link, Router} from 'components/Router'
+import { Link, Router } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
-import {FlexContent} from "./components/rebass";
+import Footer from "./components/Footer";
+import { FlexContent } from "./components/rebass";
+import { Box, Text, Flex } from "rebass";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
@@ -42,6 +44,9 @@ function App(siteData) {
                         </Router>
                     </React.Suspense>
                 </div>
+
+                <Footer />
+
             </Root>
         </ThemeProvider>
     )
