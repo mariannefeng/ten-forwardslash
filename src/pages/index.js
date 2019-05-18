@@ -34,7 +34,7 @@ function Homepage() {
                                      mb={3}>
                                 {data.title}
                              </Heading>
-                            <Heading fontSize={4} mb={4} fontWeight='300' pr={4}
+                            <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
                                      color='lightgray'>{data.titleTagline}</Heading>
                             <ButtonWrapper pr={6}>
                                 <Link to={data.ctaButton.ctaButtonLink}>
@@ -56,15 +56,16 @@ function Homepage() {
             </Section>
 
             <Section bg='orange'>
-                <FlexContent flexDirection='column' alignItems='center'>
-                    <Heading mb={3} fontSize={4} fontWeight='normal' px={5}>
-                        <ReactMarkdown source={data.elevatorPitch}/>
-                    </Heading>
+                <FlexContent flexDirection='row' alignItems='center'>
                     <Image
                         mx='auto'
                         src={data.elevatorPitchImage}
-                        width={3/5}
+                        width={2/5}
                         borderRadius={8} />
+                    <Heading mb={3} fontSize={3} fontWeight='500' px={5}>
+                        <ReactMarkdown source={data.elevatorPitch}/>
+                    </Heading>
+
                 </FlexContent>
             </Section>
 

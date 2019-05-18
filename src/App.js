@@ -19,6 +19,8 @@ const GlobalStyles = createGlobalStyle`
     }
     body {
         font-family: Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         color: ${colors.darkgray};
         margin: 0;
     }
