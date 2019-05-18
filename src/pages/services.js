@@ -22,7 +22,7 @@ function Services() {
                     {data.serviceSections.map((service, i) => {
                         return (
                             <Flex bg='lightteal' key={i} p={4} mb={4} flexDirection='column'>
-                                <Heading fontSize={4} mb={2} id='1'>{service.name}</Heading>
+                                <Heading fontSize={4} mb={2} id={service.anchorId}>{service.name}</Heading>
                                 <Heading fontSize={2} fontFamily='mono' mb={3}>{service.tagline}</Heading>
                                 <TextNoFirstMarginP fontSize={2}><ReactMarkdown source={service.content}/></TextNoFirstMarginP>
                             </Flex>
