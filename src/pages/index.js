@@ -41,11 +41,12 @@ function Homepage() {
                 </ButtonWrapper>
             </FullHeightFlexContent>
         </Box>
-        <Flex alignItems='center' width={[1, 1 / 2]}>
+        <Flex alignItems='center' width={[0, 1 / 2]}>
             <Image
                 px={2}
                 mx='auto'
                 src={data.ctaImage}
+                mt={[5,0]}
                 width={1}
                 borderRadius={8}
             />
@@ -56,7 +57,7 @@ function Homepage() {
         <Image
             mx='auto'
             src={data.elevatorPitchImage}
-            width={[5/6, 3/6]}
+            width={[4/6, 0.4]}
             borderRadius={8} />
         <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={5} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
