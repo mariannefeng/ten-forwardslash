@@ -1,5 +1,6 @@
 ## Things that still needs to be done 
 * Read something about how to redirect our domains to netlify
+* flash of unstyled content??
 
 M * Create footer (link to credits)
 M * Contact (swap to using mail to)
@@ -9,6 +10,7 @@ J * Services (first go should just be wide blocks)
 J * Donate
  
 * Add validation for link button?
+* mobile
 * why is netlify slow to save page updates?
 * how to create template for collection definition of 'files' type in netlifycms?   
 
