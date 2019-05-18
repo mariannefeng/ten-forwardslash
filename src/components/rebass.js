@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box, Flex, Button, Text} from 'rebass'
+import { Box, Flex, Button, Text, Link } from 'rebass'
 import styled from "styled-components";
 
 const Section = props =>

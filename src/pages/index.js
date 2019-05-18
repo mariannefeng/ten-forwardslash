@@ -16,13 +16,13 @@ function Homepage() {
 
     return (
         <div>
-            <Section bg='minty'>
+            <Section bg='brightgreen'>
                 <FlexContent flexWrap='wrap'>
                     <Box width={[1, 1/2]} pt={3}>
                         <Flex css={{height: '100%'}} alignItems='flex-center' p={4}>
                             <div>
                                 <Heading fontSize={6} fontWeight='bold' mb={3}>{data.title}</Heading>
-                                <Heading fontSize={3} fontFamily='mono' mb={4} color='mediumgray'>{data.titleTagline}</Heading>
+                                <Heading fontSize={3} mb={4} color='lightgray'>{data.titleTagline}</Heading>
                                 <Link to={data.ctaButton.ctaButtonLink}>
                                     <ClickableButton variant='accent'>{data.ctaButton.ctaButtonText}</ClickableButton>
                                 </Link>
@@ -62,7 +62,7 @@ function Homepage() {
                                       my={3}
                                       // border={`1px solid ${colors.mediumorange}`}
                                       borderRadius={3}>
-                                    <Heading fontFamily='mono' mb={3} fontSize={3}>{block.name}</Heading>
+                                    <Heading mb={3} fontSize={3}>{block.name}</Heading>
                                     <Text lineHeight={4/3}>{block.text}</Text>
                                 </Card>
                             )

@@ -1,8 +1,7 @@
 import React from 'react'
-// import { Link } from 'components/Router'
 import { Box, Link, Image } from 'rebass'
-import styled from 'styled-components'
 import { FlexContent } from "./rebass";
+import styled from "styled-components";
 
 const NavLink = styled(Link)`
 text-decoration: none;
@@ -25,7 +24,7 @@ function Menu(props) {
             alignItems='center'>
             <Link href='/'>
                 <Image
-                    width={[ 1/10, 1/15, 1/18 ]}
+                    width={[1 / 10, 1 / 15, 1 / 18]}
                     src={props.logo}
                 />
             </Link>

@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+
 const MailingListForm = ({ status, message, onValidated }) => {
     let email;
 
@@ -11,14 +13,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
         });
 
     return (
-        <div
-            style={{
-                background: "#efefef",
-                borderRadius: 2,
-                padding: 10,
-                display: "inline-block"
-            }}
-        >
+        <div className='form-control'>
             {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
             {status === "error" && (
                 <div
@@ -33,13 +28,11 @@ const MailingListForm = ({ status, message, onValidated }) => {
                 />
             )}
             <input
-                style={{ fontSize: "2em", padding: 5 }}
                 ref={node => (email = node)}
                 type="email"
                 placeholder="Your Email"
             />
-            <br />
-            <button style={{ fontSize: "2em", padding: 5 }} onClick={submit}>
+            <button className='button primary' onClick={submit}>
                 Make It So
             </button>
         </div>

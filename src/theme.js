@@ -9,11 +9,13 @@ export const colors = {
     lightyellow: '#f9fee3',
     minty: '#F2F9F4',
     teal: '#04c88d',
+    brightgreen: '#04c82b',
     lightteal: '#e9fef8',
     cyan: '#c5f3fe',
     lightgray: '#eeeeed',
     mediumgray: '#726b59',
     darkgray: '#433e34',
+    brightblue: '#043ec6',
     white: '#ffffff',
     darkblue: '#026178',
     darkishblue: '#0386a6'
@@ -40,7 +42,7 @@ export default {
             backgroundColor: colors.orange,
             color: colors.white,
             '&:hover': {
-                backgroundColor: colors.lightorange
+                backgroundColor: colors.mediumorange
             }
         },
         outline: {
