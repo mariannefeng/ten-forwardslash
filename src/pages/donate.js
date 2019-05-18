@@ -21,16 +21,17 @@ const DonorBoxEmbed = props =>
             allowpaymentrequest />
     </div>
 
+
 function Donate() {
     const { data } = useRouteData()
 
     return (
-        <Section>
-            <FlexContent flexDirection='column'>
-                <Heading fontSize={5} mb={4} mx='auto'>{data.title}</Heading>
-                <Flex flexWrap='wrap'>
-                    <Flex width={[1, 0.45]} p={2} flexDirection='column'>
-                        <TextNoFirstMarginP  mx='auto'>
+        <Section bg='darkishblue'>
+            <FlexContent color='white' flexDirection='column'>
+                <Heading fontSize={5} mb={4} pt={4} mx='auto'>{data.title}</Heading>
+                <Flex flexWrap='wrap' justifyContent='space-around'>
+                    <Flex  width={[1, 0.45]} p={2} flexDirection='column'>
+                        <TextNoFirstMarginP mx='auto' pt={2} pb={4} fontSize={3}>
                             <ReactMarkdown source={data.content} />
                         </TextNoFirstMarginP>
                     </Flex>

@@ -15,7 +15,8 @@ export const colors = {
     mediumgray: '#726b59',
     darkgray: '#433e34',
     white: '#ffffff',
-    darkblue: '#026178'
+    darkblue: '#026178',
+    darkishblue: '#0386a6'
 }
 
 export default {
