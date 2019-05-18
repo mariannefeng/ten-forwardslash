@@ -33,7 +33,7 @@ function App(siteData) {
         <ThemeProvider theme={theme}>
             <Root>
                 <GlobalStyles/>
-                <Menu content={siteData.content}/>
+                <Menu content={siteData.content} logo={siteData.logo}/>
                 <div className="content">
                     <React.Suspense fallback={<em>Loading...</em>}>
                         <Router>

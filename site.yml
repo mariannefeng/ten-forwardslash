@@ -6,6 +6,10 @@ content:
   - { path: /donate, key: donate, label: Donate }
 description: Ten-Forward is a small nonprofit with big dreams
 logoUrl: https://peaceful-gates-58e765.netlify.com/images/10f-square.png
+social:
+  - { key: insta, url: ''}
+  - { key: linkedin, url: ''}
+  - { key: twitter, url: ''}
 repo: https://github.com/tenforwardslash/ten-forwardslash
 title: Ten-Forward
 titleHome: Ten-Forward | The next generation of nonprofits
