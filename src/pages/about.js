@@ -53,6 +53,8 @@ function About() {
 
                 <Heading alignSelf='center' fontSize={5} my={4} color='teal'>{data.aboutTitle}</Heading>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
+                    {/*todo: this works for only two, i realize we should prob handle board members
+                        differently w/ a different section*/}
                     {data.team.map((teamMember, i) => {
                         return (
                             <Flex width={[1, 0.45]} key={i} p={2} flexDirection='column'>
