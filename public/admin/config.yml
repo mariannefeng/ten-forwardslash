@@ -65,7 +65,7 @@ collections:
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Tagline, name: tagline, widget: text}
-              - {label: Anchor ID, name: anchorId, widget: text}
+              - {label: Anchor ID, name: anchorId, widget: string}
               - {label: Content, name: content, widget: markdown}
               - {label: Image, name: image, widget: image}
       - label: "Contact Page"
