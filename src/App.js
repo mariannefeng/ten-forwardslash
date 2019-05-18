@@ -7,12 +7,16 @@ import {Root, Routes, addPrefetchExcludes, withSiteData} from 'react-static'
 import {Link, Router} from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
+import {FlexContent} from "./components/rebass";
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
 // todo: load the fonts we want in here as well
 const GlobalStyles = createGlobalStyle`
+    html, body {
+        height: 100%;
+    }
     body {
         font-family: Helvetica, Arial, sans-serif;
         color: ${colors.darkgray};

@@ -1,9 +1,17 @@
 import React from 'react'
 import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
+import styled from "styled-components"
 import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
 
-import { Section, FlexContent } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent } from 'components/rebass';
+
+// todo: review -- idk a good name for this
+const TextNoFirstMarginP = styled(Text)`
+p:first-child {
+    margin-block-start: 0;
+}
+`
 
 const AboutHeader = props =>
     <Heading
@@ -15,7 +23,7 @@ const AboutHeader = props =>
         textAlign='center'
         />
 const AboutBlurb = props =>
-    <Text
+    <TextNoFirstMarginP
         {...props}
         py={2}
         fontSize={3}
@@ -26,7 +34,7 @@ function About() {
     console.log("data", data)
     return (
         <Section bg='minty'>
-            <FlexContent flexDirection='column' m={3} px={4} flex={1}>
+            <FullHeightFlexContent flexDirection='column' m={3} px={4} flex={1}>
                 <Heading alignSelf='center' fontSize={5} mb={4} color='teal'>{data.title}</Heading>
                 <Flex>
                     <AboutHeader>our mission</AboutHeader>
@@ -42,7 +50,35 @@ function About() {
                     <AboutHeader>our history</AboutHeader>
                 </Flex>
                 <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
-            </FlexContent>
+
+                <Heading alignSelf='center' fontSize={5} my={4} color='teal'>{data.aboutTitle}</Heading>
+                <Flex flexWrap='wrap' justifyContent='space-around'>
+                    {data.team.map((teamMember, i) => {
+                        return (
+                            <Flex width={[1, 0.45]} key={i} p={2} flexDirection='column'>
+                                <Image
+                                    alignSelf='center'
+                                    mx='auto'
+                                    src={teamMember.image}
+                                    width={[3/4, 2/3, 1/2]}
+                                    height={['150px', '250px']}
+                                    borderRadius={8}
+                                    css={{objectFit: 'contain', maxHeight: '150px'}}
+                                    mb={3}
+                                />
+                                <Heading mb={2} fontSize={3}>{teamMember.name}</Heading>
+                                <Heading fontFamily='mono' mb={2} fontSize={2}>{teamMember.position}</Heading>
+                                <Text><ReactMarkdown source={teamMember.bio}/></Text>
+                            </Flex>
+                        )
+                    })}
+                    <Box width={[1,1/2]}>
+                    </Box>
+                    <Box width={[1,1/2]}>
+
+                    </Box>
+                </Flex>
+            </FullHeightFlexContent>
         </Section>
     )
 }
