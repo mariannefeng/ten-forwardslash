@@ -1,15 +1,21 @@
 import React from 'react'
 import { Box, Flex, Button, Text, Link } from 'rebass'
 import styled from "styled-components";
+import theme from '../theme'
 
-const Section = props =>
-    <Box
+const Section = props => {
+    let css = checkProps(props, {minHeight: '500px'})
+
+    return < Flex
         {...props}
-        py={[2, 4]}
-    />
+        py = {[2, 4]}
+        css = {css}
+        />
+
+}
 
 const FlexContent = props => {
-    let css = checkProps(props, {maxWidth: '900px'})
+    let css = checkProps(props, {maxWidth: '950px'})
 
     return <Flex
         {...props}

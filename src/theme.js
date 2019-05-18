@@ -3,6 +3,7 @@
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
     orange: '#FCB606',
+    brightorange: '#fcb206',
     mediumorange: '#fcc33e',
     lightorange: '#feeabd',
     lightblue: '#e7eefe',
@@ -15,6 +16,7 @@ export const colors = {
     lightgray: '#eeeeed',
     mediumgray: '#726b59',
     darkgray: '#433e34',
+    anotherblue: '#04a1c8',
     brightblue: '#043ec6',
     white: '#ffffff',
     darkblue: '#026178',
@@ -39,7 +41,7 @@ export default {
     buttons: {
         accent: {
             fontWeight: 'normal',
-            backgroundColor: colors.orange,
+            backgroundColor: colors.brightorange,
             color: colors.white,
             '&:hover': {
                 backgroundColor: colors.mediumorange
