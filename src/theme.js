@@ -14,6 +14,7 @@ export const colors = {
     brightgreen: '#04c82b',
     lightteal: '#e9fef8',
     cyan: '#c5f3fe',
+    codebggray: '#eff0f1',
     lightgray: '#eeeeed',
     mediumgray: '#726b59',
     darkgray: '#433e34',

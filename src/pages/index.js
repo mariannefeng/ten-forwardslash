@@ -16,16 +16,6 @@ const ButtonWrapper = styled(Box)`
    text-align: right 
 `
 
-const CardWithHover = styled(Card)`
-    -webkit-transition: background 1s;
-    
-    &:hover {
-        background: ${colors.lightgray};
-        -webkit-transition: background 0.5s;
-    } 
-`
-
-
 function Homepage() {
     const {data} = useRouteData()
 
@@ -79,23 +69,22 @@ function Homepage() {
                 </FlexContent>
             </Section>
 
-            <Section bg='darkgray'>
-                <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around'>
-                    <Heading m={5} color='white' fontSize={5}>{data.ctaOne}</Heading>
+            <Section bg='white'>
+                <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
+                    <Heading m={5} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap' justifyContent='space-around'>
                         {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
                         {data.blocks.map((block, i) => {
                             return (
                                 <ClickableLink href={block.path} color='black'>
-                                    <CardWithHover width={1}
+                                    <Card width={1}
                                                    key={i}
                                                    p={4}
                                                    my={3}
-                                                   bg='white'
-                                                   borderRadius={3}>
-                                        <Heading mb={4} fontSize={4}>{block.name}</Heading>
-                                        <Text lineHeight={4 / 3} fontSize={3} fontWeight='400'>{block.text}</Text>
-                                    </CardWithHover>
+                                                   bg='codebggray'>
+                                        <Heading mb={4} fontSize={4} fontFamily='mono'>{ block.name + '/'}</Heading>
+                                        <Text lineHeight={4 / 3} fontSize={2} fontWeight='400'>{block.text}</Text>
+                                    </Card>
                                 </ClickableLink>
                             )
                         })}

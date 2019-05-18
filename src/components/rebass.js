@@ -66,4 +66,8 @@ const ClickableLink = styled(Link)`
     cursor: pointer;
 `
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink};
+const PrettyInput = styled.input`
+    
+`
+
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput };

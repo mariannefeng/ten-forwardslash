@@ -1,6 +1,6 @@
 import React from 'react'
 
-
+import { ClickableButton, PrettyInput } from "./rebass";
 
 const MailingListForm = ({ status, message, onValidated }) => {
     let email;
@@ -13,7 +13,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
         });
 
     return (
-        <div className='form-control'>
+        <div>
             {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
             {status === "error" && (
                 <div
@@ -27,14 +27,14 @@ const MailingListForm = ({ status, message, onValidated }) => {
                     dangerouslySetInnerHTML={{ __html: message }}
                 />
             )}
-            <input
-                ref={node => (email = node)}
-                type="email"
-                placeholder="Your Email"
-            />
-            <button className='button primary' onClick={submit}>
+
+            <PrettyInput ref={node => (email = node)}
+                         type="email"
+                         placeholder="Your Email" />
+
+            <ClickableButton onClick={submit}>
                 Make It So
-            </button>
+            </ClickableButton>
         </div>
     )
 }

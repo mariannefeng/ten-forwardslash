@@ -24,7 +24,7 @@ function Menu(props) {
             alignItems='center'>
             <Link href='/'>
                 <Image
-                    width={[1 / 10, 1 / 15, 1 / 18]}
+                    width={[1 / 10, 1 / 15]}
                     src={props.logo}
                 />
             </Link>
