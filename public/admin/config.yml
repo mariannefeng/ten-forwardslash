@@ -26,6 +26,7 @@ collections:
               - {label: "Button Text", name: "ctaButtonText", widget: "string"}
               - {label: "Button Link", name: "ctaButtonLink", widget: "string"}
           - {label: Elevator Pitch, name: elevatorPitch, widget: markdown}
+          - {label: Elevator Pitch Image, name: elevatorPitchImage, widget: image}
           - {label: CTA Image, name: ctaImage, widget: image}
           - {label: CTA One, name: ctaOne, widget: string}
           - label: Homepage Blocks

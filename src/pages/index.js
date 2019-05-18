@@ -62,7 +62,7 @@ function Homepage() {
                     </Heading>
                     <Image
                         mx='auto'
-                        src='https://peaceful-gates-58e765.netlify.com/images/more_casual_graphic.svg'
+                        src={data.elevatorPitchImage}
                         width={3/5}
                         borderRadius={8} />
                 </FlexContent>
