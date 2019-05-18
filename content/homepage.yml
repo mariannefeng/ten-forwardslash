@@ -1,22 +1,37 @@
 title: Your nonprofit deserves a boost
 titleTagline: >-
-  You’re solving the world’s biggest problems. Elevate your operation with top-notch tech.
-elevatorPitch: >-
-  Just because your nonprofit’s mission doesn’t center on technology doesn’t mean your nonprofit won’t benefit from technology. With better tech your organization can reach more people, affect greater change, and put your donation dollars to better use. Ten-Forward is a dedicated group of software nerds looking to partner our expertise with your world-bettering vision.
-  Your nonprofit isn’t a tech agency or a software firm. But ours is.
+  You’re solving the world’s biggest problems - elevate your operation with
+  top-notch tech.
 ctaButton:
   ctaButtonLink: /contact
   ctaButtonText: Schedule a Meeting
-ctaImage: /images/homepage_float.svg
+elevatorPitch: >-
+  With better technology your organization can reach more people, affect greater
+  change, and put your donation dollars to better use. Ten-Forward is a
+  dedicated group of software nerds looking to partner our expertise with your
+  world-bettering vision. 
+
+
+  Your nonprofit isn’t a tech agency or a software firm. But ours is.
+ctaImage: /images/cropped_homepage_float.svg
 ctaOne: What We Do
 blocks:
   - image: /images/uploads/pinball.jpg
     name: Workshops
-    text: The learning curve for new or new-to-you technologies shouldn’t be a barrier to your mission. If you want to make the most of the tools you already have, we can show you how.
+    text: >-
+      The learning curve for new or new-to-you technologies shouldn’t be a
+      barrier to your mission. If you want to make the most of the tools you
+      already have, we can show you how.
   - image: /images/uploads/pinball.jpg
     name: Consulting
-    text: If your tech question feels too big to handle, we’re equipped to help you find custom answers to your most pressing problems. We work alongside your team to support your mission through software solutions.
+    text: >-
+      If your tech question feels too big to handle, we’re equipped to help you
+      find custom answers to your most pressing problems. We work alongside your
+      team to support your mission through software solutions.
   - image: /images/uploads/moneyplease.gif
     name: Product R&D
-    text: Tools for your nonprofit should be designed with your nonprofit in mind. When you need juuuuust the right ___________, use software for nonprofits by a nonprofit.
+    text: >-
+      Tools for your nonprofit should be designed with your nonprofit in mind.
+      When you need juuuuust the right ___________, use software for nonprofits
+      by a nonprofit.
 ctaTwo: Want updates?

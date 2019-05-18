@@ -4,10 +4,10 @@ import { Link } from 'components/Router'
 import { Box, Flex, Heading, Image, Card, Text } from 'rebass'
 
 import { Section, FlexContent, FullHeightFlexContent, ClickableButton } from 'components/rebass';
-import MailchimpSubscribe from "react-mailchimp-subscribe"
+import MailchimpSubscribe from 'react-mailchimp-subscribe'
+import ReactMarkdown from 'react-markdown'
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
-
 
 function Homepage() {
     const { data } = useRouteData()
@@ -17,10 +17,10 @@ function Homepage() {
             <Section bg='minty'>
                 <FlexContent flexWrap='wrap'>
                     <Box width={[1, 1/2]} pt={3}>
-                        <Flex css={{height: '100%'}} alignItems='flex-end' p={4}>
+                        <Flex css={{height: '100%'}} alignItems='flex-center' p={4}>
                             <div>
                                 <Heading fontSize={6} fontWeight='bold' mb={3}>{data.title}</Heading>
-                                <Heading fontSize={2} fontFamily='mono' mb={4}>{data.titleTagline}</Heading>
+                                <Heading fontSize={3} fontFamily='mono' mb={4} color='mediumgray'>{data.titleTagline}</Heading>
                                 <Link to={data.ctaButton.ctaButtonLink}>
                                     <ClickableButton variant='accent'>{data.ctaButton.ctaButtonText}</ClickableButton>
                                 </Link>
@@ -38,12 +38,15 @@ function Homepage() {
                 </FlexContent>
             </Section>
 
-            <Section bg='teal'>
+            <Section bg='lightgray'>
                 <FlexContent flexDirection='column' alignItems='center'>
-                    <Heading mb={3} color='darkblue' fontSize={4} fontWeight='normal' px={5}>{data.elevatorPitch}</Heading>
+                    <Heading mb={3} fontSize={4} fontWeight='normal' px={5}>
+                        <ReactMarkdown source={data.elevatorPitch} />
+                    </Heading>
                 </FlexContent>
             </Section>
-            <Section bg='lightgray'>
+
+            <Section bg='lightyellow'>
                 <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around'>
                     <Heading mb={3} color='teal' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap'  justifyContent='space-around'>
@@ -59,9 +62,9 @@ function Homepage() {
                     </Flex>
                 </FlexContent>
             </Section>
-            <Section bg='darkblue'>
+            <Section bg='lightblue'>
                 <FullHeightFlexContent justifyContent='center'>
-                    <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
+                    <Heading fontSize={4} fontWeight='normal'>{data.ctaTwo}</Heading>
                     <MailchimpSubscribe url={url} />
                 </FullHeightFlexContent>
             </Section>

@@ -6,8 +6,9 @@ import { FlexContent } from "./rebass";
 
 const NavLink = styled(Link)`
 text-decoration: none;
+padding: 2px;
 &:hover {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #03a776;
 }
 `
 

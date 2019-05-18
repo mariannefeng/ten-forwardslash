@@ -3,11 +3,15 @@
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
     orange: '#FCB606',
+    lightorange: '#fcc33e',
+    lightblue: '#e7eefe',
+    lightyellow: '#f9fee3',
     minty: '#F2F9F4',
     teal: '#04c88d',
     lightteal: '#e9fef8',
     cyan: '#c5f3fe',
     lightgray: '#eeeeed',
+    mediumgray: '#726b59',
     darkgray: '#433e34',
     white: '#ffffff',
     darkblue: '#026178',
@@ -27,13 +31,16 @@ export default {
         sans: 'Helvetica, sans-serif',
         // need to load in these fonts:
         // test: 'Proxima Nova, sans-serif',
-        mono: 'Menlo, monospace',
+        mono: 'Consolas, monospace',
     },
     buttons: {
         accent: {
             fontWeight: 'normal',
             backgroundColor: colors.orange,
             color: colors.white,
+            '&:hover': {
+                backgroundColor: colors.lightorange
+            }
         },
         outline: {
             fontWeight: 'normal',
