@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Box, Flex } from 'rebass'
 import { ClickableButton, PrettyInput } from "./rebass";
 
 const MailingListForm = ({ status, message, onValidated }) => {
@@ -13,7 +13,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
         });
 
     return (
-        <div>
+        <Flex flexDirection='column' justifyContent='center' width={1}>
             {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
             {status === "error" && (
                 <div
@@ -28,14 +28,15 @@ const MailingListForm = ({ status, message, onValidated }) => {
                 />
             )}
 
-            <PrettyInput ref={node => (email = node)}
-                         type="email"
-                         placeholder="Your Email" />
-
-            <ClickableButton onClick={submit}>
+            <Box my={4}>
+                <PrettyInput ref={node => (email = node)}
+                             type="email"
+                             placeholder="Your Email" />
+            </Box>
+            <ClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='accent' css={{ color: 'black' }}>
                 Make It So
             </ClickableButton>
-        </div>
+        </Flex>
     )
 }
 

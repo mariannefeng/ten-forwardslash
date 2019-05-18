@@ -72,7 +72,7 @@ function Homepage() {
 
             <Section bg='white'>
                 <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
-                    <Heading m={5} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
+                    <Heading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap' justifyContent='space-around'>
                         {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
                         {data.blocks.map((block, i) => {
@@ -93,19 +93,17 @@ function Homepage() {
                 </FlexContent>
             </Section>
 
-            <Section bg='teal'>
-                <FullHeightFlexContent flexDirection='column' alignItems='center'>
-                    <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
-                    <div>
-                        <MailchimpSubscribe url={url}
-                                            render={({subscribe, status, message}) => (
-                                                <MailingListForm
-                                                    status={status}
-                                                    message={message}
-                                                    onValidated={formData => subscribe(formData)}
-                                                />
-                                            )}/>
-                    </div>
+            <Section bg='brightteal'>
+                <FullHeightFlexContent flexDirection='column' alignItems='center' width={[1, 1/4]}>
+                    <Heading fontSize={5} fontWeight='normal' color='darkgray'>{data.ctaTwo}</Heading>
+                    <MailchimpSubscribe url={url}
+                                        render={({subscribe, status, message}) => (
+                                            <MailingListForm
+                                                status={status}
+                                                message={message}
+                                                onValidated={formData => subscribe(formData)}
+                                            />
+                                        )}/>
                 </FullHeightFlexContent>
             </Section>
 

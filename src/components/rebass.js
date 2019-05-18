@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, Button, Text, Link } from 'rebass'
 import styled from "styled-components";
-import theme from '../theme'
+import theme, { colors } from '../theme'
 
 const Section = props => {
     let css = checkProps(props, {minHeight: '500px'})
@@ -38,6 +38,9 @@ const ClickableButton = props => {
     let css = checkProps(props, {
         cursor: 'pointer',
         fontFamily: 'Consolas, monospace',
+        ':focus':  {
+            outline: 'none'
+        }
     })
 
     return <Button
@@ -68,7 +71,13 @@ const ClickableLink = styled(Link)`
 `
 
 const PrettyInput = styled.input`
-    
+    font-size: 18px;
+    padding: 10px;
+    width: 100%;
+    font-family: ${theme.fonts['sans']}; 
+    :focus {
+        outline: none;
+    }
 `
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput };
