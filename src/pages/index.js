@@ -46,6 +46,7 @@ function Homepage() {
                     </Box>
                     <Flex alignItems='center' width={[1, 1 / 2]}>
                         <Image
+                            px={2}
                             mx='auto'
                             src={data.ctaImage}
                             width={1}
@@ -80,10 +81,10 @@ function Homepage() {
                                     <Card width={1}
                                                    key={i}
                                                    p={4}
-                                                   my={3}
+                                                   my={4}
                                                    bg='codebggray'>
-                                        <Heading mb={4} fontSize={4} fontFamily='mono'>{ block.name + '/'}</Heading>
-                                        <Text lineHeight={4 / 3} fontSize={2} fontWeight='400'>{block.text}</Text>
+                                        <Heading mb={4} fontSize={3} fontFamily='mono'>{ block.name + ' /'}</Heading>
+                                        <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='mono'>{block.text}</Text>
                                     </Card>
                                 </ClickableLink>
                             )
