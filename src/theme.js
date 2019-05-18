@@ -44,6 +44,7 @@ export default {
     buttons: {
         accent: {
             fontWeight: 'normal',
+            fontFamily: 'Consolas, monospace',
             backgroundColor: colors.brightorange,
             color: colors.white,
             '&:hover': {

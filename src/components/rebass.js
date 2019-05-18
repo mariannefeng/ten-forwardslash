@@ -36,7 +36,8 @@ const FullHeightFlexContent = props => {
 
 const ClickableButton = props => {
     let css = checkProps(props, {
-        cursor: 'pointer'
+        cursor: 'pointer',
+        fontFamily: 'Consolas, monospace',
     })
 
     return <Button
