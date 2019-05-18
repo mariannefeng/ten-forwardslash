@@ -1,6 +1,14 @@
 import React from 'react'
 import { Box, Flex, Button } from 'rebass'
 
+function mergeCssProps(props, css) {
+    if (props.hasOwnProperty('css')) {
+        css = {...css, ...props.css}
+        delete props.css
+    }
+    return css
+}
+
 const Section = props =>
     <Box
         {...props}
@@ -8,28 +16,28 @@ const Section = props =>
     />
 
 const FlexContent = props => {
-    let css = {maxWidth: '900px'}
-    if (props.hasOwnProperty('css')) {
-        css = {...css, ...props.css}
-        delete props.css
-    }
+    let cssProps = mergeCssProps(props, {maxWidth: '900px'})
     return <Flex
         {...props}
         m='auto'
-        css={css}
+        css={cssProps}
     />
 }
 
-const FullHeightFlexContent = props =>
-    <FlexContent
+const FullHeightFlexContent = props => {
+    let cssProps = mergeCssProps(props, {height: "100%"})
+    return <FlexContent
         {...props}
-        css={{height: "100%"}}
+        css={cssProps}
     />
+}
 
-const ClickableButton = props =>
-    <Button
+const ClickableButton = props => {
+    let cssProps = mergeCssProps(props, {cursor: "pointer"})
+    return <Button
         {...props}
-        css={{cursor: "pointer"}}
+        css={cssProps}
     />
+}
 
 export {Section, FlexContent, FullHeightFlexContent, ClickableButton};
