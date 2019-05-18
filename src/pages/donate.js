@@ -1,17 +1,45 @@
 import React from 'react'
-import { useRouteData } from "react-static"
-import ReactMarkdown from "react-markdown"
+import { useRouteData } from 'react-static'
+import ReactMarkdown from 'react-markdown'
+import { Flex, Heading, Box } from 'rebass'
+
+import { Section, FlexContent, TextNoFirstMarginP } from 'components/rebass';
+
+
+const DonorBoxEmbed = props =>
+    <div>
+        <script src='https://donorbox.org/widget.js' paypalExpress='false'/>
+        <iframe
+            src={'https://donorbox.org/embed/ten-forward'}
+            height={'685px'}
+            width={'100%'}
+            style={{maxWidth: '500px', minWidth: '310px', maxHeight: 'none !important'}}
+            seamless={'seamless'}
+            name={'donorbox'}
+            frameBorder={'0'}
+            scrolling={'no'}
+            allowpaymentrequest />
+    </div>
 
 function Donate() {
     const { data } = useRouteData()
 
     return (
-        <div>
-            <h1>{data.title}</h1>
-            <div>
-                <ReactMarkdown source={data.content} />
-            </div>
-        </div>
+        <Section>
+            <FlexContent flexDirection='column'>
+                <Heading fontSize={5} mb={4} mx='auto'>{data.title}</Heading>
+                <Flex flexWrap='wrap'>
+                    <Flex width={[1, 0.45]} p={2} flexDirection='column'>
+                        <TextNoFirstMarginP  mx='auto'>
+                            <ReactMarkdown source={data.content} />
+                        </TextNoFirstMarginP>
+                    </Flex>
+                    <Box width={[1,0.45]} p={2}>
+                        <DonorBoxEmbed/>
+                    </Box>
+                </Flex>
+            </FlexContent>
+        </Section>
 
     )
 }
