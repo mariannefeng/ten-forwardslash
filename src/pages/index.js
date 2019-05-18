@@ -57,15 +57,14 @@ function Homepage() {
 
             <Section bg='orange'>
                 <FlexContent flexDirection='column' alignItems='center'>
-                    <Image
-                        mx='auto'
-                        src='https://peaceful-gates-58e765.netlify.com/images/elevator_pitch_graphic.svg'
-                        width={1}
-                        borderRadius={8}
-                    />
                     <Heading mb={3} fontSize={4} fontWeight='normal' px={5}>
                         <ReactMarkdown source={data.elevatorPitch}/>
                     </Heading>
+                    <Image
+                        mx='auto'
+                        src='https://peaceful-gates-58e765.netlify.com/images/more_casual_graphic.svg'
+                        width={3/5}
+                        borderRadius={8} />
                 </FlexContent>
             </Section>
 
