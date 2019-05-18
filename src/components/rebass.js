@@ -7,12 +7,18 @@ const Section = props =>
         py={[2, 4]}
     />
 
-const FlexContent = props =>
-    <Flex
+const FlexContent = props => {
+    let css;
+    if (props.hasOwnProperty('css')) {
+        css = {...{maxWidth: '900px'}, ...props.css}
+        delete props.css
+    }
+    return <Flex
         {...props}
-        width='900px'
         m='auto'
+        css={css}
     />
+}
 
 const FullHeightFlexContent = props =>
     <FlexContent
