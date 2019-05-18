@@ -28,10 +28,10 @@ function Donate() {
     return (
         <Section bg='darkishblue'>
             <FlexContent color='white' flexDirection='column'>
-                <Heading fontSize={5} mb={4} mx='auto'>{data.title}</Heading>
+                <Heading fontSize={5} mb={4} pt={4} mx='auto'>{data.title}</Heading>
                 <Flex flexWrap='wrap'>
                     <Flex  width={[1, 0.45]} p={2} flexDirection='column'>
-                        <TextNoFirstMarginP mx='auto' py={4} fontSize={3}>
+                        <TextNoFirstMarginP mx='auto' pt={2} pb={4} fontSize={3}>
                             <ReactMarkdown source={data.content} />
                         </TextNoFirstMarginP>
                     </Flex>

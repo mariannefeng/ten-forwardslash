@@ -14,6 +14,7 @@ const FlexContent = props => {
     return <Flex
         {...props}
         m='auto'
+        px={[3,1,0]}
         css={css}
     />
 }
