@@ -8,7 +8,8 @@ servicesDesc: >-
   Ten-Forward works side-by-side with your organization to identify how
   technology can be best leveraged to serve your mission.
 serviceSections:
-  - content: >+
+  - anchorId: workshops
+    content: >+
       Lacking training resources? You’re not alone. Nonprofits regularly
       underutilize the tech they have because of the [prohibitive costs of
       training](https://www.salesforce.org/nonprofit/nonprofit-trends-report/).
@@ -28,7 +29,8 @@ serviceSections:
     image: /images/uploads/gandalf-lay.png
     name: Workshops
     tagline: Learn skills and save money
-  - content: >
+  - anchorId: consulting
+    content: >
       We get it. Investing in new tech feels over-the-top when what you’re doing
       now works. But what if you could streamline your operation?
 
@@ -53,7 +55,8 @@ serviceSections:
     image: /images/uploads/max.png
     name: Consulting
     tagline: Hire experts
-  - content: >
+  - anchorId: research-and-development
+    content: >
       Your nonprofit exists in a unique environment that necessitates tools
       built with your needs in mind. You need meaningful, long-lasting
       solutions, and products that are not only within your price range but that
