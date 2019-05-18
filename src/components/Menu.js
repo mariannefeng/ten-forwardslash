@@ -15,7 +15,6 @@ text-decoration: none;
 //currently, this data comes from our site.yml. See App.js for usage
 function Menu(props) {
 
-
     return (
         <FlexContent
             px={2}
@@ -23,10 +22,12 @@ function Menu(props) {
             color='darkgray'
             bg='white'
             alignItems='center'>
-            <Image
-                width={[ 1/10, 1/15, 1/18 ]}
-                src={props.logo}
-            />
+            <Link href='/'>
+                <Image
+                    width={[ 1/10, 1/15, 1/18 ]}
+                    src={props.logo}
+                />
+            </Link>
             <Box mx='auto'/>
             {props.content.map((c, i) => (
                 <Box pl={3} key={i}>
