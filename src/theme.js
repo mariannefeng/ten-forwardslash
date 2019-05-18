@@ -3,7 +3,8 @@
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
     orange: '#FCB606',
-    lightorange: '#fcc33e',
+    mediumorange: '#fcc33e',
+    lightorange: '#feeabd',
     lightblue: '#e7eefe',
     lightyellow: '#f9fee3',
     minty: '#F2F9F4',

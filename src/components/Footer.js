@@ -1,5 +1,5 @@
 import {FlexContent} from "./rebass";
-import {Box, Flex, Text} from "rebass";
+import {Box, Flex, Text, Link} from "rebass";
 import React from "react";
 import {Root} from "react-static";
 
@@ -12,7 +12,7 @@ function Footer(props) {
             color='darkgray'
             bg='white'
             justifyContent='space-between'>
-            <Text p={2} fontWeight='bold'>this is a fooooooter</Text>
+            <Link href='/credits'><Text p={2} fontWeight='bold'>Credits</Text></Link>
             <Flex>
                 <Text p={2} fontWeight='bold'>Insta</Text>
                 <Text p={2} fontWeight='bold'>Twitter</Text>

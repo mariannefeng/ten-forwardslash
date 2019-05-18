@@ -3,9 +3,11 @@ import { useRouteData } from 'react-static'
 import { Link } from 'components/Router'
 import { Box, Flex, Heading, Image, Card, Text } from 'rebass'
 
+import { colors } from '../theme'
 import { Section, FlexContent, FullHeightFlexContent, ClickableButton } from 'components/rebass';
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import ReactMarkdown from 'react-markdown'
+import MailingListForm from "../components/MailingListForm";
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
@@ -46,26 +48,42 @@ function Homepage() {
                 </FlexContent>
             </Section>
 
-            <Section bg='lightyellow'>
+            <Section bg='white'>
                 <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around'>
-                    <Heading mb={3} color='teal' fontSize={5}>{data.ctaOne}</Heading>
+                    <Heading mb={3} color='darkblue' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap'  justifyContent='space-around'>
                         {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
                         {data.blocks.map((block, i) => {
                             return (
-                                <Card bg='white' width={[1, 1/4]} key={i} p={2} m={1}>
+                                <Card bg='lightyellow'
+                                      width={1}
+                                      key={i}
+                                      p={3}
+                                      my={3}
+                                      // border={`1px solid ${colors.mediumorange}`}
+                                      borderRadius={3}>
                                     <Heading fontFamily='mono' mb={3} fontSize={3}>{block.name}</Heading>
-                                    <Text>{block.text}</Text>
+                                    <Text lineHeight={4/3}>{block.text}</Text>
                                 </Card>
                             )
                         })}
                     </Flex>
                 </FlexContent>
             </Section>
-            <Section bg='lightblue'>
-                <FullHeightFlexContent justifyContent='center'>
+
+            <Section bg='minty'>
+                <FullHeightFlexContent flexDirection='column' alignItems='center'>
                     <Heading fontSize={4} fontWeight='normal'>{data.ctaTwo}</Heading>
-                    <MailchimpSubscribe url={url} />
+                    <div>
+                        <MailchimpSubscribe url={url}
+                                            render={({ subscribe, status, message }) => (
+                                                <MailingListForm
+                                                    status={status}
+                                                    message={message}
+                                                    onValidated={formData => subscribe(formData)}
+                                                />
+                                            )}/>
+                    </div>
                 </FullHeightFlexContent>
             </Section>
 
