@@ -4,7 +4,6 @@ import React from "react";
 import { Root } from "react-static";
 
 function Footer(props) {
-
     return (
         <FlexContent
             px={2}
@@ -17,9 +16,15 @@ function Footer(props) {
                 <ClickableLink href='/credits'>Credits</ClickableLink>
             </Flex>
             <Flex>
-                <ClickableLink p={2} fontWeight='bold'>Insta</ClickableLink>
-                <ClickableLink p={2} fontWeight='bold'>Twitter</ClickableLink>
-                <ClickableLink p={2} fontWeight='bold'>LinkedIn</ClickableLink>
+                {props.social.map((c, i) => (
+                    <ClickableLink href={c.url}
+                                   p={2}
+                                   fontWeight='bold'
+                                   key={i}
+                                   target='_blank'>
+                        <i className={`fab fa-${c.faIcon}`}></i>
+                    </ClickableLink>
+                ))}
             </Flex>
         </FlexContent>
     )

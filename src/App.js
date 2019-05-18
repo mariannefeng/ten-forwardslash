@@ -45,7 +45,7 @@ function App(siteData) {
                     </React.Suspense>
                 </div>
 
-                <Footer />
+                <Footer social={siteData.social}/>
             </Root>
         </ThemeProvider>
     )

@@ -14,7 +14,6 @@ padding: 2px;
 //menu is a dumb component that takes in a map of navbar items
 //currently, this data comes from our site.yml. See App.js for usage
 function Menu(props) {
-
     return (
         <FlexContent
             px={2}
