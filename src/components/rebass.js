@@ -8,11 +8,8 @@ const Section = props =>
     />
 
 const FlexContent = props => {
-    let css = {maxWidth: '900px'}
-    if (props.hasOwnProperty('css')) {
-        css = {...css, ...props.css}
-        delete props.css
-    }
+    let css = checkProps(props, {maxWidth: '900px'})
+
     return <Flex
         {...props}
         m='auto'
@@ -20,16 +17,31 @@ const FlexContent = props => {
     />
 }
 
-const FullHeightFlexContent = props =>
-    <FlexContent
-        {...props}
-        css={{height: "100%"}}
-    />
+const FullHeightFlexContent = props => {
+    let css = checkProps(props, {height: '100%'})
 
-const ClickableButton = props =>
-    <Button
+    return <FlexContent
         {...props}
-        css={{cursor: "pointer"}}
+        css={css}
     />
+}
+
+const ClickableButton = props => {
+    let css = checkProps(props, {cursor: 'pointer'})
+
+    return <Button
+        {...props}
+        css={css}
+    />
+}
+
+function checkProps (props, css) {
+    if (props.hasOwnProperty('css')) {
+        css = {...css, ...props.css}
+        delete props.css
+    }
+
+    return css
+}
 
 export {Section, FlexContent, FullHeightFlexContent, ClickableButton};
