@@ -4,6 +4,9 @@ import { Link } from 'components/Router'
 import { Box, Flex, Heading, Image, Card, Text } from 'rebass'
 
 import { Section, FlexContent, FullHeightFlexContent, ClickableButton } from 'components/rebass';
+import MailchimpSubscribe from "react-mailchimp-subscribe"
+
+const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
 
 function Homepage() {
@@ -37,7 +40,7 @@ function Homepage() {
 
             <Section bg='teal'>
                 <FlexContent flexDirection='column' alignItems='center'>
-                    <Heading mb={3} color='darkblue' fontSize={5}>{data.elevatorPitch}</Heading>
+                    <Heading mb={3} color='darkblue' fontSize={4} fontWeight='normal' px={5}>{data.elevatorPitch}</Heading>
                 </FlexContent>
             </Section>
             <Section bg='lightgray'>
@@ -48,7 +51,7 @@ function Homepage() {
                         {data.blocks.map((block, i) => {
                             return (
                                 <Card bg='white' width={[1, 1/4]} key={i} p={2} m={1}>
-                                    <Heading fontFamily='mono' mb={2} fontSize={2}>{block.name}</Heading>
+                                    <Heading fontFamily='mono' mb={3} fontSize={3}>{block.name}</Heading>
                                     <Text>{block.text}</Text>
                                 </Card>
                             )
@@ -59,6 +62,7 @@ function Homepage() {
             <Section bg='darkblue'>
                 <FullHeightFlexContent justifyContent='center'>
                     <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
+                    <MailchimpSubscribe url={url} />
                 </FullHeightFlexContent>
             </Section>
 
