@@ -1,24 +1,18 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Link } from 'components/Router'
-import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
-import styled from 'styled-components'
+import { Box, Flex, Heading, Image, Card, Text } from 'rebass'
 
-import { Section, FullHeightFlex, ClickableButton } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent, ClickableButton } from 'components/rebass';
 
-const HeroImgWrapper = styled.figure`
-    max-width: 60%; 
-    margin-left: auto !important;
-    margin-right: auto !important; 
-`
 
 function Homepage() {
     const { data } = useRouteData()
-    console.log('homepaaage', data)
+
     return (
         <div>
             <Section bg='minty'>
-                <Flex flexWrap='wrap'>
+                <FlexContent flexWrap='wrap'>
                     <Box width={[1, 1/2]} pt={3}>
                         <Flex css={{height: '100%'}} alignItems='flex-end' p={4}>
                             <div>
@@ -38,15 +32,16 @@ function Homepage() {
                             borderRadius={8}
                         />
                     </Flex>
-                </Flex>
+                </FlexContent>
             </Section>
+
             <Section bg='teal'>
-                <Flex flexDirection='column' alignItems='center'>
+                <FlexContent flexDirection='column' alignItems='center'>
                     <Heading mb={3} color='darkblue' fontSize={5}>{data.elevatorPitch}</Heading>
-                </Flex>
+                </FlexContent>
             </Section>
             <Section bg='lightgray'>
-                <Flex flexDirection='column' alignItems='center' justifyContent='space-around'>
+                <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around'>
                     <Heading mb={3} color='teal' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap'  justifyContent='space-around'>
                         {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
@@ -59,12 +54,12 @@ function Homepage() {
                             )
                         })}
                     </Flex>
-                </Flex>
+                </FlexContent>
             </Section>
             <Section bg='darkblue'>
-                <FullHeightFlex justifyContent='center'>
+                <FullHeightFlexContent justifyContent='center'>
                     <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
-                </FullHeightFlex>
+                </FullHeightFlexContent>
             </Section>
 
         </div>

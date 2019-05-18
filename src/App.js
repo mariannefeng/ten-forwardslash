@@ -22,7 +22,6 @@ const GlobalStyles = createGlobalStyle`
     }
 `
 
-
 function App(siteData) {
     //TODO: make mobile collapse/uncollapse menu work
     return (

@@ -2,6 +2,7 @@ import React from 'react'
 // import { Link } from 'components/Router'
 import { Flex, Text, Box, Link } from 'rebass'
 import styled from 'styled-components'
+import {FlexContent} from "./rebass";
 
 const NavLink = styled(Link)`
 text-decoration: none;
@@ -13,8 +14,9 @@ text-decoration: none;
 //menu is a dumb component that takes in a map of navbar items
 //currently, this data comes from our site.yml. See App.js for usage
 function Menu(props) {
+
     return (
-        <Flex
+        <FlexContent
             px={2}
             color='darkgray'
             bg='white'
@@ -26,7 +28,7 @@ function Menu(props) {
                     <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
                 </Box>
             ))}
-        </Flex>
+        </FlexContent>
     )
 }
 

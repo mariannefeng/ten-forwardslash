@@ -7,8 +7,15 @@ const Section = props =>
         py={[2, 4]}
     />
 
-const FullHeightFlex = props =>
+const FlexContent = props =>
     <Flex
+        {...props}
+        width='900px'
+        m='auto'
+    />
+
+const FullHeightFlexContent = props =>
+    <FlexContent
         {...props}
         css={{height: "100%"}}
     />
@@ -19,4 +26,4 @@ const ClickableButton = props =>
         css={{cursor: "pointer"}}
     />
 
-export { Section, FullHeightFlex, ClickableButton };
+export {Section, FlexContent, FullHeightFlexContent, ClickableButton};
