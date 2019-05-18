@@ -59,7 +59,7 @@ function Homepage() {
             src={data.elevatorPitchImage}
             width={[4/6, 0.4]}
             borderRadius={8} />
-        <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={5} width={[1, 3/6]}>
+        <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
         </Heading>
 
