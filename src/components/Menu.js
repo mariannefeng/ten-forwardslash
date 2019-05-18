@@ -18,6 +18,7 @@ function Menu(props) {
     return (
         <FlexContent
             px={2}
+            py={2}
             color='darkgray'
             bg='white'
             alignItems='center'>

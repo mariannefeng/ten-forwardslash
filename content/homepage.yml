@@ -7,7 +7,7 @@ elevatorPitch: >-
 ctaButton:
   ctaButtonLink: /contact
   ctaButtonText: Schedule a Meeting
-ctaImage: /images/Frame.svg
+ctaImage: /images/homepage_float.svg
 ctaOne: What We Do
 blocks:
   - image: /images/uploads/pinball.jpg
@@ -17,6 +17,6 @@ blocks:
     name: Consulting
     text: If your tech question feels too big to handle, we’re equipped to help you find custom answers to your most pressing problems. We work alongside your team to support your mission through software solutions.
   - image: /images/uploads/moneyplease.gif
-    name: Product Research & Development
+    name: Product R&D
     text: Tools for your nonprofit should be designed with your nonprofit in mind. When you need juuuuust the right ___________, use software for nonprofits by a nonprofit.
-ctaTwo: Follow us to see how we'll make it so... GET IT?????
+ctaTwo: Want updates? Make it so.
