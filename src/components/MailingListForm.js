@@ -1,34 +1,42 @@
 import React from 'react'
-import { Box, Flex } from 'rebass'
+import { Box, Flex, Heading } from 'rebass'
 import { ClickableButton, PrettyInput } from "./rebass";
+import styled from "styled-components";
+
+let mailMsg = styled(Box)`
+    color: ${props => props.color}
+`
 
 const MailingListForm = ({ status, message, onValidated }) => {
     let email;
 
-    const submit = () =>
-        email &&
-        email.value.indexOf("@") > -1 &&
+    const submit = () => {
         onValidated({
             EMAIL: email.value,
         });
+    }
+
+    //default is darkblue
+    var msgColor
+
+    switch(status) {
+        case 'error':
+            msgColor = 'darkgray'
+            break
+        case 'success':
+            msgColor = 'brightgreen'
+            break
+        case 'sending':
+        default:
+            msgColor = 'darkblue'
+    }
 
     return (
         <Flex flexDirection='column' justifyContent='center' width={1}>
-            {status === "sending" && <div style={{ color: "blue" }}>sending...</div>}
-            {status === "error" && (
-                <div
-                    style={{ color: "red" }}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                />
-            )}
-            {status === "success" && (
-                <div
-                    style={{ color: "green" }}
-                    dangerouslySetInnerHTML={{ __html: message }}
-                />
-            )}
-
-            <Box my={4}>
+            <Box p={2} mt={2} color={msgColor}>
+                <Heading fontSize={2} dangerouslySetInnerHTML={{__html: message}} />
+            </Box>
+            <Box mb={4} >
                 <PrettyInput ref={node => (email = node)}
                              type="email"
                              placeholder="Your Email" />

@@ -68,6 +68,10 @@ p:first-child {
 const ClickableLink = styled(Link)`
     text-decoration: none; 
     cursor: pointer;
+    color: ${colors.darkgray};
+    :hover {
+        color: ${colors.mediumgray}; 
+    }
 `
 
 const PrettyInput = styled.input`

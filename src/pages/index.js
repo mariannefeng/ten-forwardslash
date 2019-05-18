@@ -19,92 +19,102 @@ const ButtonWrapper = styled(Box)`
 function Homepage() {
     const {data} = useRouteData()
 
+    const PrimaryHero = (<FlexContent flexWrap='wrap'>
+        <Box width={[1, 1 / 2]} pt={3}>
+            <FullHeightFlexContent
+                flexDirection='column'
+                justifyContent='center'>
+                <Heading fontSize={6}
+                         fontWeight='bold'
+                         color='white'
+                         pr={3}
+                         mb={3}>
+                    {data.title}
+                </Heading>
+                <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
+                         color='lightgray'>{data.titleTagline}</Heading>
+                <ButtonWrapper pr={6}>
+                    <Link to={data.ctaButton.ctaButtonLink}>
+                        <ClickableButton variant='accent'
+                                         fontSize={3}>{data.ctaButton.ctaButtonText}</ClickableButton>
+                    </Link>
+                </ButtonWrapper>
+            </FullHeightFlexContent>
+        </Box>
+        <Flex alignItems='center' width={[1, 1 / 2]}>
+            <Image
+                px={2}
+                mx='auto'
+                src={data.ctaImage}
+                width={1}
+                borderRadius={8}
+            />
+        </Flex>
+    </FlexContent>)
+
+    const ElevatorPitch = (<FlexContent flexDirection='row' alignItems='center'>
+        <Image
+            mx='auto'
+            src={data.elevatorPitchImage}
+            width={[1, 3/6]}
+            borderRadius={8} />
+        <Heading mb={3} fontSize={4} color='white' fontWeight='300' px={5}>
+            <ReactMarkdown source={data.elevatorPitch}/>
+        </Heading>
+
+    </FlexContent>)
+
+    const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
+        <Heading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
+        <Flex flexWrap='wrap' justifyContent='space-around'>
+            {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
+            {data.blocks.map((block, i) => {
+                return (
+                    <ClickableLink
+                        key={i}
+                        href={block.path}
+                        color='black'>
+                        <Card width={1}
+                              p={4}
+                              my={4}
+                              bg='codebggray'>
+                            <Heading mb={4} fontSize={3} fontFamily='mono'>{ block.name + ' /'}</Heading>
+                            <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='mono'>{block.text}</Text>
+                        </Card>
+                    </ClickableLink>
+                )
+            })}
+        </Flex>
+    </FlexContent>)
+
+    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[1, 1/4]}>
+        <Heading fontSize={5} fontWeight='normal' color='darkgray' m={2}>{data.ctaTwo}</Heading>
+        <MailchimpSubscribe url={url}
+                            render={({subscribe, status, message}) => (
+                                <MailingListForm
+                                    status={status}
+                                    message={message}
+                                    onValidated={formData => subscribe(formData)}
+                                />
+                            )}/>
+    </FullHeightFlexContent>)
+
     return (
         <div>
             <Section bg='anotherblue'>
-                <FlexContent flexWrap='wrap'>
-                    <Box width={[1, 1 / 2]} pt={3}>
-                        <FullHeightFlexContent
-                            flexDirection='column'
-                            justifyContent='center'>
-                            <Heading fontSize={6}
-                                     fontWeight='bold'
-                                     color='white'
-                                     pr={3}
-                                     mb={3}>
-                                {data.title}
-                             </Heading>
-                            <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
-                                     color='lightgray'>{data.titleTagline}</Heading>
-                            <ButtonWrapper pr={6}>
-                                <Link to={data.ctaButton.ctaButtonLink}>
-                                    <ClickableButton variant='accent'
-                                                     fontSize={3}>{data.ctaButton.ctaButtonText}</ClickableButton>
-                                </Link>
-                            </ButtonWrapper>
-                        </FullHeightFlexContent>
-                    </Box>
-                    <Flex alignItems='center' width={[1, 1 / 2]}>
-                        <Image
-                            px={2}
-                            mx='auto'
-                            src={data.ctaImage}
-                            width={1}
-                            borderRadius={8}
-                        />
-                    </Flex>
-                </FlexContent>
+                { PrimaryHero }
             </Section>
 
             <Section bg='brightorange'>
-                <FlexContent flexDirection='row' alignItems='center'>
-                    <Image
-                        mx='auto'
-                        src={data.elevatorPitchImage}
-                        width={[1, 3/6]}
-                        borderRadius={8} />
-                    <Heading mb={3} fontSize={4} color='white' fontWeight='300' px={5}>
-                        <ReactMarkdown source={data.elevatorPitch}/>
-                    </Heading>
-
-                </FlexContent>
+                { ElevatorPitch }
             </Section>
 
             <Section bg='white'>
-                <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
-                    <Heading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
-                    <Flex flexWrap='wrap' justifyContent='space-around'>
-                        {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
-                        {data.blocks.map((block, i) => {
-                            return (
-                                <ClickableLink href={block.path} color='black'>
-                                    <Card width={1}
-                                                   key={i}
-                                                   p={4}
-                                                   my={4}
-                                                   bg='codebggray'>
-                                        <Heading mb={4} fontSize={3} fontFamily='mono'>{ block.name + ' /'}</Heading>
-                                        <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='mono'>{block.text}</Text>
-                                    </Card>
-                                </ClickableLink>
-                            )
-                        })}
-                    </Flex>
-                </FlexContent>
+                { Services }
             </Section>
 
             <Section bg='brightteal'>
-                <FullHeightFlexContent flexDirection='column' alignItems='center' width={[1, 1/4]}>
-                    <Heading fontSize={5} fontWeight='normal' color='darkgray'>{data.ctaTwo}</Heading>
-                    <MailchimpSubscribe url={url}
-                                        render={({subscribe, status, message}) => (
-                                            <MailingListForm
-                                                status={status}
-                                                message={message}
-                                                onValidated={formData => subscribe(formData)}
-                                            />
-                                        )}/>
-                </FullHeightFlexContent>
+                { NewsletterSignup }
             </Section>
 
         </div>
