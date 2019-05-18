@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
 // import styled from "styled-components"
-import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
+import { Flex, Heading } from 'rebass'
 
 import { Section, FlexContent, TextNoFirstMarginP } from 'components/rebass';
 
