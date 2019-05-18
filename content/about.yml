@@ -1,4 +1,4 @@
-title: About Ten-Forward
+title: the nonprofit
 mission: >-
   To help organizations building a better society discover how software can be
   used to boost their impact through workshops, consultations, and informed
@@ -18,5 +18,32 @@ history: >-
   as you work tirelessly to build a better society. You’re making your
   organization’s vision a reality. We’re making sure the right tech gets into
   your hands to supercharge the process.
-aboutTitle: About the Founders
-team: []
+aboutTitle: the founders
+team:
+  - bio: >-
+      Marianne graduated from UW Foster’s Business School with a degree in IS
+      and Supply Chain Management but knew she was interested in software
+      development thanks to an introductory computer science course. After
+      college, she worked at Expeditors International, helping to build backend
+      systems using a variety of tools, as well as working closely with the
+      Business team to build prototype websites. Her next job was at Level 11,
+      where she honed her skills even further using leading-edge technology to
+      help build large distributed systems under tight deadlines. Marianne is a
+      talented software engineer with a deep interest in helping nonprofits and
+      social organizations use tech to solve big problems.
+    image: /images/uploads/gandalf-lay.png
+    name: Marianne Feng
+    position: Co-founder
+  - bio: >-
+      Jessi started their career in technology while acquiring a B.S. in Physics
+      & Astronomy doing research. After graduating from UW, they worked at
+      Expeditors International for 2 years as a Developer in Test, learning
+      Python working on a test automation framework. They then moved to Level 11
+      for a job as a Site Reliability Engineer. While working for Level 11, they
+      gained expertise in developing tools for infrastructure management,
+      orchestration systems, and continuous delivery. They are eager to use
+      their highly specialized skills to affect positive change on pressing
+      issues.
+    image: /images/uploads/max.png
+    name: Jessi Shank
+    position: Co-founder
