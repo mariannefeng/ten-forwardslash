@@ -1,9 +1,11 @@
 //https://rebassjs.org/theming
 
+// colors from https://palx.jxnblk.com/FCB606
 export const colors = {
     orange: '#FCB606',
     minty: '#F2F9F4',
     teal: '#04c88d',
+    lightteal: '#e9fef8',
     cyan: '#c5f3fe',
     lightgray: '#eeeeed',
     darkgray: '#433e34',
@@ -16,7 +18,6 @@ export default {
     fontSizes: [
         12, 14, 16, 20, 24, 32, 48, 64
     ],
-    // colors from https://palx.jxnblk.com/FCB606
     colors: colors,
     space: [
         0, 4, 8, 16, 32, 64, 128, 256

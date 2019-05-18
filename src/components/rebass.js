@@ -1,5 +1,6 @@
 import React from 'react'
-import { Box, Flex, Button } from 'rebass'
+import {Box, Flex, Button, Text} from 'rebass'
+import styled from "styled-components";
 
 const Section = props =>
     <Box
@@ -44,4 +45,11 @@ function checkProps (props, css) {
     return css
 }
 
-export {Section, FlexContent, FullHeightFlexContent, ClickableButton};
+// todo: review -- idk a good name for this
+const TextNoFirstMarginP = styled(Text)`
+p:first-child {
+    margin-block-start: 0;
+}
+`
+
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP};

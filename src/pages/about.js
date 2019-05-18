@@ -4,14 +4,7 @@ import ReactMarkdown from "react-markdown"
 import styled from "styled-components"
 import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
 
-import { Section, FlexContent, FullHeightFlexContent } from 'components/rebass';
-
-// todo: review -- idk a good name for this
-const TextNoFirstMarginP = styled(Text)`
-p:first-child {
-    margin-block-start: 0;
-}
-`
+import { Section, FlexContent, FullHeightFlexContent, TextNoFirstMarginP } from 'components/rebass';
 
 const AboutHeader = props =>
     <Heading
@@ -31,7 +24,6 @@ const AboutBlurb = props =>
 
 function About() {
     const { data } = useRouteData()
-    console.log("data", data)
     return (
         <Section bg='minty'>
             <FullHeightFlexContent flexDirection='column' m={3} px={4} flex={1}>
@@ -74,11 +66,6 @@ function About() {
                             </Flex>
                         )
                     })}
-                    <Box width={[1,1/2]}>
-                    </Box>
-                    <Box width={[1,1/2]}>
-
-                    </Box>
                 </Flex>
             </FullHeightFlexContent>
         </Section>
