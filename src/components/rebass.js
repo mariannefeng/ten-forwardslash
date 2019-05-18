@@ -8,11 +8,11 @@ const Section = props =>
     />
 
 const FlexContent = props => {
-    let css;
+    let css = {maxWidth: '900px'}
     if (props.hasOwnProperty('css')) {
-        css = {...{maxWidth: '900px'}, ...props.css}
-        delete props.css
+        css = {...css, ...props.css}
     }
+    console.log("css", css)
     return <Flex
         {...props}
         m='auto'
