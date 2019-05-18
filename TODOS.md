@@ -4,7 +4,7 @@
 M * Create footer (link to credits)
 M * Contact (swap to using mail to)
 M * Homepage
-J * About page 
+~~J * About page~~ 
 J * Services (first go should just be wide blocks)
 J * Donate
  

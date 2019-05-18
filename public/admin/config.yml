@@ -58,7 +58,7 @@ collections:
         file: "content/services.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Services Header, name: servicesHeader, widget: string}
+          - {label: Services Description, name: servicesDesc, widget: markdown}
           - label: Services Sections
             name: serviceSections
             widget: list
