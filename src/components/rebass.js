@@ -61,4 +61,9 @@ p:first-child {
 }
 `
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP};
+const ClickableLink = styled(Link)`
+    text-decoration: none; 
+    cursor: pointer;
+`
+
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink};

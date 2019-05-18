@@ -1,18 +1,28 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-import { Link } from 'components/Router'
-import { Box, Flex, Heading, Image, Card, Text } from 'rebass'
+import { Box, Flex, Heading, Image, Card, Text, Link } from 'rebass'
 
-import { Section, FlexContent, FullHeightFlexContent, ClickableButton } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent, ClickableButton, ClickableLink } from 'components/rebass';
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import ReactMarkdown from 'react-markdown'
 import MailingListForm from "../components/MailingListForm";
 import styled from "styled-components";
 
+import { colors } from '../theme'
+
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
 const ButtonWrapper = styled(Box)`
    text-align: right 
+`
+
+const CardWithHover = styled(Card)`
+    -webkit-transition: background 1s;
+    
+    &:hover {
+        background: ${colors.lightgray};
+        -webkit-transition: background 0.5s;
+    } 
 `
 
 
@@ -55,46 +65,47 @@ function Homepage() {
                 </FlexContent>
             </Section>
 
-            <Section bg='orange'>
+            <Section bg='brightorange'>
                 <FlexContent flexDirection='row' alignItems='center'>
                     <Image
                         mx='auto'
                         src={data.elevatorPitchImage}
-                        width={2/5}
+                        width={[1, 3/6]}
                         borderRadius={8} />
-                    <Heading mb={3} fontSize={3} fontWeight='500' px={5}>
+                    <Heading mb={3} fontSize={4} color='white' fontWeight='300' px={5}>
                         <ReactMarkdown source={data.elevatorPitch}/>
                     </Heading>
 
                 </FlexContent>
             </Section>
 
-            <Section bg='white'>
+            <Section bg='darkgray'>
                 <FlexContent flexDirection='column' alignItems='center' justifyContent='space-around'>
-                    <Heading mb={3} color='darkblue' fontSize={5}>{data.ctaOne}</Heading>
+                    <Heading m={5} color='white' fontSize={5}>{data.ctaOne}</Heading>
                     <Flex flexWrap='wrap' justifyContent='space-around'>
                         {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
                         {data.blocks.map((block, i) => {
                             return (
-                                <Card bg='lightyellow'
-                                      width={1}
-                                      key={i}
-                                      p={3}
-                                      my={3}
-                                    // border={`1px solid ${colors.mediumorange}`}
-                                      borderRadius={3}>
-                                    <Heading mb={3} fontSize={3}>{block.name}</Heading>
-                                    <Text lineHeight={4 / 3}>{block.text}</Text>
-                                </Card>
+                                <ClickableLink href={block.path} color='black'>
+                                    <CardWithHover width={1}
+                                                   key={i}
+                                                   p={4}
+                                                   my={3}
+                                                   bg='white'
+                                                   borderRadius={3}>
+                                        <Heading mb={4} fontSize={4}>{block.name}</Heading>
+                                        <Text lineHeight={4 / 3} fontSize={3} fontWeight='400'>{block.text}</Text>
+                                    </CardWithHover>
+                                </ClickableLink>
                             )
                         })}
                     </Flex>
                 </FlexContent>
             </Section>
 
-            <Section bg='minty'>
+            <Section bg='teal'>
                 <FullHeightFlexContent flexDirection='column' alignItems='center'>
-                    <Heading fontSize={4} fontWeight='normal'>{data.ctaTwo}</Heading>
+                    <Heading fontSize={4} fontWeight='normal' color='white'>{data.ctaTwo}</Heading>
                     <div>
                         <MailchimpSubscribe url={url}
                                             render={({subscribe, status, message}) => (

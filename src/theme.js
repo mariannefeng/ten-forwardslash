@@ -2,6 +2,7 @@
 
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
+    yellow: '#F7C331',
     orange: '#FCB606',
     brightorange: '#fcb206',
     mediumorange: '#fcc33e',
@@ -20,7 +21,8 @@ export const colors = {
     brightblue: '#043ec6',
     white: '#ffffff',
     darkblue: '#026178',
-    darkishblue: '#0386a6'
+    darkishblue: '#0386a6',
+    brightpurple: '#a105e3'
 }
 
 export default {
