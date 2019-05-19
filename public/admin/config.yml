@@ -90,3 +90,4 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
+          - {label: Location, name: location, widget: map }
