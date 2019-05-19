@@ -77,6 +77,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: string}
           - {label: Footer, name: footer, widget: markdown}
+          - {label: Location, name: location, widget: map }
       - label: "Donate Page"
         name: "donate"
         file: "content/donate.yml"
@@ -90,4 +91,3 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
-          - {label: Location, name: location, widget: map }
