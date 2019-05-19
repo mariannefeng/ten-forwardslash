@@ -82,7 +82,8 @@ collections:
         file: "content/donate.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: content, name: content, widget: markdown}
+          - {label: Content, name: content, widget: markdown}
+          - {label: Legal Disclaimer, name: disclaimer, widget: markdown}
       - label: "Credits Page"
         name: "credits"
         file: "content/credits.yml"
