@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
 
+const AnyReactComponent = ({ text }) => <i className='fas fa-lg fa-hand-spock' style={{color: '#e33105'}}/>;
+
 class SimpleMap extends Component {
     static defaultProps = {
         center: {
             lat: 47.598530,
             lng: -122.325371
         },
-        zoom: 13
+        zoom: 15
     }
 
     createMapOptions() {
@@ -236,6 +238,11 @@ class SimpleMap extends Component {
                     defaultCenter={this.props.center}
                     options={this.createMapOptions}
                     defaultZoom={this.props.zoom} >
+                    <AnyReactComponent
+                        lat={47.598802}
+                        lng={-122.3257522}
+                        text="Make it so"
+                    />
                 </GoogleMapReact>
             </div>
         );
