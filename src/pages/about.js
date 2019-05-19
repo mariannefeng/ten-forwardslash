@@ -4,7 +4,7 @@ import ReactMarkdown from "react-markdown"
 import styled from "styled-components"
 import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
 
-import { Section, FlexContent, FullHeightFlexContent, TextNoFirstMarginP } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent, TextNoFirstMarginP, PageTitle } from 'components/rebass';
 
 const AboutHeader = props =>
     <Heading
@@ -28,7 +28,7 @@ function About() {
     return (
         <Section bg='darkerteal'>
             <FullHeightFlexContent flexDirection='column' px={4} flex={1} mt={3} color='white'>
-                <Heading alignSelf='center' fontSize={5} mb={4} color='minty'>{data.title}</Heading>
+                <PageTitle color='minty'>{data.title}</PageTitle>
                 <Flex>
                     <AboutHeader>our mission</AboutHeader>
                 </Flex>

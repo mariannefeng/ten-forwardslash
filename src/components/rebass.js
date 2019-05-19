@@ -69,7 +69,9 @@ const PageHero = (props) => (
     <Section bg={props.bg} color={props.color}>
         <FlexContent flexDirection='column' px={4} flex={1}>
             <PageTitle>{props.title}</PageTitle>
-            <TextNoFirstMarginP fontSize={3} px={[4,5]}><ReactMarkdown source={props.blurb}/></TextNoFirstMarginP>
+            <TextNoFirstMarginP fontSize={3} px={[4,5]}>
+                <ReactMarkdown source={props.blurb}/>
+            </TextNoFirstMarginP>
         </FlexContent>
     </Section>
 )

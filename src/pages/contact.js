@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData, withSiteData } from 'react-static'
 import ReactMarkdown from 'react-markdown'
 import { Heading, Box, Flex, Text, Link } from 'rebass'
-import {ClickableLink, FlexContent, FullHeightFlexContent, FullHeightSection} from '../components/rebass';
+import { ClickableLink, FlexContent, FullHeightFlexContent, FullHeightSection, PageTitle } from '../components/rebass';
 import styled from 'styled-components'
 import SimpleMap from "../components/SimpleMap"
 
@@ -60,8 +60,7 @@ function Contact(siteData) {
 
     return (
         <FullHeightSection bg='mediumgray' flexDirection='column'>
-            <Heading textAlign='center' color='lightgray' mb={2} fontSize={5}>{data.title}</Heading>
-
+            <PageTitle color='lightgray'>{data.title}</PageTitle>
             <SocialRow color='white'
                        width={1}
                        mb={[0, 2]}

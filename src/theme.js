@@ -27,7 +27,8 @@ export const colors = {
     white: '#ffffff',
     darkblue: '#026178',
     darkishblue: '#0386a6',
-    brightpurple: '#a105e3'
+    brightpurple: '#a105e3',
+    lessintensepurple: '#8d04c8'
 }
 
 export default {
