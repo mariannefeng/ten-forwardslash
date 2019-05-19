@@ -4,6 +4,11 @@ import klaw from 'klaw'
 import yaml from 'js-yaml'
 import React from 'react'
 
+import dotenv from 'dotenv'
+
+//initialize dotenv
+dotenv.config()
+
 //TODO: error handle this properly, if we can't read site yml then give up
 const siteConfig = yaml.safeLoad(fs.readFileSync('site.yml', 'utf8'))
 

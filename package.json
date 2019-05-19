@@ -2,16 +2,18 @@
   "name": "ten-forwardslash",
   "private": true,
   "scripts": {
-    "start": "react-static start",
-    "stage": "react-static build --staging",
-    "build": "react-static build",
+    "start": "dotenv react-static start",
+    "stage": "dotenv react-static build --staging",
+    "build": "dotenv react-static build",
     "analyze": "react-static build --analyze",
     "serve": "serve dist -p 3000"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "axios": "^0.18.0",
-    "fs": "0.0.1-security",
+    "dotenv": "^8.0.0",
+    "dotenv-cli": "^2.0.0",
+    "file-system": "^2.2.2",
     "google-map-react": "^1.1.4",
     "js-yaml": "^3.13.1",
     "klaw": "^3.0.0",

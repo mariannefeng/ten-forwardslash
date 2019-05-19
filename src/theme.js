@@ -19,6 +19,7 @@ export const colors = {
     cyan: '#c5f3fe',
     codebggray: '#eff0f1',
     lightgray: '#eeeeed',
+    lightmediumgray: '#aaa69b',
     mediumgray: '#726b59',
     darkgray: '#433e34',
     anotherblue: '#04a1c8',

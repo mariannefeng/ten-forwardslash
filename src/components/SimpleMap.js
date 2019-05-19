@@ -1,26 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-
-class MyGreatPlace extends Component {
-    static defaultProps = {};
-
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        //tODO; this just doesn't work
-        return (
-            <div css={{ height: '100px', width: '100px', backgroundColor: 'black'}}>
-                <i className={`fab fa-hand-spock-o`}></i>
-            </div>
-        );
-    }
-}
-
 
 class SimpleMap extends Component {
     static defaultProps = {
@@ -246,18 +226,16 @@ class SimpleMap extends Component {
     }
 
     render() {
+        const MAP_KEY = process.env.GOOGLE_MAPS_API_KEY
 
         return (
             // Important! Always set the container height explicitly
             <div style={{ height: '70vh', width: '100%' }}>
                 <GoogleMapReact
-                    bootstrapURLKeys={{ key: 'AIzaSyAsin5-tdRFglW-bzSe3h2zE3XhxuIEEqk' }}
+                    bootstrapURLKeys={{ key: MAP_KEY }}
                     defaultCenter={this.props.center}
                     options={this.createMapOptions}
                     defaultZoom={this.props.zoom} >
-                    <MyGreatPlace lat={59.955413}
-                       lng={30.337844}
-                       text="My Marker" />
                 </GoogleMapReact>
             </div>
         );
