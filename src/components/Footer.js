@@ -16,15 +16,18 @@ function Footer(props) {
                 <ClickableLink href='/credits'>Credits</ClickableLink>
             </Flex>
             <Flex>
-                {props.social.map((c, i) => (
-                    <ClickableLink href={c.url}
-                                   p={2}
-                                   fontWeight='bold'
-                                   key={i}
-                                   target='_blank'>
-                        <i className={`fab fa-${c.faIcon}`}></i>
-                    </ClickableLink>
-                ))}
+                {
+                    Object.keys(props.social).map(key =>
+                        <ClickableLink href={props.social[key].url}
+                                       p={2}
+                                       fontWeight='bold'
+                                       key={key}
+                                       target='_blank'>
+                            <i className={`fab fa-${props.social[key].faIcon}`}></i>
+                        </ClickableLink>
+
+                    )
+                }
             </Flex>
         </FlexContent>
     )

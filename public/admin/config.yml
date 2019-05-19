@@ -75,7 +75,7 @@ collections:
         file: "content/contact.yml"
         fields:
           - {label: Title, name: title, widget: string}
-          - {label: Intro, name: intro, widget: markdown}
+          - {label: Intro, name: intro, widget: string}
           - {label: Footer, name: footer, widget: markdown}
       - label: "Donate Page"
         name: "donate"

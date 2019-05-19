@@ -26,9 +26,9 @@ const AboutBlurb = props =>
 function About() {
     const { data } = useRouteData()
     return (
-        <Section bg='minty'>
-            <FullHeightFlexContent flexDirection='column' m={3} px={4} flex={1} mt={3}>
-                <Heading alignSelf='center' fontSize={5} mb={4} color='teal'>{data.title}</Heading>
+        <Section bg='darkerteal'>
+            <FullHeightFlexContent flexDirection='column' m={3} px={4} flex={1} mt={3} color='white'>
+                <Heading alignSelf='center' fontSize={5} mb={4} color='minty'>{data.title}</Heading>
                 <Flex>
                     <AboutHeader>our mission</AboutHeader>
                 </Flex>
@@ -44,7 +44,7 @@ function About() {
                 </Flex>
                 <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
 
-                <Heading alignSelf='center' fontSize={5} my={4} color='teal'>{data.aboutTitle}</Heading>
+                <Heading alignSelf='center' fontSize={5} my={4} color='minty'>{data.aboutTitle}</Heading>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
                     {/*todo: this works for only two, i realize we should prob handle board members
                         differently w/ a different section*/}

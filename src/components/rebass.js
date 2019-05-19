@@ -7,10 +7,10 @@ const Section = props => {
     let css = checkProps(props, {minHeight: '500px'})
 
     return < Flex
-        {...props}
         py = {[2, 4]}
         css = {css}
-        />
+        {...props}
+    />
 
 }
 
@@ -18,9 +18,9 @@ const FullHeightSection = props => {
     let css = checkProps(props, {minHeight: '100vh'})
 
     return < Section
-        {...props}
-        py = {[2, 4]}
+        py = {[2, 4]} //TODO: if this inherits from Section, do we need to set py?
         css = {css}
+        {...props}
     />
 
 }
@@ -29,10 +29,11 @@ const FlexContent = props => {
     let css = checkProps(props, {maxWidth: '950px'})
 
     return <Flex
-        {...props}
         m='auto'
-        px={[3,1,0]}
+        px={[3,2,1]}
         css={css}
+        {...props}
+
     />
 }
 

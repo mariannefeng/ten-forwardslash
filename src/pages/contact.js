@@ -1,12 +1,12 @@
 import React from 'react'
-import { useRouteData } from 'react-static'
+import { useRouteData, withSiteData } from 'react-static'
 import ReactMarkdown from 'react-markdown'
-import { Heading, Box, Flex, Text } from 'rebass'
+import { Heading, Box, Flex, Text, Link } from 'rebass'
 import {ClickableLink, FlexContent, FullHeightFlexContent, FullHeightSection} from '../components/rebass';
 import styled from 'styled-components'
 import SimpleMap from "../components/SimpleMap"
 
-import { colors } from '../theme'
+import theme, { colors } from '../theme'
 
 const ContactText = styled(Text)`
     a {
@@ -16,6 +16,10 @@ const ContactText = styled(Text)`
     a:hover {
         color: ${colors.mediumgray}
     }
+    
+    a i.fa-envelope {
+        padding: 5px;
+    }
 `
 
 const SocialBox = props =>
@@ -24,7 +28,8 @@ const SocialBox = props =>
         padding={3}
         bg='lightgray'
         color='darkgray'
-        width={1/2}
+        width={[1, 1/2]}
+        mb={[2, 0]}
         flexDirection='column'
         justifyContent='space-evenly'
         alignItems='center'
@@ -35,45 +40,68 @@ const SocialBox = props =>
     />
 
 const SocialRow = styled(FlexContent)`
-    div:first-child {
-        margin-right: 4px;
-    }
+    @media (min-width: ${theme.breakpoints[0]}) {
+       div:first-child {
+            margin-right: 4px;
+       }
     
-    div:last-child {
-        margin-left: 4px;    
-    }    
+        div:last-child {
+            margin-left: 4px;    
+        } 
+    }   
 `
 
-function Contact() {
-    const { data } = useRouteData()
+function LinkRenderer(props) {
+    return <a href={props.href} target="_blank">{props.children}</a>
+}
 
+function Contact(siteData) {
+    const { data } = useRouteData()
 
     return (
         <FullHeightSection bg='mediumgray' flexDirection='column'>
             <SocialRow color='white'
-                         width={1}
-                         mb={2}
-                         justifyContent='space-evenly'
-                         alignItems='center'>
+                       width={1}
+                       mb={[0, 2]}
+                       px={0}
+                       flexDirection={['column', 'row']}
+                       justifyContent='space-evenly'
+                       alignItems='center'>
 
                 <SocialBox>
-                    <Text>24 Hour Response Guaranteed. Send us an email at:</Text>
-                    <Heading fontFamily='mono' fontSize={2}> <i className={`fas fa-envelope`}></i> info@ten-forward.com</Heading>
+                    <Text>{data.intro}</Text>
+                    <ContactText fontFamily='mono' fontSize={2} width={1}>
+                        <a href='mailto:info@ten-forward.com'>
+                            <Text><i className={`fas fa-envelope`}></i>info@ten-forward.com</Text>
+                        </a>
+                    </ContactText>
                 </SocialBox>
 
                 <SocialBox>
                     <Text>More of a social creature? Give us a shout on:</Text>
                     <Flex justifyContent='space-between' width={1/2}>
-                        <Heading fontSize={2}> <i className={`fab fa-instagram fa-lg`}></i></Heading>
-                        <Heading fontSize={2}> <i className={`fab fa-twitter fa-lg`}></i></Heading>
+                        <ContactText fontSize={2}>
+                            <Link href={`${siteData.social['insta'].url}`} target='_blank'>
+                                <i className={`fab fa-${siteData.social['insta'].faIcon} fa-lg`}></i>
+                            </Link>
+                        </ContactText>
+                        <ContactText fontSize={2}>
+                            <Link href={`${siteData.social['twitter'].url}`} target='_blank'>
+                                <i className={`fab fa-${siteData.social['twitter'].faIcon} fa-lg`}></i>
+                            </Link>
+                        </ContactText>
                     </Flex>
                 </SocialBox>
 
             </SocialRow>
 
-            <FlexContent width={1} flexDirection='column' bg='lightgray'>
+            <FlexContent
+                width={1}
+                px={0}
+                flexDirection='column'
+                bg='lightgray'>
                 <ContactText fontSize={2} p={3} width={1} lineHeight={3/2}>
-                    <ReactMarkdown source={data.footer}/>
+                    <ReactMarkdown source={data.footer}  renderers={{link: LinkRenderer}}/>
                 </ContactText>
                 <SimpleMap />
             </FlexContent>
@@ -82,4 +110,4 @@ function Contact() {
     )
 }
 
-export default Contact
+export default withSiteData(Contact)
