@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Box, Flex, Link, Image } from 'rebass'
 import { FlexContent } from './rebass'
 import styled from 'styled-components'
@@ -28,35 +28,31 @@ class Menu extends React.Component {
 
     render() {
         return (
-            <FlexContent
-                px={2}
-                py={3}
-                color='darkgray'
-                bg='white'
-                alignItems='center'>
-                <Link href='/'>
-                    <Image
-                        width={[1 / 10, 1 / 15]}
-                        src={this.props.logo}
-                    />
-                </Link>
-                <Box mx='auto'/>
-                <Hide breakpoints={[0]}>
-                    {this.props.content.map((c, i) => {
-                            if (c.showInNav) {
-                                return (<Box pl={3} key={i}>
-                                    <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
-                                </Box>)
-                            }
-                        }
-                    )}
-                </Hide>
-                <Hide breakpoints={[1, 2]}>
-                    <Flex flexDirection='column' alignItems='flex-end' pr={3}>
-                        <i className='fas fa-bars fa-lg'
-                           css={{ cursor: 'pointer' }}
-                           onClick={this.onClick}></i>
-                        {this.state.showMobileMenu && this.props.content.map((c, i) => {
+            <Fragment>
+                <FlexContent
+                    px={2}
+                    py={3}
+                    color='darkgray'
+                    bg='white'
+                    alignItems='center'>
+                    <Link href='/'>
+                        <Image
+                            width={[1 / 10, 1 / 15]}
+                            src={this.props.logo}
+                        />
+                    </Link>
+                    <Box mx='auto'/>
+
+                    <Hide breakpoints={[1, 2]}>
+                        <Box pr={3}>
+                            <i className='fas fa-bars fa-lg'
+                               css={{ cursor: 'pointer' }}
+                               onClick={this.onClick}></i>
+                        </Box>
+                    </Hide>
+
+                    <Hide breakpoints={[0]}>
+                        {this.props.content.map((c, i) => {
                                 if (c.showInNav) {
                                     return (<Box pl={3} key={i}>
                                         <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
@@ -64,9 +60,20 @@ class Menu extends React.Component {
                                 }
                             }
                         )}
-                    </Flex>
+                    </Hide>
+                </FlexContent>
+                <Hide breakpoints={[1, 2]} pr={3} flexDirection='column'>
+                    {this.state.showMobileMenu && this.props.content.map((c, i) => {
+                            if (c.showInNav) {
+                                return (<Box key={i} css={{ textAlign: 'right' }} pb={3}>
+                                            <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                                        </Box>)
+                            }
+                        }
+                    )}
                 </Hide>
-            </FlexContent>
+            </Fragment>
+
         )
     }
 }

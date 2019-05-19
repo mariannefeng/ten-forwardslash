@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import theme from '../theme'
-import { Flex } from 'rebass'
+import { Flex, Box } from 'rebass'
 
 const { breakpoints } = theme
 const lastIndex = breakpoints.length - 1
