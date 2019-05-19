@@ -5,7 +5,7 @@ import styled from "styled-components"
 import { Flex, Heading } from 'rebass'
 
 import { colors } from '../theme'
-import { Section, FlexContent, TextNoFirstMarginP } from 'components/rebass';
+import { Section, FlexContent, TextNoFirstMarginP, PageHero } from 'components/rebass';
 
 const SquareListWrapper = styled.div`
 ul {
@@ -28,14 +28,9 @@ function Services() {
 
     return (
         <div>
-            <Section bg='brightorange' color='white'>
-                <FlexContent flexDirection='column' m={3} px={4} flex={1}>
-                    <Heading alignSelf='center' fontSize={5} mb={4}>{data.title}</Heading>
-                    <TextNoFirstMarginP fontSize={3} px={[4,5]}><ReactMarkdown source={data.servicesDesc}/></TextNoFirstMarginP>
-                </FlexContent>
-            </Section>
+            <PageHero bg='brightorange' color='white' title={data.title} blurb={data.servicesDesc}/>
             <Section bg='white'>
-                <FlexContent flexDirection='column' m={3} px={4} pt={4}>
+                <FlexContent flexDirection='column' my={3} px={4} pt={4}>
                     {data.serviceSections.map((service, i) => {
                         return (
                             <Flex bg='anotherblue' color='white' key={i} p={[4, 5]} mb={4} mx={1} flexDirection='column'>

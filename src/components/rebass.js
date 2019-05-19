@@ -1,6 +1,8 @@
 import React from 'react'
-import { Box, Flex, Button, Text, Link } from 'rebass'
-import styled from "styled-components";
+import {Box, Flex, Button, Text, Link, Heading} from 'rebass'
+import styled from "styled-components"
+import ReactMarkdown from 'react-markdown'
+
 import theme, { colors } from '../theme'
 
 const Section = props => {
@@ -61,6 +63,17 @@ const ClickableButton = props => {
     />
 }
 
+const PageTitle = props => <Heading {...props} alignSelf='center' fontSize={5} mb={4} />
+
+const PageHero = (props) => (
+    <Section bg={props.bg} color={props.color}>
+        <FlexContent flexDirection='column' px={4} flex={1}>
+            <PageTitle>{props.title}</PageTitle>
+            <TextNoFirstMarginP fontSize={3} px={[4,5]}><ReactMarkdown source={props.blurb}/></TextNoFirstMarginP>
+        </FlexContent>
+    </Section>
+)
+
 function checkProps (props, css) {
     if (props.hasOwnProperty('css')) {
         css = {...css, ...props.css}
@@ -97,4 +110,4 @@ const PrettyInput = styled.input`
 `
 
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput, FullHeightSection };
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero };

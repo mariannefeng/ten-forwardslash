@@ -27,7 +27,7 @@ function About() {
     const { data } = useRouteData()
     return (
         <Section bg='darkerteal'>
-            <FullHeightFlexContent flexDirection='column' m={3} px={4} flex={1} mt={3} color='white'>
+            <FullHeightFlexContent flexDirection='column' px={4} flex={1} mt={3} color='white'>
                 <Heading alignSelf='center' fontSize={5} mb={4} color='minty'>{data.title}</Heading>
                 <Flex>
                     <AboutHeader>our mission</AboutHeader>
