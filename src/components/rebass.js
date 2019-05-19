@@ -31,7 +31,7 @@ const FlexContent = props => {
     return <Flex
         {...props}
         m='auto'
-        px={[3,1,0]}
+        px={[3,2,1]}
         css={css}
     />
 }

@@ -31,7 +31,7 @@ function Donate() {
                 <Heading fontSize={5} mb={4} pt={4} mx='auto'>{data.title}</Heading>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
                     <Flex  width={[1, 0.45]} p={2} flexDirection='column'>
-                        <TextNoFirstMarginP mx='auto' pt={2} pb={4} fontSize={3}>
+                        <TextNoFirstMarginP mx='auto' pt={3} pb={4} fontSize={3}>
                             <ReactMarkdown source={data.content} />
                         </TextNoFirstMarginP>
                     </Flex>

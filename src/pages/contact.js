@@ -34,11 +34,11 @@ function Contact() {
                     <ReactMarkdown source={data.intro}/>
                 </CustomWords>
 
-                <FlexContent alignItems='flex-start' mt={5}>
-                    <CustomWords fontSize={2} p={3} width={1/4} lineHeight={3/2}>
+                <FlexContent alignItems='flex-start' flexWrap='wrap' mt={[0, 5]}>
+                    <CustomWords fontSize={2} p={3} width={[1, 1/4]} lineHeight={3/2}>
                         <ReactMarkdown source={data.footer}/>
                     </CustomWords>
-                    <Box width={2/3}>
+                    <Box width={[1,2/3]}>
                         <SimpleMap />
                     </Box>
                 </FlexContent>
