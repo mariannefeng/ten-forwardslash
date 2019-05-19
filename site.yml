@@ -9,7 +9,8 @@ logoUrl: https://peaceful-gates-58e765.netlify.com/images/10f-square.png
 social:
   - { key: insta, url: 'https://www.instagram.com/10forwardslash/', faIcon: 'instagram'}
   - { key: linkedin, url: 'https://www.linkedin.com/company/ten-forward', faIcon: 'linkedin-in'}
-  - { key: twitter, url: 'https://twitter.com/twitter', faIcon: 'twitter'}
+  - { key: twitter, url: 'https://twitter.com/10forwardslash', faIcon: 'twitter'}
+  - { key: medium, url: 'https://medium.com/@10forwardslash', faIcon: 'medium'}
 repo: https://github.com/tenforwardslash/ten-forwardslash
 title: Ten-Forward
 titleHome: Ten-Forward | The next generation of nonprofits
