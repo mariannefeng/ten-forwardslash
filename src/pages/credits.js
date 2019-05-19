@@ -7,11 +7,11 @@ import { Heading } from 'rebass'
 function Credits() {
     const { data } = useRouteData()
     return (
-        <PageHero
-            bg='lessintensepurple'
-            color='white'
-            title={data.title}
-            blurb={data.content}/>
+            <PageHero
+                bg='lessintensepurple'
+                color='white'
+                title={data.title}
+                blurb={data.content}/>
     )
 }
 

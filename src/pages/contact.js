@@ -102,7 +102,9 @@ function Contact(siteData) {
                 flexDirection='column'
                 bg='lightgray'>
                 <ContactText fontSize={2} p={3} width={1} lineHeight={3/2}>
-                    <ReactMarkdown source={data.footer}  renderers={{link: LinkRenderer}}/>
+                    <ReactMarkdown
+                        source={data.footer}
+                        renderers={{link: LinkRenderer}}/>
                 </ContactText>
                 <SimpleMap />
             </FlexContent>

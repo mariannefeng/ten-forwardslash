@@ -70,7 +70,10 @@ const PageHero = (props) => (
         <FlexContent flexDirection='column' px={4} flex={1}>
             <PageTitle>{props.title}</PageTitle>
             <TextNoFirstMarginP fontSize={3} px={[4,5]}>
-                <ReactMarkdown source={props.blurb}/>
+                <ReactMarkdown
+                    source={props.blurb}
+                    renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
+                />
             </TextNoFirstMarginP>
         </FlexContent>
     </Section>
