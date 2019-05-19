@@ -9,7 +9,7 @@ servicesDesc: >-
   technology can be best leveraged to serve your mission.
 serviceSections:
   - anchorId: workshops
-    content: >+
+    content: >-
       Lacking training resources? You’re not alone. Nonprofits regularly
       underutilize the tech they have because of the [prohibitive costs of
       training](https://www.salesforce.org/nonprofit/nonprofit-trends-report/).
@@ -20,12 +20,8 @@ serviceSections:
 
 
       We currently provide training in WordPress and look forward to adding more
-      topics that benefit your organization. Help us out by answering the
-      question below: 
-
-
-      [QUESTION HERE] + survey answer
-
+      topics that benefit your organization. [Let us know](/contact) what topics
+      would provide the most impact.
     image: /images/uploads/gandalf-lay.png
     name: Workshops
     tagline: Learn skills and save money
