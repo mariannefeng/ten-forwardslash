@@ -88,7 +88,7 @@ const ClickableLink = styled(Link)`
 const PrettyInput = styled.input`
     font-size: 18px;
     padding: 10px;
-    width: 100%;
+    width: 93%; //todo: review -- width 100% was growing past the parent div 
     font-family: ${theme.fonts['sans']}; 
     :focus {
         outline: none;
