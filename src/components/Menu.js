@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Link, Image } from 'rebass'
-import { FlexContent } from "./rebass";
-import styled from "styled-components";
+import { Box, Flex, Link, Image } from 'rebass'
+import { FlexContent } from './rebass'
+import styled from 'styled-components'
+import Hide from './Hide'
 
 const NavLink = styled(Link)`
 text-decoration: none;
@@ -11,34 +12,63 @@ padding: 2px;
 }
 `
 
-//menu is a dumb component that takes in a map of navbar items
+//menu takes in a map of navbar items
 //currently, this data comes from our site.yml. See App.js for usage
-function Menu(props) {
-    return (
-        <FlexContent
-            px={2}
-            py={3}
-            color='darkgray'
-            bg='white'
-            alignItems='center'>
-            <Link href='/'>
-                <Image
-                    width={[1 / 10, 1 / 15]}
-                    src={props.logo}
-                />
-            </Link>
-            <Box mx='auto'/>
-            {props.content.map((c, i) => {
-                if (c.showInNav) {
-                    return (<Box pl={3} key={i}>
-                        <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
-                    </Box>)
-                }
-            }
+class Menu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showMobileMenu: false
+        };
+    }
 
-            )}
-        </FlexContent>
-    )
+    onClick = () => {
+        this.setState({ showMobileMenu: !this.state.showMobileMenu });
+    }
+
+    render() {
+        return (
+            <FlexContent
+                px={2}
+                py={3}
+                color='darkgray'
+                bg='white'
+                alignItems='center'>
+                <Link href='/'>
+                    <Image
+                        width={[1 / 10, 1 / 15]}
+                        src={this.props.logo}
+                    />
+                </Link>
+                <Box mx='auto'/>
+                <Hide breakpoints={[0]}>
+                    {this.props.content.map((c, i) => {
+                            if (c.showInNav) {
+                                return (<Box pl={3} key={i}>
+                                    <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                                </Box>)
+                            }
+                        }
+                    )}
+                </Hide>
+                <Hide breakpoints={[1, 2]}>
+                    <Flex flexDirection='column' alignItems='flex-end' pr={3}>
+                        <i className='fas fa-bars fa-lg'
+                           css={{ cursor: 'pointer' }}
+                           onClick={this.onClick}></i>
+                        {this.state.showMobileMenu && this.props.content.map((c, i) => {
+                                if (c.showInNav) {
+                                    return (<Box pl={3} key={i}>
+                                        <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                                    </Box>)
+                                }
+                            }
+                        )}
+                    </Flex>
+                </Hide>
+            </FlexContent>
+        )
+    }
 }
 
 export default Menu
