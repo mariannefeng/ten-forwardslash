@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 import theme, { colors } from '../theme'
 
 const Section = props => {
-    let css = checkProps(props, {minHeight: '500px'})
+    let css = checkProps(props, {minHeight: '450px'})
 
     return < Flex
         py = {[2, 4]}
