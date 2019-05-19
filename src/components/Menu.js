@@ -28,11 +28,15 @@ function Menu(props) {
                 />
             </Link>
             <Box mx='auto'/>
-            {props.content.map((c, i) => (
-                <Box pl={3} key={i}>
-                    <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
-                </Box>
-            ))}
+            {props.content.map((c, i) => {
+                if (c.showInNav) {
+                    return (<Box pl={3} key={i}>
+                        <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                    </Box>)
+                }
+            }
+
+            )}
         </FlexContent>
     )
 }

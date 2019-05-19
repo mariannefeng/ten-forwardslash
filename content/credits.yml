@@ -1,11 +1,15 @@
 title: Thanks
-content: >
-  This website wouldn't have been possible without the following: 
-
-  * Something
-
-  * Something else
+content: >-
+  This website wouldn't have been possible without the following tools and
+  technologies:
 
 
-  For a full list of the javascript libraries used, check out our repo at 
-  [ten-forwardslash]()
+  * [humaaans](https://www.humaaans.com/)
+
+  * [Netlify CMS](https://www.netlifycms.org/)
+
+  * [React Static](https://github.com/nozzle/react-static)
+
+
+  For a full list of the javascript libraries used, check out our repo at
+  [ten-forwardslash](https://github.com/tenforwardslash/ten-forwardslash)

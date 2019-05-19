@@ -1,15 +1,17 @@
 import React from 'react'
-import { useRouteData } from "react-static"
-import ReactMarkdown from "react-markdown"
+import { useRouteData } from 'react-static'
+import ReactMarkdown from 'react-markdown'
+import { FullHeightFlexContent, FullHeightSection, PageHero } from '../components/rebass';
+import { Heading } from 'rebass'
 
 function Credits() {
     const { data } = useRouteData()
-
     return (
-        <div>
-            <h1>This wouldn't have been possible without the following libraries</h1>
-        </div>
-
+            <PageHero
+                bg='lessintensepurple'
+                color='white'
+                title={data.title}
+                blurb={data.content}/>
     )
 }
 
