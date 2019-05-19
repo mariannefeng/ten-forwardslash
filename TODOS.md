@@ -2,9 +2,9 @@
 * Read something about how to redirect our domains to netlify
 * flash of unstyled content??
 
-M * Create footer (link to credits)
+~~M * Create footer (link to credits)~~
 M * Contact (swap to using mail to)
-M * Homepage
+~~M * Homepage
 ~~J * About page~~ 
 J * Services (first go should just be wide blocks)
 J * Donate

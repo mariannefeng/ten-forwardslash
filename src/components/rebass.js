@@ -14,6 +14,17 @@ const Section = props => {
 
 }
 
+const FullHeightSection = props => {
+    let css = checkProps(props, {minHeight: '100vh'})
+
+    return < Section
+        {...props}
+        py = {[2, 4]}
+        css = {css}
+    />
+
+}
+
 const FlexContent = props => {
     let css = checkProps(props, {maxWidth: '950px'})
 
@@ -84,4 +95,5 @@ const PrettyInput = styled.input`
     }
 `
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput };
+
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput, FullHeightSection };

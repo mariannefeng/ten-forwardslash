@@ -14,7 +14,7 @@ addPrefetchExcludes(['dynamic'])
 
 // todo: load the fonts we want in here as well
 const GlobalStyles = createGlobalStyle`
-    html, body {
+    html, body, div#root {
         height: 100%;
     }
     body {
@@ -35,8 +35,10 @@ function App(siteData) {
         <ThemeProvider theme={theme}>
             <Root>
                 <GlobalStyles/>
+
                 <Menu content={siteData.content} logo={siteData.logo}/>
-                <div className="content">
+
+                <div>
                     <React.Suspense fallback={<em>Loading...</em>}>
                         <Router>
                             <Dynamic path="dynamic"/>
