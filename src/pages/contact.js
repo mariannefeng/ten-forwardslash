@@ -60,6 +60,8 @@ function Contact(siteData) {
 
     return (
         <FullHeightSection bg='mediumgray' flexDirection='column'>
+            <Heading textAlign='center' color='lightgray' mb={2} fontSize={5}>{data.title}</Heading>
+
             <SocialRow color='white'
                        width={1}
                        mb={[0, 2]}
