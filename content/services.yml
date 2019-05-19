@@ -24,12 +24,9 @@ serviceSections:
       question below: 
 
 
-      \[QUESTION HERE] + survey answer
-
-
       <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLScAjpdiYMAwloCricjvj7sLgGYgsBfoaYTUK72OslWUPvoBWQ/viewform?embedded=true"
-      width="440" height="231" frameborder="0" marginheight="0"
+      width="350" height="492" frameborder="0" marginheight="0"
       marginwidth="0">Loading...</iframe>
     image: /images/uploads/gandalf-lay.png
     name: Workshops
