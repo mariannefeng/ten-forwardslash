@@ -88,7 +88,7 @@ function Homepage() {
         </Flex>
     </FlexContent>)
 
-    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[1, 1/4]}>
+    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/4]}>
         <Heading fontSize={5} fontWeight='normal' color='darkgray' m={2}>{data.ctaTwo}</Heading>
         <MailchimpSubscribe url={url}
                             render={({subscribe, status, message}) => (
