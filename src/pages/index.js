@@ -33,7 +33,7 @@ function Homepage() {
                 </Heading>
                 <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
                          color='lightgray'>{data.titleTagline}</Heading>
-                <ButtonWrapper pr={6}>
+                <ButtonWrapper pr={6} mb={[4, 0]}>
                     <Link to={data.ctaButton.ctaButtonLink}>
                         <ClickableButton variant='accent'
                                          fontSize={3}>{data.ctaButton.ctaButtonText}</ClickableButton>
@@ -57,7 +57,7 @@ function Homepage() {
         <Image
             mx='auto'
             src={data.elevatorPitchImage}
-            width={[4/6, 0.4]}
+            width={[0, 0.4]}
             borderRadius={8} />
         <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>

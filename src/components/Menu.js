@@ -45,9 +45,7 @@ class Menu extends React.Component {
 
                     <Hide breakpoints={[1, 2]}>
                         <Box pr={3}>
-                            <i className='fas fa-bars fa-lg'
-                               css={{ cursor: 'pointer' }}
-                               onClick={this.onClick}></i>
+                            <i className='fas fa-bars fa-lg' onClick={this.onClick}></i>
                         </Box>
                     </Hide>
 
@@ -62,6 +60,7 @@ class Menu extends React.Component {
                         )}
                     </Hide>
                 </FlexContent>
+
                 <Hide breakpoints={[1, 2]} pr={3} flexDirection='column'>
                     {this.state.showMobileMenu && this.props.content.map((c, i) => {
                             if (c.showInNav) {
