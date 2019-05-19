@@ -123,6 +123,8 @@ class SimpleMap extends Component {
                         ]
                     }
             ]
+            // so many cool styles at https://snazzymaps.com/
+            //
             // styles: [
             //     {
             //         featureType: "all",

@@ -25,7 +25,8 @@ const ContactText = styled(Text)`
 const SocialBox = props =>
     <Flex
         {...props}
-        padding={3}
+        py={3}
+        px={5}
         bg='lightgray'
         color='darkgray'
         width={[1, 1/2]}
@@ -35,7 +36,7 @@ const SocialBox = props =>
         alignItems='center'
         css={{
             minHeight: '150px',
-            textAlign: 'center'
+            textAlign: 'left'
         }}
     />
 
@@ -73,7 +74,7 @@ function Contact(siteData) {
                     <Text>{data.intro}</Text>
                     <ContactText fontFamily='mono' fontSize={2} width={1}>
                         <a href='mailto:info@ten-forward.com'>
-                            <Text><i className={`fas fa-envelope`}></i>info@ten-forward.com</Text>
+                            <Text textAlign='center'><i className={`fas fa-envelope`}></i>info@ten-forward.com</Text>
                         </a>
                     </ContactText>
                 </SocialBox>
@@ -101,7 +102,7 @@ function Contact(siteData) {
                 px={0}
                 flexDirection='column'
                 bg='lightgray'>
-                <ContactText fontSize={2} p={3} width={1} lineHeight={3/2}>
+                <ContactText fontSize={2} py={3} px={5} width={1} lineHeight={3/2}>
                     <ReactMarkdown
                         source={data.footer}
                         renderers={{link: LinkRenderer}}/>

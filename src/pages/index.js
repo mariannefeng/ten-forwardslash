@@ -9,6 +9,7 @@ import MailingListForm from "../components/MailingListForm";
 import styled from "styled-components";
 
 import { colors } from '../theme'
+import { PageTitle } from "../components/rebass";
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
@@ -62,7 +63,6 @@ function Homepage() {
         <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
         </Heading>
-
     </FlexContent>)
 
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
@@ -89,7 +89,9 @@ function Homepage() {
     </FlexContent>)
 
     const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/4]}>
-        <Heading fontSize={5} fontWeight='normal' color='darkgray' m={2}>{data.ctaTwo}</Heading>
+
+        <PageTitle color='white'>{data.ctaTwo}</PageTitle>
+
         <MailchimpSubscribe url={url}
                             render={({subscribe, status, message}) => (
                                 <MailingListForm
@@ -114,7 +116,7 @@ function Homepage() {
                 { Services }
             </Section>
 
-            <Section bg='brightteal'>
+            <Section bg='darkerteal'>
                 { NewsletterSignup }
             </Section>
 

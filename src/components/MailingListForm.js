@@ -21,14 +21,14 @@ const MailingListForm = ({ status, message, onValidated }) => {
 
     switch(status) {
         case 'error':
-            msgColor = 'darkgray'
+            msgColor = 'white'
             break
         case 'success':
             msgColor = 'brightgreen'
             break
         case 'sending':
         default:
-            msgColor = 'darkblue'
+            msgColor = 'lightgray'
     }
 
     return (
@@ -41,7 +41,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
                              type="email"
                              placeholder="Your Email" />
             </Box>
-            <ClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='accent' css={{ color: 'black' }}>
+            <ClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='accent'>
                 Make It So
             </ClickableButton>
         </Flex>
