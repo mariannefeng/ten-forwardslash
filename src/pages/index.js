@@ -35,7 +35,7 @@ function Homepage() {
                 <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
                          color='lightgray'>{data.titleTagline}</Heading>
                 <ButtonWrapper pr={6} mb={[4, 0]}>
-                    <Link to={data.ctaButton.ctaButtonLink}>
+                    <Link href={data.ctaButton.ctaButtonLink}>
                         <ClickableButton variant='accent'
                                          fontSize={3}>{data.ctaButton.ctaButtonText}</ClickableButton>
                     </Link>
