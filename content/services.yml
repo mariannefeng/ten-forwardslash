@@ -51,7 +51,7 @@ serviceSections:
     image: /images/uploads/gandalf-lay.png
     name: Workshops
     tagline: Learn skills and save money
-  - anchorId: research-and-development
+  - anchorId: product
     content: >
       Your nonprofit exists in a unique environment that necessitates tools
       built with your needs in mind. You need meaningful, long-lasting
