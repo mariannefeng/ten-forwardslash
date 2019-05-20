@@ -6,8 +6,8 @@ ctaButton:
   ctaButtonLink: /contact
   ctaButtonText: Schedule a Meeting
 elevatorPitch: >-
-  Ten-Forward is a group of software nerds looking to partner our expertise with your
-  world-bettering vision. 
+  Ten-Forward is a group of software nerds looking to partner our expertise with
+  your world-bettering vision. 
 
 
   Your nonprofit isn’t a tech agency or a software firm. But ours is.
@@ -17,23 +17,23 @@ ctaOne: What We Do
 blocks:
   - image: /images/uploads/pinball.jpg
     name: Consulting
+    path: '/services#consulting'
     text: >-
       If your tech question feels too big to handle, we’re equipped to help you
       find custom answers to your most pressing problems. We work alongside your
       team to support your mission through software solutions.
-    path: /services#consulting
   - image: /images/uploads/pinball.jpg
     name: Workshops
+    path: '/services#workshops'
     text: >-
       The learning curve for new or new-to-you technologies shouldn’t be a
       barrier to your mission. If you want to make the most of the tools you
       already have, we can show you how.
-    path: /services#workshops
   - image: /images/uploads/moneyplease.gif
     name: Product R&D
+    path: '/services#research-and-development'
     text: >-
       Tools for your nonprofit should be designed with your nonprofit in mind.
-      When you need juuuuust the right solution, use software for nonprofits
-      by a nonprofit.
-    path: /services#product
+      When you need juuuuust the right solution, use software for nonprofits by
+      a nonprofit.
 ctaTwo: Want updates?
