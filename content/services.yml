@@ -8,23 +8,6 @@ servicesDesc: >-
   Ten-Forward works side-by-side with your organization to identify how
   technology can be best leveraged to serve your mission.
 serviceSections:
-  - anchorId: workshops
-    content: >-
-      Lacking training resources? You’re not alone. Nonprofits regularly
-      underutilize the tech they have because of the [prohibitive costs of
-      training](https://www.salesforce.org/nonprofit/nonprofit-trends-report/).
-
-      Our affordable, user-friendly workshops empower your organization to put
-      the software you’re already using to work so you can focus on your
-      specialty—making the world better.
-
-
-      We currently provide training in WordPress and look forward to adding more
-      topics that benefit your organization. [Let us know](/contact) what topics
-      would provide the most impact.
-    image: /images/uploads/gandalf-lay.png
-    name: Workshops
-    tagline: Learn skills and save money
   - anchorId: consulting
     content: >
       We get it. Investing in new tech feels over-the-top when what you’re doing
@@ -51,7 +34,24 @@ serviceSections:
     image: /images/uploads/max.png
     name: Consulting
     tagline: Hire experts
-  - anchorId: research-and-development
+  - anchorId: workshops
+    content: >-
+      Lacking training resources? You’re not alone. Nonprofits regularly
+      underutilize the tech they have because of the [prohibitive costs of
+      training](https://www.salesforce.org/nonprofit/nonprofit-trends-report/).
+
+      Our affordable, user-friendly workshops empower your organization to put
+      the software you’re already using to work so you can focus on your
+      specialty—making the world better.
+
+
+      We currently provide training in WordPress and look forward to adding more
+      topics that benefit your organization. [Let us know](/contact) what topics
+      would provide the most impact.
+    image: /images/uploads/gandalf-lay.png
+    name: Workshops
+    tagline: Learn skills and save money
+  - anchorId: product
     content: >
       Your nonprofit exists in a unique environment that necessitates tools
       built with your needs in mind. You need meaningful, long-lasting
