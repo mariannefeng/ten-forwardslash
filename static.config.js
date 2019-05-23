@@ -71,6 +71,7 @@ export default {
     },
 
     plugins: [
+        require.resolve('react-static-plugin-styled-components'),
         [
             //automagically creates url->page mappings by looking at files under src/pages
             require.resolve('react-static-plugin-source-filesystem'),
