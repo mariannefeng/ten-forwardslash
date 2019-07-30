@@ -37,7 +37,7 @@ class Menu extends React.Component {
                     alignItems='center'>
                     <Link href='/'>
                         <Image
-                            width={[1 / 10, 1 / 15]}
+                            width={[2 / 10, 3/10, 0.18 ]}
                             src={this.props.logo}
                         />
                     </Link>

@@ -1,5 +1,17 @@
 ## Things that still needs to be done 
+### QA Reminders: 
+* mobile (Android + iPhone)
+* Safari + Firefox
+* tablet 
 
+
+* Read something about how to redirect our domains to netlify
+* Add validation for link button?
+* why is netlify slow to save page updates?
+* how to create template for collection definition of 'files' type in netlifycms?   
+* use [react-helmet](https://github.com/nfl/react-helmet) for head meta tags on pages
+
+### Done
 ~~M * Create footer (link to credits)~~
 M * Contact (swap to using mail to)
 ~~M * Homepage
@@ -7,24 +19,7 @@ M * Contact (swap to using mail to)
 J * Services (first go should just be wide blocks)
 J * Donate
 * Credits
-
-
-QA Reminders: 
-* mobile (Android + iPhone)
-* Safari + Firefox
-* tablet 
-
-
-* Read something about how to redirect our domains to netlify
-
-
-
 * flash of unstyled content?? 
-* Add validation for link button?
-* why is netlify slow to save page updates?
-* how to create template for collection definition of 'files' type in netlifycms?   
-
-### Done
 * Hook up react-static site into netlifycms (just means pull data)
 ~~* Remove react-bulma-components, and swap to using rebass + styled-components~~
 * Hook up react site to bulma 
