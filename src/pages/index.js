@@ -27,7 +27,7 @@ function Homepage() {
                 justifyContent='center'>
                 <BrandedMainHeading fontSize={6}
                          fontWeight='bold'
-                         color='white'
+                         color='green'
                          pr={3}
                          mb={3}>
                     {data.title}
@@ -36,7 +36,7 @@ function Homepage() {
                          color='lightgray'>{data.titleTagline}</Text>
                 <ButtonWrapper pr={6} mb={[4, 0]}>
                     <Link href={data.ctaButton.ctaButtonLink}>
-                        <ArrowClickableButton variant='transparent' fontSize={3} buttonText={data.ctaButton.ctaButtonText} />
+                        <ArrowClickableButton variant='transparent' fontSize={3} color='orange' buttonText={data.ctaButton.ctaButtonText} />
                     </Link>
                 </ButtonWrapper>
             </FullHeightFlexContent>
@@ -59,7 +59,7 @@ function Homepage() {
             src={data.elevatorPitchImage}
             width={[0, 0.4]}
             borderRadius={8} />
-        <Text mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
+        <Text mb={3} mx='auto' fontSize={4} color='black' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
         </Text>
     </FlexContent>)
@@ -103,11 +103,11 @@ function Homepage() {
 
     return (
         <div>
-            <Section bg='anotherblue'>
+            <Section bg='black'>
                 { PrimaryHero }
             </Section>
 
-            <Section bg='brightorange'>
+            <Section bg='green'>
                 { ElevatorPitch }
             </Section>
 
