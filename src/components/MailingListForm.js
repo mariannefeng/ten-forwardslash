@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, Flex, Heading } from 'rebass'
-import { ClickableButton, PrettyInput } from "./rebass";
+import { Box, Flex, Heading, Text } from 'rebass'
+import { ClickableButton, PrettyInput, ArrowClickableButton } from "./rebass";
 import styled from "styled-components";
 
 let mailMsg = styled(Box)`
@@ -41,9 +41,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
                              type="email"
                              placeholder="Your Email" />
             </Box>
-            <ClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='accent'>
-                Make It So
-            </ClickableButton>
+            <ArrowClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='transparent' buttonText='Make It So'/>
         </Flex>
     )
 }

@@ -13,7 +13,7 @@ function Footer(props) {
             justifyContent='space-between'
             alignItem='center'>
             <Flex justifyContent='center' flexDirection='column'>
-                <ClickableLink href='/credits'>Credits</ClickableLink>
+                <ClickableLink href='/credits' style={{fontFamily: "'Ubuntu Mono', monospace", textTransform: "uppercase"}}>Credits</ClickableLink>
             </Flex>
             <Flex>
                 {

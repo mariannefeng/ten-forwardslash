@@ -5,6 +5,17 @@ import ReactMarkdown from 'react-markdown'
 
 import theme, { colors } from '../theme'
 
+const BrandedMainHeading = styled(Heading)`
+    text-transform: lowercase;
+    font-family: "OCR A Extended", monospace;
+`
+
+const BrandedSubHeading = styled(Heading)`
+    text-transform: uppercase;
+    font-family: 'Ubuntu Mono', monospace;
+`
+
+
 const Section = props => {
     let css = checkProps(props, {minHeight: '450px'})
 
@@ -51,7 +62,8 @@ const FullHeightFlexContent = props => {
 const ClickableButton = props => {
     let css = checkProps(props, {
         cursor: 'pointer',
-        fontFamily: 'Consolas, monospace',
+        fontFamily: '"Ubuntu Mono", monospace',
+        textTransform: "uppercase",
         ':focus':  {
             outline: 'none'
         }
@@ -62,8 +74,18 @@ const ClickableButton = props => {
         css={css}
     />
 }
+// ArrowClickableButton is from our branding guide -- it will append '>>>' in OCR A font and center it properly
+// still need to add animation etc
+const ArrowClickableButton = props => {
+    // props.buttonText
 
-const PageTitle = props => <Heading {...props} alignSelf='center' fontSize={5} mb={4} />
+    return <ClickableButton {...props}>
+        <Text color={props.color} style={{"display": "flex"}}>{props.buttonText}<Text color={props.color} style={{marginLeft: "5px", marginTop: "-1px"}} fontFamily='mono'> >>></Text></Text>
+    </ClickableButton>
+}
+
+
+const PageTitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4} />
 
 const PageHero = (props) => (
     <Section bg={props.bg} color={props.color}>
@@ -115,4 +137,6 @@ const PrettyInput = styled.input`
 `
 
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, TextNoFirstMarginP, ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero };
+export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
+    ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero,
+    BrandedMainHeading, BrandedSubHeading};

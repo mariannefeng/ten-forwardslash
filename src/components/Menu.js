@@ -7,6 +7,8 @@ import Hide from './Hide'
 const NavLink = styled(Link)`
 text-decoration: none;
 padding: 2px;
+font-family: 'Ubuntu Mono', monospace;
+text-transform: uppercase;
 &:hover {
     border-bottom: 2px solid #03a776;
 }

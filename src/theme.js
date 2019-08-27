@@ -2,6 +2,7 @@
 
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
+    transparent: 'transparent',
     yellow: '#F7C331',
     orange: '#FCB606',
     brightorange: '#fcb206',
@@ -41,20 +42,35 @@ export default {
         0, 4, 8, 16, 32, 64, 128, 256
     ],
     fonts: {
-        sans: 'Helvetica, sans-serif',
-        // need to load in these fonts:
-        // test: 'Proxima Nova, sans-serif',
-        mono: 'Consolas, monospace',
+        sans: '"Nunito Sans", sans-serif',
+        // need to load in this subheader font:
+        submono: '"Ubuntu Mono", monospace',
+        mono: '"OCR A Extended", monospace',
     },
     buttons: {
+        // todo: we need to make this accent button have no background and have the >>>
         accent: {
             fontWeight: 'normal',
-            fontFamily: 'Consolas, monospace',
+            fontFamily: '"Ubuntu Mono", monospace',
+            textTransform: 'uppercase',
             backgroundColor: colors.brightorange,
             color: colors.white,
             '&:hover': {
                 backgroundColor: colors.mediumorange
+            },
+            '&:after': {
+                content: '>'
             }
+        },
+        transparent: {
+            fontWeight: 'normal',
+            fontFamily: '"Ubuntu Mono", monospace',
+            textTransform: 'uppercase',
+            backgroundColor: colors.transparent,
+            color: colors.white,
+            '&:hover': {
+                color: colors.lightgray
+            },
         },
         outline: {
             fontWeight: 'normal',

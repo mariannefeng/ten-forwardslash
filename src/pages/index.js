@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData } from 'react-static'
 import { Box, Flex, Heading, Image, Card, Text, Link } from 'rebass'
 
-import { Section, FlexContent, FullHeightFlexContent, ClickableButton, ClickableLink } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent, ClickableButton, ClickableLink, BrandedMainHeading, BrandedSubHeading, ArrowClickableButton } from 'components/rebass';
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import ReactMarkdown from 'react-markdown'
 import MailingListForm from "../components/MailingListForm";
@@ -25,19 +25,18 @@ function Homepage() {
             <FullHeightFlexContent
                 flexDirection='column'
                 justifyContent='center'>
-                <Heading fontSize={6}
+                <BrandedMainHeading fontSize={6}
                          fontWeight='bold'
                          color='white'
                          pr={3}
                          mb={3}>
                     {data.title}
-                </Heading>
-                <Heading fontSize={4} mb={4} fontWeight='400' pr={4}
-                         color='lightgray'>{data.titleTagline}</Heading>
+                </BrandedMainHeading>
+                <Text fontSize={4} mb={4} fontWeight='400' pr={4}
+                         color='lightgray'>{data.titleTagline}</Text>
                 <ButtonWrapper pr={6} mb={[4, 0]}>
                     <Link href={data.ctaButton.ctaButtonLink}>
-                        <ClickableButton variant='accent'
-                                         fontSize={3}>{data.ctaButton.ctaButtonText}</ClickableButton>
+                        <ArrowClickableButton variant='transparent' fontSize={3} buttonText={data.ctaButton.ctaButtonText} />
                     </Link>
                 </ButtonWrapper>
             </FullHeightFlexContent>
@@ -60,13 +59,13 @@ function Homepage() {
             src={data.elevatorPitchImage}
             width={[0, 0.4]}
             borderRadius={8} />
-        <Heading mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
+        <Text mb={3} mx='auto' fontSize={4} color='white' fontWeight='300' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
-        </Heading>
+        </Text>
     </FlexContent>)
 
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
-        <Heading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</Heading>
+        <BrandedSubHeading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
         <Flex flexWrap='wrap' justifyContent='space-around'>
             {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
             {data.blocks.map((block, i) => {
@@ -79,8 +78,8 @@ function Homepage() {
                               p={4}
                               my={4}
                               bg='codebggray'>
-                            <Heading mb={4} fontSize={3} fontFamily='mono'>{ block.name + ' /'}</Heading>
-                            <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='mono'>{block.text}</Text>
+                            <BrandedMainHeading mb={4} fontSize={3}>{ block.name + ' /'}</BrandedMainHeading>
+                            <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='sans'>{block.text}</Text>
                         </Card>
                     </ClickableLink>
                 )

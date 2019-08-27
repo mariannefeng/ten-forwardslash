@@ -44,7 +44,7 @@ function About() {
                 </Flex>
                 <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
 
-                <Heading alignSelf='center' fontSize={5} my={4} color='minty'>{data.aboutTitle}</Heading>
+                <PageTitle alignSelf='center' fontSize={5} my={4} color='minty'>{data.aboutTitle}</PageTitle>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
                     {/*todo: this works for only two, i realize we should prob handle board members
                         differently w/ a different section*/}
