@@ -66,9 +66,16 @@ export default {
             '&:hover': {
                 backgroundColor: colors.mediumorange
             },
-            '&:after': {
-                content: '>'
-            }
+        },
+        accentBlack: {
+            fontWeight: 'normal',
+            fontFamily: '"Ubuntu Mono", monospace',
+            textTransform: 'uppercase',
+            backgroundColor: colors.lightgray,
+            color: colors.white,
+            '&:hover': {
+                backgroundColor: colors.darkgray,
+            },
         },
         transparent: {
             fontWeight: 'normal',

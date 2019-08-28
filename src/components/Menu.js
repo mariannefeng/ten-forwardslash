@@ -31,11 +31,11 @@ class Menu extends React.Component {
     render() {
         return (
             <Fragment>
+                <Box bg='black'>
                 <FlexContent
                     px={2}
                     py={3}
-                    color='darkgray'
-                    bg='white'
+                    color='black'
                     alignItems='center'>
                     <Link href='/'>
                         <Image
@@ -55,24 +55,24 @@ class Menu extends React.Component {
                         {this.props.content.map((c, i) => {
                                 if (c.showInNav) {
                                     return (<Box pl={3} key={i}>
-                                        <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                                        <NavLink href={c.path} key={'desktopMenu' + i} color='white'>{c.label}</NavLink>
                                     </Box>)
                                 }
                             }
                         )}
                     </Hide>
                 </FlexContent>
-
                 <Hide breakpoints={[1, 2]} pr={3} flexDirection='column'>
                     {this.state.showMobileMenu && this.props.content.map((c, i) => {
                             if (c.showInNav) {
                                 return (<Box key={i} css={{ textAlign: 'right' }} pb={3}>
-                                            <NavLink href={c.path} key={'desktopMenu' + i} color='darkgray'>{c.label}</NavLink>
+                                            <NavLink href={c.path} key={'desktopMenu' + i} color='white'>{c.label}</NavLink>
                                         </Box>)
                             }
                         }
                     )}
                 </Hide>
+                </Box>
             </Fragment>
 
         )

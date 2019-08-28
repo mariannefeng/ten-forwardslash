@@ -15,6 +15,21 @@ const BrandedSubHeading = styled(Heading)`
     font-family: 'Ubuntu Mono', monospace;
 `
 
+//OverlayText **REQUIRES** to be contained in an element with ****position:relative;*** set
+const OverlayText = styled(Text)`
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    overflow: hidden;
+    text-align: justify;
+    text-transform: uppercase;
+    font-family: "OCR A Extended", monospace;
+    opacity: 0.5;
+`
+
 
 const Section = props => {
     let css = checkProps(props, {minHeight: '450px'})
@@ -139,4 +154,4 @@ const PrettyInput = styled.input`
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
     ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero,
-    BrandedMainHeading, BrandedSubHeading};
+    BrandedMainHeading, BrandedSubHeading, OverlayText};
