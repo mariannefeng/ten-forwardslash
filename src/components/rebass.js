@@ -15,7 +15,8 @@ const BrandedSubHeading = styled(Heading)`
     font-family: 'Ubuntu Mono', monospace;
 `
 
-//OverlayText **REQUIRES** to be contained in an element with ****position:relative;*** set
+//OverlayText **REQUIRES** to be contained in an element with ****position:relative;*** set, since it is using position absolute.
+//  otherwise it'll just be at the top of your page, messing everything up.
 const OverlayText = styled(Text)`
     position: absolute; 
     top: 0;
@@ -23,6 +24,7 @@ const OverlayText = styled(Text)`
     right: 0;
     bottom: 0;
     z-index: 2;
+    font-size: 8px;
     overflow: hidden;
     text-align: justify;
     text-transform: uppercase;
