@@ -9,8 +9,9 @@ text-decoration: none;
 padding: 2px;
 font-family: 'Ubuntu Mono', monospace;
 text-transform: uppercase;
+letter-spacing: 2px;
 &:hover {
-    border-bottom: 2px solid #03a776;
+    border-bottom: 2px solid #ffffff;
 }
 `
 
@@ -55,7 +56,7 @@ class Menu extends React.Component {
                         {this.props.content.map((c, i) => {
                                 if (c.showInNav) {
                                     return (<Box pl={3} key={i}>
-                                        <NavLink href={c.path} key={'desktopMenu' + i} color='white'>{c.label}</NavLink>
+                                        <NavLink href={c.path} key={'desktopMenu' + i} color='green'>{c.label}</NavLink>
                                     </Box>)
                                 }
                             }
@@ -66,7 +67,7 @@ class Menu extends React.Component {
                     {this.state.showMobileMenu && this.props.content.map((c, i) => {
                             if (c.showInNav) {
                                 return (<Box key={i} css={{ textAlign: 'right' }} pb={3}>
-                                            <NavLink href={c.path} key={'desktopMenu' + i} color='white'>{c.label}</NavLink>
+                                            <NavLink href={c.path} key={'desktopMenu' + i} color='green'>{c.label}</NavLink>
                                         </Box>)
                             }
                         }

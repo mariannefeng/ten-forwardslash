@@ -1,6 +1,7 @@
-import React from 'react'
-import {Box, Flex, Button, Text, Link, Heading} from 'rebass'
+import React, { useState } from 'react'
+import { Box, Flex, Button, Text, Link, Heading } from 'rebass'
 import styled from "styled-components"
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import ReactMarkdown from 'react-markdown'
 
 import theme, { colors } from '../theme'
@@ -29,7 +30,7 @@ const OverlayText = styled(Text)`
     text-align: justify;
     text-transform: uppercase;
     font-family: "OCR A Extended", monospace;
-    opacity: 0.5;
+    opacity: 0.3;
 `
 
 
@@ -91,14 +92,49 @@ const ClickableButton = props => {
         css={css}
     />
 }
-// ArrowClickableButton is from our branding guide -- it will append '>>>' in OCR A font and center it properly
-// still need to add animation etc
-const ArrowClickableButton = props => {
-    // props.buttonText
 
-    return <ClickableButton {...props}>
-        <Text color={props.color} style={{"display": "flex"}}>{props.buttonText}<Text color={props.color} style={{marginLeft: "5px", marginTop: "-1px"}} fontFamily='mono'> >>></Text></Text>
-    </ClickableButton>
+const Slashes = props => {
+    // {[0.5, 0.75, 1].map((opacity, ind) => {
+    //     return <ArrowClickableButtonSlash hovered={hovered} color={props.color} opacity={opacity}/>
+    // })}
+    return <TransitionGroup component="div">
+                {[0.5, 0.75, 1].map(
+                    ({ id, opacity}) => (
+                        <CSSTransition
+                            timeout={500}
+                            classNames="fade"
+                            key={id}
+                        >
+                            <Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: props.opacity}} fontFamily={'mono'}>/</Text>
+                        </CSSTransition>
+                    )
+                )}
+            </TransitionGroup>
+}
+
+const ArrowClickableButtonSlash = props => {
+    let arrowStyle = {marginLeft: "3px", marginTop: "-1px", opacity: props.opacity}
+    // if (props.hovered) {
+        return <CSSTransition
+            in={props.hovered}
+            timeout={150}
+            classNames="slashes"
+            unmountOnExit
+        ><Text color={props.color} style={arrowStyle} fontFamily={'mono'}>/</Text></CSSTransition>
+    // }
+    // return null
+}
+
+const ArrowClickableButton = props => {
+    const [hovered, setHovered] = useState(false);
+    const toggleHover = () => setHovered(!hovered);
+    return (
+        <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
+            <Text color={props.color} style={{"display": "flex"}}>{props.buttonText} {[0.5, 0.75, 1].map((opacity, ind) => {
+                return <ArrowClickableButtonSlash hovered={hovered} color={props.color} opacity={opacity}/>
+            })} <Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
+        </ClickableButton>
+    )
 }
 
 

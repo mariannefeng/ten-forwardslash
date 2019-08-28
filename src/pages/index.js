@@ -13,15 +13,15 @@ import { MEASURE_OF_A_MAN } from 'components/easteregg-backgrounds'
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
 const ButtonWrapper = styled(Box)`
-   text-align: right 
+   text-align: left 
 `
 
 function Homepage() {
     const {data} = useRouteData()
 
     const PrimaryHero = (
-        <div style={{position: "relative", width: "100%"}} >
-            <OverlayText>{MEASURE_OF_A_MAN}</OverlayText>
+        <Box width={1} pb={[0,4]} style={{position: "relative"}}>
+            <OverlayText color='blue'>{MEASURE_OF_A_MAN}</OverlayText>
             <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
                 <Box width={[1, 1 / 2]} pt={3} style={{zIndex: 3}}>
                     <FullHeightFlexContent
@@ -54,7 +54,7 @@ function Homepage() {
                     />
                 </Flex>
             </FlexContent>
-        </div>)
+        </Box>)
 
     const ElevatorPitch = (<FlexContent flexDirection='row' alignItems='center' flexWrap='wrap'>
         <Image
@@ -106,7 +106,7 @@ function Homepage() {
 
     return (
         <div>
-            <Section bg='black'>
+            <Section py={0} bg='black'>
                 { PrimaryHero }
             </Section>
 
