@@ -16,21 +16,22 @@ const BrandedSubHeading = styled(Heading)`
     font-family: 'Ubuntu Mono', monospace;
 `
 
-//OverlayText **REQUIRES** to be contained in an element with ****position:relative;*** set, since it is using position absolute.
-//  otherwise it'll just be at the top of your page, messing everything up.
+//fixme: since changing to using psuedoelements, can't get the full script to work for measure of a man.
+//  figure out how to escape correctly. currently the escape funciton used turns it garbled, just tried it really quick 
 const OverlayText = styled(Text)`
-    position: absolute; 
+position: relative;
+overflow: hidden;
+&:after {
+    position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    font-size: 8px;
+    content: "${ props => props.content }";
     overflow: hidden;
     text-align: justify;
     text-transform: uppercase;
     font-family: "OCR A Extended", monospace;
-    opacity: 0.3;
+    opacity: 0.3;    
+} 
 `
 
 
@@ -94,35 +95,22 @@ const ClickableButton = props => {
 }
 
 const Slashes = props => {
-    // {[0.5, 0.75, 1].map((opacity, ind) => {
-    //     return <ArrowClickableButtonSlash hovered={hovered} color={props.color} opacity={opacity}/>
-    // })}
-    return <TransitionGroup component="div">
-                {[0.5, 0.75, 1].map(
-                    ({ id, opacity}) => (
+    // todo: add arrow to transition group, hide from ArrowClickableButton if hovered
+    return <TransitionGroup component={null}>
+        {props.hovered ?
+            [0.5, 0.75, 1].map(
+                    ({ opacity, index }) => (
                         <CSSTransition
                             timeout={500}
                             classNames="fade"
-                            key={id}
+                            key={index}
                         >
-                            <Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: props.opacity}} fontFamily={'mono'}>/</Text>
+                            <Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>/</Text>
                         </CSSTransition>
                     )
-                )}
+                )
+        : null }
             </TransitionGroup>
-}
-
-const ArrowClickableButtonSlash = props => {
-    let arrowStyle = {marginLeft: "3px", marginTop: "-1px", opacity: props.opacity}
-    // if (props.hovered) {
-        return <CSSTransition
-            in={props.hovered}
-            timeout={150}
-            classNames="slashes"
-            unmountOnExit
-        ><Text color={props.color} style={arrowStyle} fontFamily={'mono'}>/</Text></CSSTransition>
-    // }
-    // return null
 }
 
 const ArrowClickableButton = props => {
@@ -130,9 +118,7 @@ const ArrowClickableButton = props => {
     const toggleHover = () => setHovered(!hovered);
     return (
         <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            <Text color={props.color} style={{"display": "flex"}}>{props.buttonText} {[0.5, 0.75, 1].map((opacity, ind) => {
-                return <ArrowClickableButtonSlash hovered={hovered} color={props.color} opacity={opacity}/>
-            })} <Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
+            <Text color={props.color} style={{"display": "flex"}}>{props.buttonText} <Slashes color={props.color} hovered={hovered} /><Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
         </ClickableButton>
     )
 }
@@ -142,15 +128,17 @@ const PageTitle = props => <BrandedSubHeading {...props} alignSelf='center' font
 
 const PageHero = (props) => (
     <Section bg={props.bg} color={props.color}>
-        <FlexContent flexDirection='column' px={4} flex={1}>
-            <PageTitle>{props.title}</PageTitle>
-            <TextNoFirstMarginP fontSize={3} px={[4,5]}>
-                <ReactMarkdown
-                    source={props.blurb}
-                    renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
-                />
-            </TextNoFirstMarginP>
-        </FlexContent>
+        <OverlayText color='blue' content={props.overlay}>
+            <FlexContent flexDirection='column' px={4} flex={1} style={{position:'relative'}}>
+                <PageTitle>{props.title}</PageTitle>
+                <TextNoFirstMarginP fontSize={3} px={[4,5]}>
+                    <ReactMarkdown
+                        source={props.blurb}
+                        renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
+                    />
+                </TextNoFirstMarginP>
+            </FlexContent>
+        </OverlayText>
     </Section>
 )
 

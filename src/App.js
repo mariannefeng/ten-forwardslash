@@ -8,14 +8,11 @@ import { Router } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
-import 'fonts.css';
+import 'app.css';
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
-// todo: load the fonts we want in here as well
-//font-family: 'Ubuntu Mono', monospace;
-// font-family: 'Nunito Sans', sans-serif;
 const GlobalStyles = createGlobalStyle`
     html, body, div#root {
         height: 100%;

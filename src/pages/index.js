@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import MailingListForm from "../components/MailingListForm";
 import styled from "styled-components";
 
-import { MEASURE_OF_A_MAN } from 'components/easteregg-backgrounds'
+import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
@@ -20,40 +20,41 @@ function Homepage() {
     const {data} = useRouteData()
 
     const PrimaryHero = (
-        <Box width={1} pb={[0,4]} style={{position: "relative"}}>
-            <OverlayText color='blue'>{MEASURE_OF_A_MAN}</OverlayText>
-            <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
-                <Box width={[1, 1 / 2]} pt={3} style={{zIndex: 3}}>
-                    <FullHeightFlexContent
-                        flexDirection='column'
-                        justifyContent='center'>
-                        <BrandedMainHeading fontSize={6}
-                                 fontWeight='bold'
-                                 color='green'
-                                 pr={3}
-                                 mb={3}>
-                            {data.title}
-                        </BrandedMainHeading>
-                        <Text fontSize={4} mb={4} fontWeight='400' pr={4}
-                                 color='white'>{data.titleTagline}</Text>
-                        <ButtonWrapper pr={6} mb={[4, 0]}>
-                            <Link href={data.ctaButton.ctaButtonLink}>
-                                <ArrowClickableButton variant='transparent' fontSize={3} color='orange' buttonText={data.ctaButton.ctaButtonText} />
-                            </Link>
-                        </ButtonWrapper>
-                    </FullHeightFlexContent>
-                </Box>
-                <Flex alignItems='center' width={[0, 1 / 2]} style={{zIndex: 3}}>
-                    <Image
-                        px={2}
-                        mx='auto'
-                        src={data.ctaImage}
-                        mt={[5,0]}
-                        width={1}
-                        borderRadius={8}
-                    />
-                </Flex>
-            </FlexContent>
+        <Box width={1} pb={[0,4]} >
+            <OverlayText color='blue' style={{fontSize: "8px"}} content={escape(MEASURE_OF_A_MAN)}>
+                <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
+                    <Box width={[1, 1 / 2]} pt={3} style={{zIndex: 3}}>
+                        <FullHeightFlexContent
+                            flexDirection='column'
+                            justifyContent='center'>
+                            <BrandedMainHeading fontSize={6}
+                                     fontWeight='bold'
+                                     color='green'
+                                     pr={3}
+                                     mb={3}>
+                                {data.title}
+                            </BrandedMainHeading>
+                            <Text fontSize={4} mb={4} fontWeight='400' pr={4}
+                                     color='white'>{data.titleTagline}</Text>
+                            <ButtonWrapper pr={6} mb={[4, 0]}>
+                                <Link href={data.ctaButton.ctaButtonLink}>
+                                    <ArrowClickableButton variant='transparent' fontSize={3} color='orange' buttonText={data.ctaButton.ctaButtonText} />
+                                </Link>
+                            </ButtonWrapper>
+                        </FullHeightFlexContent>
+                    </Box>
+                    <Flex alignItems='center' width={[0, 1 / 2]} style={{zIndex: 3}}>
+                        <Image
+                            px={2}
+                            mx='auto'
+                            src={data.ctaImage}
+                            mt={[5,0]}
+                            width={1}
+                            borderRadius={8}
+                        />
+                    </Flex>
+                </FlexContent>
+            </OverlayText>
         </Box>)
 
     const ElevatorPitch = (<FlexContent flexDirection='row' alignItems='center' flexWrap='wrap'>
@@ -62,7 +63,7 @@ function Homepage() {
             src={data.elevatorPitchImage}
             width={[0, 0.4]}
             borderRadius={8} />
-        <Text mb={3} mx='auto' fontSize={4} color='white' fontWeight='400' px={[3, 5]} width={[1, 3/6]}>
+        <Text mb={3} mx='auto' fontSize={4} color='black' fontWeight='500' px={[3, 5]} width={[1, 3/6]}>
             <ReactMarkdown source={data.elevatorPitch}/>
         </Text>
     </FlexContent>)
@@ -90,7 +91,7 @@ function Homepage() {
         </Flex>
     </FlexContent>)
 
-    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/4]}>
+    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/2, 1/4]}>
 
         <PageTitle color='white'>{data.ctaTwo}</PageTitle>
 
@@ -110,7 +111,7 @@ function Homepage() {
                 { PrimaryHero }
             </Section>
 
-            <Section bg='yellow'>
+            <Section bg='green'>
                 { ElevatorPitch }
             </Section>
 

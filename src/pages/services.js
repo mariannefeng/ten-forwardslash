@@ -6,6 +6,7 @@ import { Flex, Heading } from 'rebass'
 
 import { colors } from '../theme'
 import { Section, FlexContent, TextNoFirstMarginP, PageHero } from 'components/rebass';
+import { TEN_FORWARD_STAMP } from 'components/text-overlay-filler'
 
 const SquareListWrapper = styled.div`
 ul {
@@ -28,7 +29,7 @@ function Services() {
 
     return (
         <div>
-            <PageHero bg='brightorange' color='white' title={data.title} blurb={data.servicesDesc}/>
+            <PageHero bg='black' overlay={TEN_FORWARD_STAMP} color='white' title={data.title} blurb={data.servicesDesc}/>
             <Section bg='white'>
                 <FlexContent flexDirection='column' my={3} px={4} pt={4}>
                     {data.serviceSections.map((service, i) => {
