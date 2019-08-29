@@ -17,7 +17,7 @@ const BrandedSubHeading = styled(Heading)`
 `
 
 //fixme: since changing to using psuedoelements, can't get the full script to work for measure of a man.
-//  figure out how to escape correctly. currently the escape funciton used turns it garbled, just tried it really quick 
+//  figure out how to escape correctly. currently the escape funciton used turns it garbled, just tried it really quick
 const OverlayText = styled(Text)`
 position: relative;
 overflow: hidden;
@@ -105,7 +105,7 @@ const Slashes = props => {
                             classNames="fade"
                             key={index}
                         >
-                            <Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>/</Text>
+                            <Text color={props.color} style={{marginLeft: "-4px", marginTop: "-1px", opacity: opacity, marginRight: index === 2 ? "-5px" : "0"}} fontFamily={'mono'}>/</Text>
                         </CSSTransition>
                     )
                 )
@@ -118,7 +118,7 @@ const ArrowClickableButton = props => {
     const toggleHover = () => setHovered(!hovered);
     return (
         <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            <Text color={props.color} style={{"display": "flex"}}>{props.buttonText} <Slashes color={props.color} hovered={hovered} /><Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
+            <Text color={props.color} style={{"display": "flex"}}><div style={{paddingRight: "5px"}}>{props.buttonText}</div><Slashes color={props.color} hovered={hovered} /><Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
         </ClickableButton>
     )
 }
