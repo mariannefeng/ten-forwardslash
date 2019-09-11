@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown'
 import MailingListForm from "../components/MailingListForm";
 import styled from "styled-components";
 
-import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
+import { MEASURE_OF_A_MAN, MARIANNE_TEST } from 'components/text-overlay-filler'
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
@@ -16,12 +16,21 @@ const ButtonWrapper = styled(Box)`
    text-align: left 
 `
 
+function string_as_unicode_escape(input) {
+    //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
+    var output = '';
+    for (var i = 0, l = input.length; i < l; i++)
+        output += '\\' + input.charCodeAt(i).toString(16);
+    return output;
+}
+
 function Homepage() {
     const {data} = useRouteData()
 
+
     const PrimaryHero = (
         <Box width={1} pb={[0,4]} >
-            <OverlayText color='blue' style={{fontSize: "8px"}} content={escape(MEASURE_OF_A_MAN)}>
+            <OverlayText color='blue' style={{fontSize: "10px"}} content={string_as_unicode_escape(MEASURE_OF_A_MAN)}>
                 <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
                     <Box width={[1, 1 / 2]} pt={3} style={{zIndex: 3}}>
                         <FullHeightFlexContent
