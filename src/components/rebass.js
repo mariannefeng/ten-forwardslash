@@ -14,6 +14,7 @@ const BrandedMainHeading = styled(Heading)`
 const BrandedSubHeading = styled(Heading)`
     text-transform: uppercase;
     font-family: 'Ubuntu Mono', monospace;
+    letter-spacing: 1.5px;
 `
 
 function string_as_unicode_escape(input) {
@@ -59,7 +60,7 @@ const Section = props => {
 const FullHeightSection = props => {
     let css = checkProps(props, {minHeight: '100vh'})
 
-    return < Section
+    return <Section
         py = {[2, 4]} //TODO: if this inherits from Section, do we need to set py?
         css = {css}
         {...props}
@@ -138,15 +139,17 @@ const PageTitle = props => <BrandedSubHeading {...props} alignSelf='center' font
 
 const PageHero = (props) => (
     <Section bg={props.bg} color={props.color}>
-        <OverlayText color='blue' content={props.overlay} style={{margin: "auto"}}>
-            <FlexContent flexDirection='column' px={4} flex={1} style={{position:'relative'}}>
-                <PageTitle color='white'>{props.title}</PageTitle>
-                <TextNoFirstMarginP fontSize={3} px={[4,5]} color='white'>
-                    <ReactMarkdown
-                        source={props.blurb}
-                        renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
-                    />
-                </TextNoFirstMarginP>
+        <OverlayText color='blue' content={props.overlay} mx='auto' mb={3}>
+            <FlexContent flexDirection='column' px={4} flex={1} style={{position:'relative', height: "100%"}} alignItems='center' justifyContent='center'>
+                <FlexContent flexDirection='column'>
+                    <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} color='green' textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
+                    <TextNoFirstMarginP fontSize={3} px={[4,5]} color='white'>
+                        <ReactMarkdown
+                            source={props.blurb}
+                            renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
+                        />
+                    </TextNoFirstMarginP>
+                </FlexContent>
             </FlexContent>
         </OverlayText>
     </Section>
@@ -169,19 +172,19 @@ p:first-child {
 `
 
 const ClickableLink = styled(Link)`
-    text-decoration: none; 
+    text-decoration: none;
     cursor: pointer;
     color: ${colors.darkgray};
     :hover {
-        color: ${colors.mediumgray}; 
+        color: ${colors.mediumgray};
     }
 `
 
 const PrettyInput = styled.input`
     font-size: 18px;
     padding: 10px;
-    width: 93%; //todo: review -- width 100% was growing past the parent div 
-    font-family: ${theme.fonts['sans']}; 
+    width: 93%; //todo: review -- width 100% was growing past the parent div
+    font-family: ${theme.fonts['sans']};
     :focus {
         outline: none;
     }

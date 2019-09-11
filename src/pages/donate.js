@@ -26,8 +26,8 @@ function Donate() {
     const { data } = useRouteData()
 
     return (
-        <Section bg='darkishblue'>
-            <FlexContent color='white' flexDirection='column' mt={3}>
+        <Section bg='white'>
+            <FlexContent color='black' flexDirection='column' mt={3}>
                 <PageTitle >{data.title}</PageTitle>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
                     <Flex  width={[1, 0.45]} p={2} flexDirection='column' justifyContent='space-between'>

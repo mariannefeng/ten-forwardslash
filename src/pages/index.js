@@ -36,7 +36,7 @@ function Homepage() {
                         <FullHeightFlexContent
                             flexDirection='column'
                             justifyContent='center'>
-                            <BrandedMainHeading fontSize={6}
+                            <BrandedMainHeading fontSize={[6, 6]}
                                      fontWeight='bold'
                                      color='green'
                                      pr={3}
@@ -102,7 +102,7 @@ function Homepage() {
 
     const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/2, 1/4]}>
 
-        <PageTitle color='white'>{data.ctaTwo}</PageTitle>
+        <PageTitle color='black'>{data.ctaTwo}</PageTitle>
 
         <MailchimpSubscribe url={url}
                             render={({subscribe, status, message}) => (
@@ -128,7 +128,7 @@ function Homepage() {
                 { Services }
             </Section>
 
-            <Section bg='green'>
+            <Section bg='yellow'>
                 { NewsletterSignup }
             </Section>
 

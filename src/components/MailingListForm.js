@@ -41,7 +41,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
                              type="email"
                              placeholder="Your Email" />
             </Box>
-            <ArrowClickableButton p={2} onClick={submit} width={3/5} m='auto' variant='transparent' buttonText='Make It So'/>
+            <ArrowClickableButton p={2} onClick={submit} width={3/5} color='black' m='auto' variant='transparent' buttonText='Make It So'/>
         </Flex>
     )
 }
