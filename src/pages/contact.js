@@ -60,7 +60,7 @@ function Contact(siteData) {
     const { data } = useRouteData()
 
     return (
-        <FullHeightSection bg='mediumgray' flexDirection='column'>
+        <FullHeightSection bg='black' flexDirection='column'>
             <PageTitle color='lightgray'>{data.title}</PageTitle>
             <SocialRow color='white'
                        width={1}

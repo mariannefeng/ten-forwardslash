@@ -80,4 +80,8 @@ class Menu extends React.Component {
     }
 }
 
+Menu.defaultProps = {
+    bg: "black",
+}
+
 export default Menu

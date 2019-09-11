@@ -30,9 +30,9 @@ function Homepage() {
 
     const PrimaryHero = (
         <Box width={1} pb={[0,4]} >
-            <OverlayText color='blue' style={{fontSize: "10px"}} content={string_as_unicode_escape(MEASURE_OF_A_MAN)}>
+            <OverlayText color='blue' style={{fontSize: "10px"}} content={MEASURE_OF_A_MAN}>
                 <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
-                    <Box width={[1, 1 / 2]} pt={3} style={{zIndex: 3}}>
+                    <Box width={[1, 1 / 2]} pt={3}>
                         <FullHeightFlexContent
                             flexDirection='column'
                             justifyContent='center'>
@@ -52,7 +52,7 @@ function Homepage() {
                             </ButtonWrapper>
                         </FullHeightFlexContent>
                     </Box>
-                    <Flex alignItems='center' width={[0, 1 / 2]} style={{zIndex: 3}}>
+                    <Flex alignItems='center' width={[0, 1 / 2]}>
                         <Image
                             px={2}
                             mx='auto'
@@ -128,7 +128,7 @@ function Homepage() {
                 { Services }
             </Section>
 
-            <Section bg='darkerteal'>
+            <Section bg='green'>
                 { NewsletterSignup }
             </Section>
 

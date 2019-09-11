@@ -16,21 +16,31 @@ const BrandedSubHeading = styled(Heading)`
     font-family: 'Ubuntu Mono', monospace;
 `
 
+function string_as_unicode_escape(input) {
+    //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
+    var output = '';
+    for (var i = 0, l = input.length; i < l; i++)
+        output += '\\' + input.charCodeAt(i).toString(16);
+    return output;
+}
+
 //fixme: since changing to using psuedoelements, can't get the full script to work for measure of a man.
 //  figure out how to escape correctly. currently the escape funciton used turns it garbled, just tried it really quick
 const OverlayText = styled(Text)`
 position: relative;
 overflow: hidden;
+z-index: 1;
 &:after {
+    z-index: -1;
     position: absolute;
     top: 0;
     left: 0;
-    content: "${ props => props.content }";
+    content: "${ props => string_as_unicode_escape(props.content) }";
     overflow: hidden;
     text-align: justify;
     text-transform: uppercase;
     font-family: "OCR A Extended", monospace;
-    opacity: 0.3;    
+    opacity: ${ props => props.opacity ? props.opacity : "0.3" };    
 } 
 `
 
@@ -39,7 +49,7 @@ const Section = props => {
     let css = checkProps(props, {minHeight: '450px'})
 
     return < Flex
-        py = {[2, 4]}
+        py = {[1, 2]}
         css = {css}
         {...props}
     />
@@ -128,10 +138,10 @@ const PageTitle = props => <BrandedSubHeading {...props} alignSelf='center' font
 
 const PageHero = (props) => (
     <Section bg={props.bg} color={props.color}>
-        <OverlayText color='blue' content={props.overlay}>
+        <OverlayText color='blue' content={props.overlay} style={{margin: "auto"}}>
             <FlexContent flexDirection='column' px={4} flex={1} style={{position:'relative'}}>
-                <PageTitle>{props.title}</PageTitle>
-                <TextNoFirstMarginP fontSize={3} px={[4,5]}>
+                <PageTitle color='white'>{props.title}</PageTitle>
+                <TextNoFirstMarginP fontSize={3} px={[4,5]} color='white'>
                     <ReactMarkdown
                         source={props.blurb}
                         renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
