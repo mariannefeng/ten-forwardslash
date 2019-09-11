@@ -1,14 +1,14 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-import { Box, Flex, Heading, Image, Card, Text, Link } from 'rebass'
+import { Box, Flex, Image, Card, Text, Link } from 'rebass'
 
-import { Section, FlexContent, FullHeightFlexContent, ClickableButton, ClickableLink, BrandedMainHeading, BrandedSubHeading, ArrowClickableButton, OverlayText, PageTitle } from 'components/rebass';
+import { Section, FlexContent, FullHeightFlexContent, ClickableLink, BrandedMainHeading, BrandedSubHeading, ArrowClickableButton, OverlayText, PageSubtitle } from '../components/rebass';
 import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import ReactMarkdown from 'react-markdown'
 import MailingListForm from "../components/MailingListForm";
 import styled from "styled-components";
 
-import { MEASURE_OF_A_MAN, MARIANNE_TEST } from 'components/text-overlay-filler'
+import { MEASURE_OF_A_MAN } from '../components/text-overlay-filler'
 
 const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
@@ -16,21 +16,13 @@ const ButtonWrapper = styled(Box)`
    text-align: left 
 `
 
-function string_as_unicode_escape(input) {
-    //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
-    var output = '';
-    for (var i = 0, l = input.length; i < l; i++)
-        output += '\\' + input.charCodeAt(i).toString(16);
-    return output;
-}
-
 function Homepage() {
     const {data} = useRouteData()
 
 
     const PrimaryHero = (
         <Box width={1} pb={[0,4]} >
-            <OverlayText color='blue' style={{fontSize: "10px"}} content={MEASURE_OF_A_MAN}>
+            <OverlayText color='blue' overlayFontSize='10px' content={MEASURE_OF_A_MAN}>
                 <FlexContent flexWrap='wrap' ml={[1,3,'auto']}>
                     <Box width={[1, 1 / 2]} pt={3}>
                         <FullHeightFlexContent
@@ -78,7 +70,7 @@ function Homepage() {
     </FlexContent>)
 
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
-        <BrandedSubHeading m={4} color='darkgray' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
+        <BrandedSubHeading m={4} color='green' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
         <Flex flexWrap='wrap' justifyContent='space-around'>
             {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
             {data.blocks.map((block, i) => {
@@ -90,9 +82,11 @@ function Homepage() {
                         <Card width={1}
                               p={4}
                               my={4}
-                              bg='codebggray'>
+                              color={'white'}
+                              style={{backgroundImage: "linear-gradient(to top, rgba(65, 0, 255,0), rgba(65, 0, 255,0.5))"}}
+                        >
                             <BrandedMainHeading mb={4} fontSize={3}>{ block.name + ' /'}</BrandedMainHeading>
-                            <Text lineHeight={4 / 3} fontSize={2} fontWeight='400' fontFamily='sans'>{block.text}</Text>
+                            <Text lineHeight={4 / 3} fontSize={2} pb={3} fontWeight='400' fontFamily='sans'>{block.text}</Text>
                         </Card>
                     </ClickableLink>
                 )
@@ -102,7 +96,7 @@ function Homepage() {
 
     const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/2, 1/4]}>
 
-        <PageTitle color='black'>{data.ctaTwo}</PageTitle>
+        <PageSubtitle color='black'>{data.ctaTwo}</PageSubtitle>
 
         <MailchimpSubscribe url={url}
                             render={({subscribe, status, message}) => (
@@ -124,7 +118,7 @@ function Homepage() {
                 { ElevatorPitch }
             </Section>
 
-            <Section bg='white'>
+            <Section bg='black'>
                 { Services }
             </Section>
 

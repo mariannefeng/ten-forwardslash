@@ -11,11 +11,15 @@ const BrandedMainHeading = styled(Heading)`
     font-family: "OCR A Extended", monospace;
 `
 
+const PageTitle = props => <BrandedMainHeading {...props} textAlign='center' alignSelf='center' fontSize={[5,6]} mb={4} />
+
 const BrandedSubHeading = styled(Heading)`
     text-transform: uppercase;
     font-family: 'Ubuntu Mono', monospace;
     letter-spacing: 1.5px;
 `
+
+const PageSubtitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4} />
 
 function string_as_unicode_escape(input) {
     //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
@@ -32,6 +36,9 @@ position: relative;
 overflow: hidden;
 z-index: 1;
 &:after {
+    font-size: ${props => props.overlayFontSize ? props.overlayFontSize : '12px'};
+    word-wrap: break-word;
+    overflow-wrap: break-word;
     z-index: -1;
     position: absolute;
     top: 0;
@@ -134,26 +141,36 @@ const ArrowClickableButton = props => {
     )
 }
 
+const PageHero = (props) => {
+    let heroContent = (<FlexContent flexDirection='column' px={4} flex={1} style={{position: 'relative', height: "100%"}}
+                                    alignItems='center' justifyContent='center'>
+        <FlexContent flexDirection='column'>
+            <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} color='green'
+                                textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
+            <TextNoFirstMarginP fontSize={3} px={[4, 5]} color='white'>
+                <ReactMarkdown
+                    source={props.blurb}
+                    renderers={{link: (props) => <a href={props.href} target="_blank">{props.children}</a>}}
+                />
+            </TextNoFirstMarginP>
+        </FlexContent>
+    </FlexContent>);
+    if (props.overlay) {
+        return (<Section bg={props.bg} color={props.color}>
+            <OverlayText color='blue' content={props.overlay} mx='auto' mb={4} overlayFontSize={props.overlayFontSize}>
+                {heroContent}
+            </OverlayText>
+        </Section>)
+    }
+    return (<Section bg={props.bg} color={props.color}>
+        {heroContent}
+    </Section>)
+}
 
-const PageTitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4} />
-
-const PageHero = (props) => (
-    <Section bg={props.bg} color={props.color}>
-        <OverlayText color='blue' content={props.overlay} mx='auto' mb={3}>
-            <FlexContent flexDirection='column' px={4} flex={1} style={{position:'relative', height: "100%"}} alignItems='center' justifyContent='center'>
-                <FlexContent flexDirection='column'>
-                    <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} color='green' textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
-                    <TextNoFirstMarginP fontSize={3} px={[4,5]} color='white'>
-                        <ReactMarkdown
-                            source={props.blurb}
-                            renderers={{ link: (props) => <a href={props.href} target="_blank">{props.children}</a> }}
-                        />
-                    </TextNoFirstMarginP>
-                </FlexContent>
-            </FlexContent>
-        </OverlayText>
-    </Section>
-)
+PageHero.defaultProps = {
+    bg: 'black',
+    overlayFontSize: '16px',
+}
 
 function checkProps (props, css) {
     if (props.hasOwnProperty('css')) {
@@ -177,6 +194,7 @@ const ClickableLink = styled(Link)`
     color: ${colors.darkgray};
     :hover {
         color: ${colors.mediumgray};
+        text-decoration: none;
     }
 `
 
@@ -192,5 +210,5 @@ const PrettyInput = styled.input`
 
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
-    ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero,
+    ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle,
     BrandedMainHeading, BrandedSubHeading, OverlayText};

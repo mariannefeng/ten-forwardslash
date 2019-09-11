@@ -37,8 +37,8 @@ export const colors = {
     shadedgreen: '#00b47a',
     yellow: '#FEB300',
     blue: '#4100FF',
-    lessbrightblue: '#200085',
-    red: 'FF4230'
+    lessbrightblue: '#1b0063',
+    red: '#FF4230'
 
 }
 

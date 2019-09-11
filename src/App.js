@@ -27,6 +27,13 @@ const GlobalStyles = createGlobalStyle`
     input, select, textarea, button {
         font-family:inherit;
     }
+    a {
+        color: ${colors.yellow};
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 `
 
 function App(siteData) {
@@ -37,7 +44,7 @@ function App(siteData) {
             <Root>
                 <GlobalStyles/>
 
-                <Menu content={siteData.content} logo={siteData.logo}/>
+                <Menu content={siteData.content} logos={siteData.logos} theme='black'/>
 
                 <div>
                     <React.Suspense fallback={<em>Loading...</em>}>

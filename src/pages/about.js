@@ -1,10 +1,9 @@
 import React from 'react'
 import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
-import styled from "styled-components"
-import { Box, Flex, Heading, Image, Button, Card, Text } from 'rebass'
-import { MEASURE_OF_A_MAN, MARIANNE_TEST } from 'components/text-overlay-filler'
-import { Section, FlexContent, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, OverlayText } from 'components/rebass';
+import { Box, Flex, Heading, Image, Text } from 'rebass'
+import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
+import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, OverlayText, BrandedMainHeading, BrandedSubHeading } from 'components/rebass';
 
 const AboutHeader = props =>
     <Heading
@@ -14,6 +13,7 @@ const AboutHeader = props =>
         py={2}
         fontFamily='mono'
         textAlign='center'
+        color='red'
         />
 const AboutBlurb = props =>
     <TextNoFirstMarginP
@@ -26,11 +26,11 @@ const AboutBlurb = props =>
 function About() {
     const { data } = useRouteData()
     return (
-        <Section bg='black'>
-            <OverlayText color='blue' style={{fontSize: "10px", margin: "auto"}} content={MEASURE_OF_A_MAN}>
-                <FullHeightFlexContent  px={4} flex={1} mt={3} color='white'>
+        <Section bg='yellow'>
+
+                <FullHeightFlexContent  px={4} flex={1} mt={3} color='black'>
                     <div style={{display: "flex", flexDirection: "column"}}>
-                        <PageTitle color='minty'>{data.title}</PageTitle>
+                        <PageTitle color='black'>{`<${data.title}>`}</PageTitle>
                         <Flex>
                             <AboutHeader>our mission</AboutHeader>
                         </Flex>
@@ -46,7 +46,7 @@ function About() {
                         </Flex>
                         <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
 
-                        <PageTitle alignSelf='center' fontSize={5} my={4} color='minty'>{data.aboutTitle}</PageTitle>
+                        <PageTitle alignSelf='center' fontSize={5} my={4} color='black'>{`<${data.aboutTitle}>`}</PageTitle>
                         <Flex flexWrap='wrap' justifyContent='space-around'>
                             {/*todo: this works for only two, i realize we should prob handle board members
                                 differently w/ a different section*/}
@@ -63,8 +63,8 @@ function About() {
                                             css={{objectFit: 'contain', maxHeight: '150px'}}
                                             mb={3}
                                         />
-                                        <Heading mb={2} fontSize={4}>{teamMember.name}</Heading>
-                                        <Heading fontFamily='mono' mb={2} fontSize={3}>{teamMember.position}</Heading>
+                                        <BrandedSubHeading mb={2} fontSize={4}>{teamMember.name}</BrandedSubHeading>
+                                        <BrandedMainHeading color='red' fontFamily='mono' mb={2} fontSize={3}>{teamMember.position}</BrandedMainHeading>
                                         <Text fontSize={2}><ReactMarkdown source={teamMember.bio}/></Text>
                                     </Flex>
                                 )
@@ -72,7 +72,7 @@ function About() {
                         </Flex>
                     </div>
                 </FullHeightFlexContent>
-            </OverlayText>
+
         </Section>
     )
 }
