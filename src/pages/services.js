@@ -5,8 +5,8 @@ import styled from "styled-components"
 import { Flex, Heading } from 'rebass'
 
 import { colors } from '../theme'
-import { Section, FlexContent, TextNoFirstMarginP, PageHero, BrandedMainHeading, BrandedSubHeading } from 'components/rebass';
-import { TEN_FORWARD_STAMP } from 'components/text-overlay-filler'
+import { Section, FlexContent, TextNoFirstMarginP, PageHero, BrandedMainHeading, BrandedSubHeading } from '../components/rebass';
+import { TEN_FORWARD_STAMP } from '../components/text-overlay-filler'
 
 const SquareListWrapper = styled.div`
 ul {

@@ -67,7 +67,7 @@ function Contact(siteData) {
 
     return (
         <FullHeightSection bg='yellow' flexDirection='column'>
-                <PageTitle color='green'>{`<${data.title}>`}</PageTitle>
+                <PageTitle color='black'>{`<${data.title}>`}</PageTitle>
                 <SocialRow color='white'
                            width={1}
                            mb={[0, 2]}

@@ -54,6 +54,14 @@ class Menu extends React.Component {
                     background: 'yellow',
                 }
                 break;
+            case "green":
+                theme = {
+                    logoUrl: this.props.logos.black,
+                    navLink: 'black',
+                    borderColor: colors.black,
+                    background: 'green',
+                }
+                break;
         }
         return theme
     }
@@ -98,7 +106,7 @@ class Menu extends React.Component {
                     {this.state.showMobileMenu && this.props.content.map((c, i) => {
                             if (c.showInNav) {
                                 return (<Box key={i} css={{ textAlign: 'right' }} pb={3}>
-                                            <NavLink href={c.path} key={'desktopMenu' + i} color='green'>{c.label}</NavLink>
+                                            <NavLink href={c.path} key={'desktopMenu' + i} color={this.theme.navLink}>{c.label}</NavLink>
                                         </Box>)
                             }
                         }

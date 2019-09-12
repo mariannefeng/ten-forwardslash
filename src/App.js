@@ -37,7 +37,6 @@ const GlobalStyles = createGlobalStyle`
 `
 
 function App(siteData) {
-    console.log(siteData);
     //TODO: make mobile collapse/uncollapse menu work
     return (
         <ThemeProvider theme={theme}>

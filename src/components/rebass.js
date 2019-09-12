@@ -37,6 +37,7 @@ overflow: hidden;
 z-index: 1;
 &:after {
     font-size: ${props => props.overlayFontSize ? props.overlayFontSize : '12px'};
+    word-break: break-all;
     word-wrap: break-word;
     overflow-wrap: break-word;
     z-index: -1;
@@ -157,7 +158,7 @@ const PageHero = (props) => {
     </FlexContent>);
     if (props.overlay) {
         return (<Section bg={props.bg} color={props.color}>
-            <OverlayText color='blue' content={props.overlay} mx='auto' mb={4} overlayFontSize={props.overlayFontSize}>
+            <OverlayText color='blue' content={props.overlay} mx='auto' my={4} overlayFontSize={props.overlayFontSize}>
                 {heroContent}
             </OverlayText>
         </Section>)
@@ -169,7 +170,7 @@ const PageHero = (props) => {
 
 PageHero.defaultProps = {
     bg: 'black',
-    overlayFontSize: '16px',
+    overlayFontSize: '12px',
 }
 
 function checkProps (props, css) {
