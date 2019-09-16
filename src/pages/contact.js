@@ -6,13 +6,13 @@ import {
     FlexContent,
     FullHeightSection,
     OverlayText,
-    PageTitle
+    PageTitle, Section
 } from '../components/rebass';
 import styled from 'styled-components'
 import SimpleMap from "../components/SimpleMap"
 
 import theme, { colors } from '../theme'
-import {TEN_FORWARD_STAMP} from "../components/text-overlay-filler";
+import NewsletterSignup from "../components/NewsletterSignup";
 
 const ContactText = styled(Text)`
     a {
@@ -42,7 +42,7 @@ const SocialBox = props =>
         alignItems='center'
         css={{
             minHeight: '150px',
-            textAlign: 'left'
+            textAlign: 'left',
         }}
     />
 
@@ -66,7 +66,7 @@ function Contact(siteData) {
     const { data } = useRouteData()
 
     return (
-        <FullHeightSection bg='yellow' flexDirection='column'>
+        <FullHeightSection bg='white' flexDirection='column'>
                 <PageTitle color='black'>{`<${data.title}>`}</PageTitle>
                 <SocialRow color='white'
                            width={1}
@@ -115,6 +115,9 @@ function Contact(siteData) {
                     </ContactText>
                     <SimpleMap />
                 </FlexContent>
+                <Section bg='yellow'>
+                    <NewsletterSignup cta='want updates?'/>
+                </Section>
         </FullHeightSection>
     )
 }

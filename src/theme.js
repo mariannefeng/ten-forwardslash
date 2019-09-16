@@ -34,11 +34,12 @@ export const colors = {
     /// start kenzie branding colors
     black: '#111319',
     green: '#00FFBC',
-    shadedgreen: '#00b47a',
     yellow: '#FEB300',
     blue: '#4100FF',
-    lessbrightblue: '#1b0063',
-    red: '#FF4230'
+    red: '#FF4230',
+    // modified opacity
+    lightenedgreen: '#00FFBC35',
+    halfyellow: '#FEB30030',
 
 }
 

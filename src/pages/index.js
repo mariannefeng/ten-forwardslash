@@ -1,16 +1,12 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Box, Flex, Image, Card, Text, Link } from 'rebass'
-
 import { Section, FlexContent, FullHeightFlexContent, ClickableLink, BrandedMainHeading, BrandedSubHeading, ArrowClickableButton, OverlayText, PageSubtitle } from '../components/rebass';
-import MailchimpSubscribe from 'react-mailchimp-subscribe'
 import ReactMarkdown from 'react-markdown'
-import MailingListForm from "../components/MailingListForm";
+import NewsletterSignup from '../components/NewsletterSignup'
 import styled from "styled-components";
 
 import { MEASURE_OF_A_MAN } from '../components/text-overlay-filler'
-
-const url = "https://ten-forward.us19.list-manage.com/subscribe/post?u=1eff7db017d8a9a0f3bc2f547&amp;id=08a107d735";
 
 const ButtonWrapper = styled(Box)`
    text-align: left 
@@ -68,7 +64,12 @@ function Homepage() {
             <ReactMarkdown source={data.elevatorPitch}/>
         </Text>
     </FlexContent>)
-
+    const ServiceCard = styled(Card)`
+        background-image: linear-gradient(to top, rgba(65, 0, 255,0), rgba(65, 0, 255,0.5));
+        :hover {
+            background-image: linear-gradient(to top, rgba(65, 0, 255,0.1), rgba(65, 0, 255,0.6));
+        }
+    `
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
         <BrandedSubHeading m={4} color='green' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
         <Flex flexWrap='wrap' justifyContent='space-around'>
@@ -79,34 +80,20 @@ function Homepage() {
                         key={i}
                         href={block.path}
                         color='black'>
-                        <Card width={1}
+                        <ServiceCard width={1}
                               p={4}
                               my={4}
                               color={'white'}
-                              style={{backgroundImage: "linear-gradient(to top, rgba(65, 0, 255,0), rgba(65, 0, 255,0.5))"}}
                         >
                             <BrandedMainHeading mb={4} fontSize={3}>{ block.name + ' /'}</BrandedMainHeading>
                             <Text lineHeight={4 / 3} fontSize={2} pb={3} fontWeight='400' fontFamily='sans'>{block.text}</Text>
-                        </Card>
+                        </ServiceCard>
                     </ClickableLink>
                 )
             })}
         </Flex>
     </FlexContent>)
 
-    const NewsletterSignup = (<FullHeightFlexContent flexDirection='column' alignItems='center' width={[5/7, 1/2, 1/4]}>
-
-        <PageSubtitle color='black'>{data.ctaTwo}</PageSubtitle>
-
-        <MailchimpSubscribe url={url}
-                            render={({subscribe, status, message}) => (
-                                <MailingListForm
-                                    status={status}
-                                    message={message}
-                                    onValidated={formData => subscribe(formData)}
-                                />
-                            )}/>
-    </FullHeightFlexContent>)
 
     return (
         <div>
@@ -123,7 +110,7 @@ function Homepage() {
             </Section>
 
             <Section bg='yellow'>
-                { NewsletterSignup }
+                <NewsletterSignup cta={data.ctaTwo}/>
             </Section>
 
         </div>

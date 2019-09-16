@@ -26,7 +26,7 @@ function Donate() {
     const { data } = useRouteData()
 
     return (
-        <Section bg='orange'>
+        <Section bg='white'>
             <FlexContent color='black' flexDirection='column' mt={3}>
                 <PageTitle fontSize={[5,6]} textAlign='center'>{`<${data.title}>`}</PageTitle>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
