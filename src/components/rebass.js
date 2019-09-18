@@ -113,31 +113,31 @@ const ClickableButton = props => {
     />
 }
 
-const Slashes = props => {
-    // todo: add arrow to transition group, hide from ArrowClickableButton if hovered
-    return <TransitionGroup component={null}>
-        {props.hovered ?
-            [0.5, 0.75, 1].map(
-                    ({ opacity, index }) => (
-                        <CSSTransition
-                            timeout={500}
-                            classNames="fade"
-                            key={index}
-                        >
-                            <Text color={props.color} style={{marginLeft: "-4px", marginTop: "-1px", opacity: opacity, marginRight: index === 2 ? "-5px" : "0"}} fontFamily={'mono'}>/</Text>
-                        </CSSTransition>
-                    )
-                )
-        : null }
-            </TransitionGroup>
+/**
+ * Slashes will, if props.hovered is true, return ///> that have increasing opacity and a transition delay
+ * (for buttons)
+ */
+const Slashes = (props) =>  {
+    return (<TransitionGroup style={{display: 'flex'}}>
+                {props.hovered ? ['0.5', '0.65', '0.85', '1'].map((opacity, index) => (
+                    <CSSTransition
+                        key={index}
+                        timeout={500}
+                        classNames="fade"
+                    >
+                        <Text color={props.color} style={{marginLeft: index === 0 ? "3px" : "-2px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>{index == 3 ? '>' : '/'}</Text>
+                    </CSSTransition>
+                )) : <CSSTransition><Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: "1"}} fontFamily={'mono'}>{'>'}</Text></CSSTransition>}
+            </TransitionGroup>)
 }
+
 
 const ArrowClickableButton = props => {
     const [hovered, setHovered] = useState(false);
     const toggleHover = () => setHovered(!hovered);
     return (
         <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            <Text color={props.color} style={{"display": "flex"}}><span style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color} hovered={hovered} /><Text style={{marginLeft: "5px", marginTop: "-1px"}}>></Text></Text>
+            <Text color={props.color} style={{"display": "flex"}}><span style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color} hovered={hovered} /></Text>
         </ClickableButton>
     )
 }

@@ -5,7 +5,7 @@ import { Section, FlexContent, FullHeightFlexContent, ClickableLink, BrandedMain
 import ReactMarkdown from 'react-markdown'
 import NewsletterSignup from '../components/NewsletterSignup'
 import styled from "styled-components";
-
+import { colors } from "../theme"
 import { MEASURE_OF_A_MAN } from '../components/text-overlay-filler'
 
 const ButtonWrapper = styled(Box)`
@@ -65,13 +65,12 @@ function Homepage() {
         </Text>
     </FlexContent>)
     const ServiceCard = styled(Card)`
-        background-image: linear-gradient(to top, rgba(65, 0, 255,0), rgba(65, 0, 255,0.5));
-        :hover {
-            background-image: linear-gradient(to top, rgba(65, 0, 255,0.1), rgba(65, 0, 255,0.6));
+        :hover h2 {
+            color: ${colors.red};
         }
     `
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
-        <BrandedSubHeading m={4} color='green' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
+        <BrandedSubHeading m={4} color='black' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
         <Flex flexWrap='wrap' justifyContent='space-around'>
             {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
             {data.blocks.map((block, i) => {
@@ -83,7 +82,8 @@ function Homepage() {
                         <ServiceCard width={1}
                               p={4}
                               my={4}
-                              color={'white'}
+                              color='black'
+                              bg='lightgray'
                         >
                             <BrandedMainHeading mb={4} fontSize={3}>{ block.name + ' /'}</BrandedMainHeading>
                             <Text lineHeight={4 / 3} fontSize={2} pb={3} fontWeight='400' fontFamily='sans'>{block.text}</Text>
@@ -105,7 +105,7 @@ function Homepage() {
                 { ElevatorPitch }
             </Section>
 
-            <Section bg='black'>
+            <Section bg='white'>
                 { Services }
             </Section>
 

@@ -106,6 +106,7 @@ function Contact(siteData) {
                 <FlexContent
                     width={1}
                     px={0}
+                    mb={4}
                     flexDirection='column'
                     bg='lightgray'>
                     <ContactText fontSize={2} py={3} px={5} width={1} lineHeight={3/2}>

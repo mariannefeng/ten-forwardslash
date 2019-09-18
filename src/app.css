@@ -21,6 +21,7 @@ These classes come from CSSTransition component, found a article about it here:
     https://blog.logrocket.com/improve-your-ui-with-react-transition-group-999fa35f7cae/
 The code is super useful
     https://codesandbox.io/s/km4jyy4n0v?from-embed
+    https://reactcommunity.org/react-transition-group/transition-group
 
 */
 
@@ -30,29 +31,22 @@ The code is super useful
 
 .fade-enter-active {
     visibility: visible;
-    transition: all 250ms;
+    transition: all 50ms;
+    /*transition-delay: 50ms;*/
 }
-.fade-enter-active:nth-child(2) {
-    transition-delay: 150ms;
+.fade-enter-active:nth-child(3) {
+    transition-delay: 50ms;
 }
 
-.fade-enter-active:nth-child(3) {
-    transition-delay: 300ms;
+.fade-enter-active:nth-child(4) {
+    transition-delay: 100ms;
+}
+
+.fade-enter-active:nth-child(5) {
+    transition-delay: 150ms;
 }
 
 .fade-exit {
     opacity: 1;
-}
-
-.fade-exit-active {
-    opacity: 0;
-    transition: all 250ms;
-}
-
-.fade-exit-active:first-child {
-    transition-delay: 300ms;
-}
-
-.fade-exit-active:nth-child(2) {
-    transition-delay: 150ms;
+    visibility: hidden;
 }
