@@ -44,7 +44,7 @@ function App(siteData) {
 
                 <Menu content={siteData.content} logos={siteData.logos} theme='black'/>
 
-                <div>
+                <div style={{marginTop: "-1px"}}>
                     <React.Suspense fallback={<em>Loading...</em>}>
                         <Router>
                             <Dynamic path="dynamic"/>

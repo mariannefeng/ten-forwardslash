@@ -75,7 +75,7 @@ class Menu extends React.Component {
                 <Box bg={this.theme.background}>
                 <FlexContent
                     px={2}
-                    py={3}
+                    py={1}
                     alignItems='center'>
                     <Link href='/'>
                         <Image

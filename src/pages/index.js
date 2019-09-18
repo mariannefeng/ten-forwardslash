@@ -33,7 +33,7 @@ function Homepage() {
                             </BrandedMainHeading>
                             <Text fontSize={4} mb={4} fontWeight='400' pr={4}
                                      color='white'>{data.titleTagline}</Text>
-                            <ButtonWrapper pr={6} mb={[4, 0]}>
+                            <ButtonWrapper pr={[1,6]} mb={[4, 0]}>
                                 <Link href={data.ctaButton.ctaButtonLink}>
                                     <ArrowClickableButton variant='transparent' fontSize={3} color='orange' buttonText={data.ctaButton.ctaButtonText} />
                                 </Link>

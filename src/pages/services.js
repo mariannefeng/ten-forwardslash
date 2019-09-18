@@ -38,7 +38,7 @@ function Services() {
         <div>
             <PageHero bg='black' overlay={TEN_FORWARD_STAMP} color='white' title={data.title} blurb={data.servicesDesc}/>
             <Section bg='white'>
-                <FlexContent flexDirection='column' my={3} px={4} pt={4}>
+                <FlexContent flexDirection='column' my={3} px={[0,4]} pt={4}>
                     {data.serviceSections.map((service, i) => {
                         return (
                             <Flex color='black' key={i} p={[4, 5]} mb={4} mx={1} flexDirection='column'>

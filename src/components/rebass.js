@@ -143,12 +143,12 @@ const ArrowClickableButton = props => {
 }
 
 const PageHero = (props) => {
-    let heroContent = (<FlexContent flexDirection='column' px={4} flex={1} style={{position: 'relative', height: "100%"}}
+    let heroContent = (<FlexContent flexDirection='column' px={[2, 4]} flex={1} style={{position: 'relative', height: "100%"}}
                                     alignItems='center' justifyContent='center'>
         <FlexContent flexDirection='column'>
-            <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} color='green'
+            <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} pt={[2,0]} color='green'
                                 textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
-            <TextNoFirstMarginP fontSize={3} px={[4, 5]} color='white'>
+            <TextNoFirstMarginP fontSize={3} px={[2, 5]} color='white'>
                 <ReactMarkdown
                     source={props.blurb}
                     renderers={{link: (props) => <a href={props.href} target="_blank">{props.children}</a>}}
