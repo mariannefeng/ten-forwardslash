@@ -54,7 +54,7 @@ export default {
         title: siteConfig.title,
         description: siteConfig.description,
         content: siteConfig.content,
-        logo: siteConfig.logoUrl,
+        logos: siteConfig.logos,
         social: siteConfig.social
     }),
 

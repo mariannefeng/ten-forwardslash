@@ -26,12 +26,12 @@ function Donate() {
     const { data } = useRouteData()
 
     return (
-        <Section bg='darkishblue'>
-            <FlexContent color='white' flexDirection='column' mt={3}>
-                <PageTitle >{data.title}</PageTitle>
+        <Section bg='white'>
+            <FlexContent color='black' flexDirection='column' mt={3}>
+                <PageTitle fontSize={[5,6]} textAlign='center'>{`<${data.title}>`}</PageTitle>
                 <Flex flexWrap='wrap' justifyContent='space-around'>
                     <Flex  width={[1, 0.45]} p={2} flexDirection='column' justifyContent='space-between'>
-                        <TextNoFirstMarginP pt={3} pb={[2, 6]} fontSize={3}>
+                        <TextNoFirstMarginP pt={[0,3]} pb={[2, 6]} fontSize={3}>
                             <ReactMarkdown source={data.content} />
                         </TextNoFirstMarginP>
                         <Text pb={4} fontSize={2}>

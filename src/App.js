@@ -8,14 +8,11 @@ import { Router } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
-import 'fonts.css';
+import 'app.css';
 
 // Any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
-// todo: load the fonts we want in here as well
-//font-family: 'Ubuntu Mono', monospace;
-// font-family: 'Nunito Sans', sans-serif;
 const GlobalStyles = createGlobalStyle`
     html, body, div#root {
         height: 100%;
@@ -30,18 +27,24 @@ const GlobalStyles = createGlobalStyle`
     input, select, textarea, button {
         font-family:inherit;
     }
+    a {
+        color: ${colors.yellow};
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 `
 
 function App(siteData) {
-    //TODO: make mobile collapse/uncollapse menu work
     return (
         <ThemeProvider theme={theme}>
             <Root>
                 <GlobalStyles/>
 
-                <Menu content={siteData.content} logo={siteData.logo}/>
+                <Menu content={siteData.content} logos={siteData.logos} theme='black'/>
 
-                <div>
+                <div style={{marginTop: "-1px"}}>
                     <React.Suspense fallback={<em>Loading...</em>}>
                         <Router>
                             <Dynamic path="dynamic"/>

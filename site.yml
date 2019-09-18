@@ -6,7 +6,11 @@ content:
   - { path: /donate, key: donate, label: Donate, showInNav: true}
   - { path: /credits, key: credits, label: Credits, showInNav: false}
 description: Ten-Forward is a small nonprofit with big dreams
-logoUrl: https://peaceful-gates-58e765.netlify.com/images/10F_Logo_Full_Black.png
+logos:
+  white: /images/logos/10F_Logo_Full_White.png
+  black: /images/logos/10F_Logo_Full_Black.png
+  yellow: /images/logos/10F_Logo_Full_Yellow.png
+  green: /images/logos/10F_Logo_Full_Green.png
 social:
   insta: { url: 'https://www.instagram.com/10forwardslash/', faIcon: 'instagram'}
   linkedin: { url: 'https://www.linkedin.com/company/ten-forward', faIcon: 'linkedin-in'}

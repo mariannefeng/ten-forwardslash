@@ -15,3 +15,38 @@
     url("//db.onlinewebfonts.com/t/971c473a19b6bba1059ba6add6af78d7.ttf") format("truetype"),
     url("//db.onlinewebfonts.com/t/971c473a19b6bba1059ba6add6af78d7.svg#OCR A Extended") format("svg");
 }
+
+/*
+These classes come from CSSTransition component, found a article about it here:
+    https://blog.logrocket.com/improve-your-ui-with-react-transition-group-999fa35f7cae/
+The code is super useful
+    https://codesandbox.io/s/km4jyy4n0v?from-embed
+    https://reactcommunity.org/react-transition-group/transition-group
+
+*/
+
+.fade-enter {
+    visibility: hidden;
+}
+
+.fade-enter-active {
+    visibility: visible;
+    transition: all 50ms;
+    /*transition-delay: 50ms;*/
+}
+.fade-enter-active:nth-child(3) {
+    transition-delay: 50ms;
+}
+
+.fade-enter-active:nth-child(4) {
+    transition-delay: 100ms;
+}
+
+.fade-enter-active:nth-child(5) {
+    transition-delay: 150ms;
+}
+
+.fade-exit {
+    opacity: 1;
+    visibility: hidden;
+}

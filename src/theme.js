@@ -3,7 +3,7 @@
 // colors from https://palx.jxnblk.com/FCB606
 export const colors = {
     transparent: 'transparent',
-    yellow: '#F7C331',
+    // yellow: '#F7C331',
     orange: '#FCB606',
     brightorange: '#fcb206',
     mediumorange: '#fcc33e',
@@ -29,7 +29,18 @@ export const colors = {
     darkblue: '#026178',
     darkishblue: '#0386a6',
     brightpurple: '#a105e3',
-    lessintensepurple: '#8d04c8'
+    lessintensepurple: '#8d04c8',
+
+    /// start kenzie branding colors
+    black: '#111319',
+    green: '#00FFBC',
+    yellow: '#FEB300',
+    blue: '#4100FF',
+    red: '#FF4230',
+    // modified opacity
+    lightenedgreen: '#00FFBC35',
+    halfyellow: '#FEB30030',
+
 }
 
 export default {
@@ -58,9 +69,16 @@ export default {
             '&:hover': {
                 backgroundColor: colors.mediumorange
             },
-            '&:after': {
-                content: '>'
-            }
+        },
+        accentBlack: {
+            fontWeight: 'normal',
+            fontFamily: '"Ubuntu Mono", monospace',
+            textTransform: 'uppercase',
+            backgroundColor: colors.lightgray,
+            color: colors.white,
+            '&:hover': {
+                backgroundColor: colors.darkgray,
+            },
         },
         transparent: {
             fontWeight: 'normal',

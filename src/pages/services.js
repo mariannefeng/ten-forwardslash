@@ -5,7 +5,8 @@ import styled from "styled-components"
 import { Flex, Heading } from 'rebass'
 
 import { colors } from '../theme'
-import { Section, FlexContent, TextNoFirstMarginP, PageHero } from 'components/rebass';
+import { Section, FlexContent, TextNoFirstMarginP, PageHero, BrandedMainHeading, BrandedSubHeading } from '../components/rebass';
+import { TEN_FORWARD_STAMP } from '../components/text-overlay-filler'
 
 const SquareListWrapper = styled.div`
 ul {
@@ -23,19 +24,28 @@ a {
 }
 `
 
+const ServiceSection = styled.div`
+    border-left: 1rem solid ${colors.green};
+    padding-left: 2rem;
+    padding-bottom: 5px;
+    margin-bottom: 1rem;
+`
+
 function Services() {
     const { data } = useRouteData()
 
     return (
         <div>
-            <PageHero bg='brightorange' color='white' title={data.title} blurb={data.servicesDesc}/>
+            <PageHero bg='black' overlay={TEN_FORWARD_STAMP} color='white' title={data.title} blurb={data.servicesDesc}/>
             <Section bg='white'>
-                <FlexContent flexDirection='column' my={3} px={4} pt={4}>
+                <FlexContent flexDirection='column' my={3} px={[0,4]} pt={4}>
                     {data.serviceSections.map((service, i) => {
                         return (
-                            <Flex bg='anotherblue' color='white' key={i} p={[4, 5]} mb={4} mx={1} flexDirection='column'>
-                                <Heading fontSize={4} mb={2} id={service.anchorId}>{service.name}</Heading>
-                                <Heading fontSize={2} fontFamily='mono' mb={3}>{service.tagline}</Heading>
+                            <Flex color='black' key={i} p={[4, 5]} mb={4} mx={1} flexDirection='column'>
+                                <ServiceSection>
+                                    <BrandedMainHeading fontSize={[5, 6]} mb={3} id={service.anchorId}>{service.name}</BrandedMainHeading>
+                                    <BrandedSubHeading fontSize={2} fontFamily='mono'>{service.tagline}</BrandedSubHeading>
+                                </ServiceSection>
                                 <TextNoFirstMarginP fontSize={2}><SquareListWrapper><ReactMarkdown source={service.content}/></SquareListWrapper></TextNoFirstMarginP>
                             </Flex>
                         )
