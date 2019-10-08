@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
-import { Box, Flex, Image } from 'rebass'
+import { Box, Image } from 'rebass'
 
 import { PageHero, BrandedSubHeading, BrandedMainHeading, FlexContent } from '../components/rebass';
 import { THE_OUTCAST } from '../components/text-overlay-filler'
