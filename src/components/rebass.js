@@ -125,9 +125,9 @@ const Slashes = (props) =>  {
                         timeout={500}
                         classNames="fade"
                     >
-                        <Text color={props.color} style={{marginLeft: index === 0 ? "3px" : "-2px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>{index == 3 ? '>' : '/'}</Text>
+                        <Text color={props.color} style={{marginLeft: index === 0 ? "3px" : "-2px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>{index === 3 ? '>' : '/'}</Text>
                     </CSSTransition>
-                )) : <CSSTransition><Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: "1"}} fontFamily={'mono'}>{'>'}</Text></CSSTransition>}
+                )) : <CSSTransition timeout={0}><Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: "1"}} fontFamily={'mono'}>{'>'}</Text></CSSTransition>}
             </TransitionGroup>)
 }
 
