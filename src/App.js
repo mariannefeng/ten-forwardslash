@@ -53,7 +53,7 @@ function App(siteData) {
                     </React.Suspense>
                 </div>
 
-                <Footer social={siteData.social}/>
+                <Footer social={siteData.social} do={siteData.digitalOcean}/>
             </Root>
         </ThemeProvider>
     )
