@@ -3,7 +3,7 @@ import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
 import { Box, Flex, Heading, Image, Text } from 'rebass'
 import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
-import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading } from 'components/rebass';
+import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading, EmailLink } from 'components/rebass';
 import styled from "styled-components";
 import {colors} from "../theme";
 
@@ -88,6 +88,21 @@ function About() {
                                 )
                             })}
                         </Flex>
+
+                        <PageTitle alignSelf='center' fontSize={5} my={4} color='black'>{'<the board>'}</PageTitle>
+                        <Flex>
+                            {data.board.map((boardMember, i) => {
+                                return (
+                                <Founder>
+                                    <BrandedSubHeading mb={2} fontSize={4}>{boardMember.name}</BrandedSubHeading>
+                                    <BrandedMainHeading fontFamily='mono' mb={0} fontSize={3}>{boardMember.position}</BrandedMainHeading>
+                                </Founder>
+                                )
+                            })}
+                        </Flex>
+                        <Box my={[3]}>
+                            <Text textAlign='center'>Wanna chat? Send an email to <EmailLink fontFamily='mono' fontSize={2} width={1}><a href='mailto:board@ten-forward.com'><i className={`fas fa-envelope`}></i>board@ten-forward.com</a></EmailLink></Text>
+                        </Box>
                     </div>
                 </FullHeightFlexContent>
 

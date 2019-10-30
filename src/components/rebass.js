@@ -209,7 +209,21 @@ const PrettyInput = styled.input`
     }
 `
 
+const EmailLink = styled(Text)`
+    a {
+        color: ${colors.darkgray};
+    }
+    
+    a:hover {
+        color: ${colors.mediumgray}
+    }
+    
+    a i.fa-envelope {
+        padding: 5px;
+    }
+`
+
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
     ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle,
-    BrandedMainHeading, BrandedSubHeading, OverlayText};
+    BrandedMainHeading, BrandedSubHeading, OverlayText, EmailLink};
