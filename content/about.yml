@@ -47,3 +47,12 @@ team:
     image: /images/uploads/max.png
     name: Jessi Shank
     position: Co-founder
+board:
+  - name: Audry Bernal
+    position: President
+  - name: Jessi Shank
+    position: Vice President
+  - name: Alexis Petznick
+    position: Treasurer
+  - name: Jenn Fritschy
+    position: Secretary
