@@ -11,6 +11,7 @@ logos:
   black: /images/logos/10F_Logo_Full_Black.png
   yellow: /images/logos/10F_Logo_Full_Yellow.png
   green: /images/logos/10F_Logo_Full_Green.png
+digitalOcean: { url: 'https://digitalocean.com', imgUrl: '/images/uploads/DO_Logo_icon_black.png'}
 social:
   insta: { url: 'https://www.instagram.com/10forwardslash/', faIcon: 'instagram'}
   linkedin: { url: 'https://www.linkedin.com/company/ten-forward', faIcon: 'linkedin-in'}

@@ -55,7 +55,8 @@ export default {
         description: siteConfig.description,
         content: siteConfig.content,
         logos: siteConfig.logos,
-        social: siteConfig.social
+        social: siteConfig.social,
+        digitalOcean: siteConfig.digitalOcean
     }),
 
     getRoutes: async () => {
