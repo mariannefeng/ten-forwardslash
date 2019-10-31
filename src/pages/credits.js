@@ -21,7 +21,7 @@ function Credits() {
                     blurb={data.content}
                     overlayFontSize='10px'/>
                 <Box bg='white' py={3} >
-                    <BrandedMainHeading fontSize={5} textAlign='center'>&lt;aminals&gt;</BrandedMainHeading>
+                    <BrandedMainHeading fontSize={5} textAlign='center'>&lt;animals&gt;</BrandedMainHeading>
                     <FlexContent width={1} py={3} flexDirection={['column', 'row']} justifyContent='space-between'>
                         {[meesh, gandalf, max].map((animal, i) => {
                             return (

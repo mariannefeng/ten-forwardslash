@@ -55,6 +55,14 @@ collections:
               - {label: Position, name: position, widget: string}
               - {label: Image, name: image, widget: image}
               - {label: Biography, name: bio, widget: markdown}
+          - label: Board
+            name: board
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Image, name: image, widget: image, required: false}
+              - {label: Biography, name: bio, widget: markdown, required: false}
       - label: "Services Page"
         name: "services"
         file: "content/services.yml"
