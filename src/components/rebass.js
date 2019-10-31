@@ -142,6 +142,13 @@ const ArrowClickableButton = props => {
     )
 }
 
+const Email = (props) => {
+    return (<GrayLink fontFamily='mono'
+                      fontSize={2}>
+        <a href={`mailto:${props.mailto}`}>
+            <i className={`fas fa-envelope`}></i>{props.mailto}</a></GrayLink>)
+}
+
 const PageHero = (props) => {
     let heroContent = (<FlexContent flexDirection='column' px={[2, 4]} flex={1} style={{position: 'relative', height: "100%"}}
                                     alignItems='center' justifyContent='center'>
@@ -209,7 +216,21 @@ const PrettyInput = styled.input`
     }
 `
 
+const GrayLink = styled(Text)`
+    a {
+        color: ${colors.darkgray};
+    }
+    
+    a:hover {
+        color: ${colors.mediumgray}
+    }
+    
+    a i.fa-envelope {
+        padding: 5px;
+    }
+`
+
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
-    ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle,
-    BrandedMainHeading, BrandedSubHeading, OverlayText};
+    ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle, Email,
+    BrandedMainHeading, BrandedSubHeading, OverlayText, GrayLink};
