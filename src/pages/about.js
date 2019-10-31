@@ -3,9 +3,9 @@ import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
 import { Box, Flex, Heading, Image, Text } from 'rebass'
 import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
-import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading } from 'components/rebass';
+import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading, GrayLink, Email} from 'components/rebass';
 import styled from "styled-components";
-import {colors} from "../theme";
+import theme, {colors} from "../theme";
 
 const ValuesHeader = styled(BrandedSubHeading)`
     border-left: 0.5rem solid ${colors.green};
@@ -28,9 +28,12 @@ const AboutBlurb = props =>
         fontSize={3}
         />
 
-const Founder = styled.div`
+const Founder = styled(Box)`
     border-left: 0.5rem solid ${colors.green};
     padding: 5px 1rem;
+    @media (max-width: ${theme.breakpoints[0]}) {
+        min-height: 4rem;
+    }
 `
 
 function About() {
@@ -87,6 +90,37 @@ function About() {
                                     </Flex>
                                 )
                             })}
+                        </Flex>
+
+                        <PageTitle alignSelf='center' fontSize={5} my={4} color='black'>{'<the board>'}</PageTitle>
+                        <Flex flexWrap='wrap'>
+                            {data.board.map((boardMember, i) => {
+                                return (
+                                <Founder width={[1, 1/2, 1/4]}
+                                         my={[1, 1, 2]}
+                                         px='.5rem !important'
+                                         css={{
+                                             borderLeft: `0.3rem solid ${colors.green}`
+                                         }}>
+                                    <Flex flexWrap='wrap'
+                                          alignItems={['center', 'stretch']}
+                                          css={{
+                                            height: '100%'
+                                        }}>
+                                        <Box width={[1/2, 1]}>
+                                            <BrandedSubHeading mb={2} fontSize={4} width={1}>{boardMember.name}</BrandedSubHeading>
+                                        </Box>
+                                        <Box width={[1/2, 1]}>
+                                            <BrandedMainHeading textAlign={['right', 'left']} fontFamily='mono' mb={0} fontSize={3} width={1}>{boardMember.position}</BrandedMainHeading>
+                                        </Box>
+                                    </Flex>
+                                </Founder>
+                                )
+                            })}
+                        </Flex>
+                        <Flex my={[3]} alignItems='center' justifyContent='center' flexWrap='wrap'>
+                            <Text css={{whiteSpace: 'nowrap'}} width={[1, 'auto']} textAlign='center'>Wanna chat? Send an email to </Text>
+                            <Email width={[1, 'auto']} mailto='board@ten-forward.com'/>
                         </Flex>
                     </div>
                 </FullHeightFlexContent>
