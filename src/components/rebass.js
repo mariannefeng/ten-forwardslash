@@ -137,7 +137,7 @@ const ArrowClickableButton = props => {
     const toggleHover = () => setHovered(!hovered);
     return (
         <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            <Text color={props.color} style={{"display": "flex"}}><span style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color} hovered={hovered} /></Text>
+            <Text color={props.color} fontSize={props.fontSize} style={{"display": "flex"}}><span style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color} hovered={hovered} /></Text>
         </ClickableButton>
     )
 }
