@@ -6,7 +6,7 @@ import {
     FlexContent,
     FullHeightSection,
     OverlayText,
-    PageTitle, Section, EmailLink
+    PageTitle, Section, Email, GrayLink
 } from '../components/rebass';
 import styled from 'styled-components'
 import SimpleMap from "../components/SimpleMap"
@@ -64,26 +64,22 @@ function Contact(siteData) {
 
                     <SocialBox>
                         <Text>{data.intro}</Text>
-                        <EmailLink fontFamily='mono' fontSize={2} width={1}>
-                            <a href='mailto:info@ten-forward.com'>
-                                <Text textAlign='center'><i className={`fas fa-envelope`}></i>info@ten-forward.com</Text>
-                            </a>
-                        </EmailLink>
+                        <Email mailto='info@ten-forward.com'/>
                     </SocialBox>
 
                     <SocialBox>
                         <Text>More of a social creature? Give us a shout on:</Text>
                         <Flex justifyContent='space-between' width={1/2}>
-                            <EmailLink fontSize={2}>
+                            <GrayLink fontSize={2}>
                                 <Link href={`${siteData.social['insta'].url}`} target='_blank'>
                                     <i className={`fab fa-${siteData.social['insta'].faIcon} fa-lg`}></i>
                                 </Link>
-                            </EmailLink>
-                            <EmailLink fontSize={2}>
+                            </GrayLink>
+                            <GrayLink fontSize={2}>
                                 <Link href={`${siteData.social['twitter'].url}`} target='_blank'>
                                     <i className={`fab fa-${siteData.social['twitter'].faIcon} fa-lg`}></i>
                                 </Link>
-                            </EmailLink>
+                            </GrayLink>
                         </Flex>
                     </SocialBox>
 
@@ -95,11 +91,11 @@ function Contact(siteData) {
                     mb={4}
                     flexDirection='column'
                     bg='lightgray'>
-                    <EmailLink fontSize={2} py={3} px={5} width={1} lineHeight={3/2}>
+                    <GrayLink fontSize={2} py={3} px={5} width={1} lineHeight={3/2}>
                         <ReactMarkdown
                             source={data.footer}
                             renderers={{link: LinkRenderer}}/>
-                    </EmailLink>
+                    </GrayLink>
                     <SimpleMap />
                 </FlexContent>
                 <Section bg='yellow'>
