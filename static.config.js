@@ -46,6 +46,17 @@ function getPageFields() {
     return getFields()
 }
 
+//script for pushing to google analytics when not running locally 
+const gaScript = `
+var host = window.location.hostname;
+if(host !== "localhost") {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125803686-1');
+}
+`
 
 export default {
 
@@ -96,6 +107,8 @@ export default {
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <title>{siteConfig.titleHome}</title>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossOrigin="anonymous" />
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125803686-1"></script>
+            <script dangerouslySetInnerHTML={{__html: gaScript}}></script>
         </Head>
         <Body>
         {children}
