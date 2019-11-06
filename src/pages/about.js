@@ -72,16 +72,18 @@ function About() {
                             {data.team.map((teamMember, i) => {
                                 return (
                                     <Flex width={[1, 0.45]} key={i} p={2} flexDirection='column'>
-                                        <Image
-                                            alignSelf='center'
-                                            mx='auto'
-                                            src={teamMember.image}
-                                            width={[3/4, 2/3, 1/2]}
-                                            height={['150px', '250px']}
-                                            borderRadius={8}
-                                            css={{objectFit: 'contain', maxHeight: '150px'}}
-                                            mb={3}
-                                        />
+                                        <Box marginRight={4}
+                                             marginBottom={3}
+                                             marginTop={4}>
+                                            <Image
+                                                alignSelf='center'
+                                                mx='auto'
+                                                src={teamMember.image}
+                                                width={1}
+                                                borderRadius={8}
+                                                css={{objectFit: 'contain'}}
+                                            />
+                                        </Box>
                                         <Founder>
                                             <BrandedSubHeading mb={2} fontSize={4}>{teamMember.name}</BrandedSubHeading>
                                             <BrandedMainHeading fontFamily='mono' mb={0} fontSize={3}>{teamMember.position}</BrandedMainHeading>
