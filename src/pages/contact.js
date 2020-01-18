@@ -68,6 +68,7 @@ function Contact(siteData) {
                             data-netlify='true'
                             name='contact'
                             py={3}>
+                            <input type="hidden" name="form-name" value="contact" />
                             <Flex mb={2}
                                   justifyContent='space-between'
                                   flexWrap='wrap'>
