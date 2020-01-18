@@ -99,6 +99,10 @@ function Contact(siteData) {
                             <Text>or shoot us an email at: </Text>
                             <Email mailto='info@ten-forward.com'/>
                         </Flex>
+                        <form netlify name="sad">
+                            <input type="text" name="name2"/>
+                            <button type="submit">submit</button>
+                        </form>
                     </FlexContent>
 
                 <FlexContent
