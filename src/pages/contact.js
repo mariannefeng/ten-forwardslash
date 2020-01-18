@@ -67,6 +67,7 @@ function Contact(siteData) {
                             as='form'
                             data-netlify='true'
                             name='contact'
+                            method='POST'
                             py={3}>
                             <input type="hidden" name="form-name" value="contact" />
                             <Flex mb={2}
