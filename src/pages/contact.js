@@ -1,12 +1,20 @@
 import React from 'react'
 import { useRouteData, withSiteData } from 'react-static'
 import ReactMarkdown from 'react-markdown'
-import { Heading, Box, Flex, Text, Link } from 'rebass'
+import { Heading, Box, Flex, Text, Link, Button } from 'rebass'
+
+import {
+    Label,
+    Input,
+    Select,
+    Textarea,
+} from '@rebass/forms/styled-components'
+
 import {
     FlexContent,
     FullHeightSection,
     OverlayText,
-    PageTitle, Section, Email, GrayLink
+    PageTitle, Section, Email, GrayLink, ArrowClickableButton
 } from '../components/rebass';
 import styled from 'styled-components'
 import SimpleMap from "../components/SimpleMap"
@@ -19,9 +27,8 @@ const SocialBox = props =>
         {...props}
         py={3}
         px={5}
-        bg='lightgray'
         color='darkgray'
-        width={[1, 1/2]}
+        width={[1]}
         mb={[2, 0]}
         flexDirection='column'
         justifyContent='space-evenly'
@@ -31,18 +38,6 @@ const SocialBox = props =>
             textAlign: 'left',
         }}
     />
-
-const SocialRow = styled(FlexContent)`
-    @media (min-width: ${theme.breakpoints[0]}) {
-       div:first-child {
-            margin-right: 4px;
-       }
-    
-        div:last-child {
-            margin-left: 4px;    
-        } 
-    }   
-`
 
 function LinkRenderer(props) {
     return <a href={props.href} target="_blank">{props.children}</a>
@@ -54,44 +49,64 @@ function Contact(siteData) {
     return (
         <Section bg='white' flexDirection='column'>
                 <PageTitle color='black'  mt={3} >{`<${data.title}>`}</PageTitle>
-                <SocialRow color='white'
-                           width={1}
-                           mb={[0, 2]}
-                           px={0}
-                           flexDirection={['column', 'row']}
-                           justifyContent='space-evenly'
-                           alignItems='center'>
-
-                    <SocialBox>
+                    <FlexContent
+                        py={3}
+                        px={[3, 5]}
+                        color='darkgray'
+                        width={[1]}
+                        mb={[2, 0]}
+                        flexDirection='column'
+                        justifyContent='space-evenly'
+                        alignItems='center'
+                        css={{
+                            minHeight: '150px',
+                            textAlign: 'left',
+                        }}>
                         <Text>{data.intro}</Text>
-                        <Email mailto='info@ten-forward.com'/>
-                    </SocialBox>
+                        <Box width={1}
+                            as='form'
+                            data-netlify='true'
+                            onSubmit={e => e.preventDefault()}
+                            py={3}>
+                            <Flex mb={2}
+                                  justifyContent='space-between'
+                                  flexWrap='wrap'>
+                                <Box width={[1, .48]}>
+                                    <Label htmlFor='name'>Name</Label>
+                                    <Input id='name' name='name'/>
+                                </Box>
+                                <Box width={[1, .48]}>
+                                    <Label htmlFor='email'>Email</Label>
+                                    <Input id='email' name='email'/>
+                                </Box>
+                            </Flex>
+                            <Flex flexDirection='column'>
+                                <Box my={[0, 1]}>
+                                    <Label htmlFor='message'>Message</Label>
+                                    <Textarea id='message' name='message'/>
+                                </Box>
+                                <Box mb={[4, 0]} width={1} textAlign='right'>
+                                    <ArrowClickableButton variant='transparent'
+                                                          color='black'
+                                                          type='submit'
+                                                          width={[1/4, 1/5]}
+                                                          buttonText='submit'/>
+                                </Box>
+                            </Flex>
+                        </Box>
 
-                    <SocialBox>
-                        <Text>More of a social creature? Give us a shout on:</Text>
-                        <Flex justifyContent='space-between' width={1/2}>
-                            <GrayLink fontSize={2}>
-                                <Link href={`${siteData.social['insta'].url}`} target='_blank'>
-                                    <i className={`fab fa-${siteData.social['insta'].faIcon} fa-lg`}></i>
-                                </Link>
-                            </GrayLink>
-                            <GrayLink fontSize={2}>
-                                <Link href={`${siteData.social['twitter'].url}`} target='_blank'>
-                                    <i className={`fab fa-${siteData.social['twitter'].faIcon} fa-lg`}></i>
-                                </Link>
-                            </GrayLink>
+                        <Flex width={[1, 3/4, 1/2]} fontSize={[2]}>
+                            <Text>or shoot us an email at: </Text>
+                            <Email mailto='info@ten-forward.com'/>
                         </Flex>
-                    </SocialBox>
-
-                </SocialRow>
+                    </FlexContent>
 
                 <FlexContent
                     width={1}
                     px={0}
                     mb={4}
-                    flexDirection='column'
-                    bg='lightgray'>
-                    <GrayLink fontSize={2} py={3} px={5} width={1} lineHeight={3/2}>
+                    flexDirection='column'>
+                    <GrayLink fontSize={2} py={3} px={[3, 5]} width={1} lineHeight={3/2}>
                         <ReactMarkdown
                             source={data.footer}
                             renderers={{link: LinkRenderer}}/>

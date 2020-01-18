@@ -58,6 +58,25 @@ export default {
         submono: '"Ubuntu Mono", monospace',
         mono: '"OCR A Extended", monospace',
     },
+    forms: {
+        input: {
+            borderRadius: 5,
+            ':focus' : {
+                outline: `1px solid ${colors.yellow}`
+            }
+        },
+        textarea: {
+            borderRadius: 5,
+            ':focus' : {
+                outline: `1px solid ${colors.yellow}`
+            }
+        },
+        label: {
+            fontSize: 1,
+            fontFamily: '"Ubuntu Mono", monospace',
+            textTransform: 'uppercase'
+        },
+    },
     buttons: {
         // todo: we need to make this accent button have no background and have the >>>
         accent: {

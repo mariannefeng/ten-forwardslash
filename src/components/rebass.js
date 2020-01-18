@@ -144,7 +144,7 @@ const ArrowClickableButton = props => {
 
 const Email = (props) => {
     return (<GrayLink fontFamily='mono'
-                      fontSize={2}>
+                      fontSize={[1, 2]}>
         <a href={`mailto:${props.mailto}`}>
             <i className={`fas fa-envelope`}></i>{props.mailto}</a></GrayLink>)
 }

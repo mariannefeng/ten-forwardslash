@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "@rebass/forms": "^4.0.6",
     "axios": "^0.18.0",
     "dotenv": "^8.0.0",
     "dotenv-cli": "^2.0.0",
@@ -28,7 +29,7 @@
     "react-static-plugin-source-filesystem": "^7.0.0",
     "react-static-plugin-styled-components": "^7.0.10",
     "react-transition-group": "^4.2.2",
-    "rebass": "^3.1.0",
+    "rebass": "^3.2.2",
     "styled-components": "^4.2.0"
   },
   "resolutions": {
