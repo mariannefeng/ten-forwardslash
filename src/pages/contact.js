@@ -66,7 +66,7 @@ function Contact(siteData) {
                         <Box width={1}
                             as='form'
                             data-netlify='true'
-                            onSubmit={e => e.preventDefault()}
+                            name='contact'
                             py={3}>
                             <Flex mb={2}
                                   justifyContent='space-between'
