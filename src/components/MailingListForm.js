@@ -18,15 +18,19 @@ const MailingListForm = ({ status, message, onValidated }) => {
         });
     }
 
+    const checkIfSubmit = (e) => {
+        if (e.keyCode === 13) {
+            submit()
+        }
+    }
+
     //default is darkblue
     var msgColor
 
     switch(status) {
         case 'error':
-            msgColor = 'white'
-            break
         case 'success':
-            msgColor = 'brightgreen'
+            msgColor = 'white'
             break
         case 'sending':
         default:
@@ -41,6 +45,7 @@ const MailingListForm = ({ status, message, onValidated }) => {
             <Box mb={4} >
                 <PrettyInput ref={node => (email = node)}
                              type="email"
+                             onKeyDown={(e) => checkIfSubmit(e) }
                              placeholder="Your Email" />
             </Box>
             <ArrowClickableButton p={2} onClick={submit} width={3/5} color='black' m='auto' variant='transparent' buttonText='Make It So'/>
