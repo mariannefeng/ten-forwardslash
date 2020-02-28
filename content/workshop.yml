@@ -1,0 +1,26 @@
+title: Wordpress Workshop with 501 Commons
+overview:
+  title: The overview
+  description: >-
+    In November 2019, Ten-Forward presented a 2-hour workshop as a part of 501 Commons’ 501 Talks Tech series on selecting WordPress plugins. We developed this workshop with an understanding that many nonprofits use WordPress for their sites, and most are extended with various plugins - of which there are over 50,000 overwhelming options.
+
+  firstSession:
+    description: The first hour of this session focused on understanding use cases and requirements as a function in plugin selection, as well as some common research practices to employ when deciding between ones with similar functionality. By talking through the plugin selection process, we helped nonprofit employees to understand the value of use cases in requirements - a skill not limited to plugins. The second hour became a working session where the attendees could ask us specific questions related to their WordPress installations.
+    slideScreenshots:
+      - image: /images/uploads/Plugins_When.png
+      - image: /images/uploads/Plugins_Which_one.png
+  secondSession:
+    description: The second hour became a working session where the attendees could ask us specific questions related to their WordPress installations.
+    image: /images/uploads/marianne-wp-workshop.jpg
+sections:
+  - title: The topics
+    content: >-
+      Topics we covered in the session extended beyond definitions of use cases and requirements. Once we went through use cases, we applied them to every step of the plugin selection process. The workshop also touched on common concerns regarding the CMS - how to begin to harden installations with basic security requirements and plugins, how to effectively back up sites through either hosting providers or plugins, as well as a basic navigation of the WordPress admin screen.
+
+
+      All content and primary takeaways are available through a summary document we created, as well as the slide deck.
+  - title: The impact
+    content: >-
+      After the workshop, 501 Commons handed out surveys to the participants. They received 8 completed surveys. Of those who answered the question of whether or not they actively planned to use any of the skills or tools learned within the next six months, all but one responded that they would.
+
+
