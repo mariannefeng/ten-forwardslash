@@ -99,16 +99,26 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
-      - label: "Portfolio"
-        name: "portfolio"
-        file: "content/portfolio.yml"
+      - label: "Workshop Portfolio Page"
+        name: "workshop"
+        file: "contents/workshop.yml"
         fields:
-          - label: Portfolio Overview Title
-            name: overview
-            widget: string
-          - label: Single Portfolio
-            name: singlePortfolio
+          - label: Sections
+            name: sections
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
+              - {label: Title, name: title, widget: string}
               - {label: Content, name: content, widget: markdown}
+#      - label: "Portfolio"
+#        name: "portfolio"
+#        file: "content/portfolio.yml"
+#        fields:
+#          - label: Portfolio Overview Title
+#            name: overview
+#            widget: string
+#          - label: Single Portfolio
+#            name: singlePortfolio
+#            widget: list
+#            fields:
+#              - {label: Name, name: name, widget: string}
+#              - {label: Content, name: content, widget: markdown}

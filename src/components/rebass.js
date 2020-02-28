@@ -21,6 +21,12 @@ const BrandedSubHeading = styled(Heading)`
 
 const PageSubtitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4} />
 
+// wow this name is absolutely awful.
+const StyledBrandedSubHeading = styled(BrandedSubHeading)`
+    border-left: 0.5rem solid ${colors.green};
+    padding: 5px 1rem;
+`
+
 function string_as_unicode_escape(input) {
     //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
     var output = '';
@@ -233,4 +239,4 @@ const GrayLink = styled(Text)`
 
 export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
     ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle, Email,
-    BrandedMainHeading, BrandedSubHeading, OverlayText, GrayLink};
+    BrandedMainHeading, BrandedSubHeading, StyledBrandedSubHeading, OverlayText, GrayLink};
