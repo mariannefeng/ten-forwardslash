@@ -74,12 +74,28 @@ export default {
         const fields = await getPageFields()
 
         //iterates over all site content and hooks up yml data to paths defined in site.yaml's content block
-        return siteConfig.content.map((page) => {
-            return {
-                path: page.path,
-                getData: () => ({data: fields[page.key]})
-            }
-        })
+         let routes = [
+             ...siteConfig.content.map((page) => {
+                return {
+                    path: page.path,
+                    getData: () => ({data: fields[page.key]})
+                }
+             }),
+             {
+                 path: siteConfig.portfolio.path,
+                 getData: () => ({data: fields[siteConfig.portfolio.key]}),
+                 children: fields.portfolio.singlePortfolio.map(post => {
+                     console.log('POST!', post)
+                     return {
+                         path: post.name,
+                         template: 'src/containers/PortfolioItem',
+                         getData: () => ({data: post})
+                     }
+                 })
+             }
+         ]
+        console.log("all routes", routes)
+        return routes
     },
 
     plugins: [
