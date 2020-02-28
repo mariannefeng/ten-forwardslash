@@ -103,6 +103,9 @@ collections:
         name: "portfolio"
         file: "content/portfolio.yml"
         fields:
+          - label: Portfolio Overview Title
+            name: overview
+            widget: string
           - label: Single Portfolio
             name: singlePortfolio
             widget: list
