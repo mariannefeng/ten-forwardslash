@@ -3,8 +3,9 @@ content:
   - { path: /about, key: about, label: About, showInNav: true }
   - { path: /services, key: services, label: Services, showInNav: true }
   - { path: /contact, key: contact, label: Contact, showInNav: true }
-  - { path: /donate, key: donate, label: Donate, showInNav: true}
-  - { path: /credits, key: credits, label: Credits, showInNav: false}
+  - { path: /donate, key: donate, label: Donate, showInNav: true }
+  - { path: /credits, key: credits, label: Credits, showInNav: false }
+blog: { path: /portfolio, key: portfolio, label: Portfolio, showInNav: false }
 description: Ten-Forward is a small nonprofit with big dreams
 logos:
   white: /images/logos/10F_Logo_Full_White.png

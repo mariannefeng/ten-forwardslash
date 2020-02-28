@@ -74,12 +74,26 @@ export default {
         const fields = await getPageFields()
 
         //iterates over all site content and hooks up yml data to paths defined in site.yaml's content block
-        return siteConfig.content.map((page) => {
-            return {
-                path: page.path,
-                getData: () => ({data: fields[page.key]})
-            }
-        })
+         return [
+             ...siteConfig.content.map((page) => {
+                return {
+                    path: page.path,
+                    getData: () => ({data: fields[page.key]})
+                }
+             }),
+             {
+                 path: siteConfig.blog.path,
+                 getData: () => ({data: fields[siteConfig.blog.path]}),
+                 children: fields.posts.singlePosts.map(post => {
+                     console.log('POST!', post)
+                     return {
+                         path: post.name,
+                         template: 'src/pages/post',
+                         getData: () => ({data: post})
+                     }
+                 })
+             }
+         ]
     },
 
     plugins: [

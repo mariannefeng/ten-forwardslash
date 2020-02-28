@@ -99,3 +99,13 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
+      - label: "Posts"
+        name: "posts"
+        file: "content/posts.yml"
+        fields:
+          - label: Single Posts
+            name: singlePosts
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Content, name: content, widget: markdown}
