@@ -99,12 +99,12 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
-      - label: "Posts"
-        name: "posts"
-        file: "content/posts.yml"
+      - label: "Portfolio"
+        name: "portfolio"
+        file: "content/portfolio.yml"
         fields:
-          - label: Single Posts
-            name: singlePosts
+          - label: Single Portfolio
+            name: singlePortfolio
             widget: list
             fields:
               - {label: Name, name: name, widget: string}

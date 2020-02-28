@@ -82,13 +82,13 @@ export default {
                 }
              }),
              {
-                 path: siteConfig.blog.path,
-                 getData: () => ({data: fields[siteConfig.blog.path]}),
-                 children: fields.posts.singlePosts.map(post => {
+                 path: siteConfig.portfolio.path,
+                 getData: () => ({data: fields[siteConfig.portfolio.path]}),
+                 children: fields.portfolio.singlePortfolio.map(post => {
                      console.log('POST!', post)
                      return {
                          path: post.name,
-                         template: 'src/pages/post',
+                         template: 'src/pages/portfolio',
                          getData: () => ({data: post})
                      }
                  })
