@@ -81,18 +81,17 @@ export default {
                     getData: () => ({data: fields[page.key]})
                 }
              }),
-             {
-                 path: siteConfig.portfolio.path,
-                 getData: () => ({data: fields[siteConfig.portfolio.key]}),
-                 children: fields.portfolio.singlePortfolio.map(post => {
-                     console.log('POST!', post)
-                     return {
-                         path: post.name,
-                         template: 'src/containers/PortfolioItem',
-                         getData: () => ({data: post})
-                     }
-                 })
-             }
+             // {
+             //     path: siteConfig.portfolio.path,
+             //     getData: () => ({data: fields[siteConfig.portfolio.key]}),
+             //     children: fields.portfolio.singlePortfolio.map(post => {
+             //         return {
+             //             path: post.name,
+             //             template: 'src/containers/PortfolioItem',
+             //             getData: () => ({data: post})
+             //         }
+             //     })
+             // }
          ]
         console.log("all routes", routes)
         return routes
