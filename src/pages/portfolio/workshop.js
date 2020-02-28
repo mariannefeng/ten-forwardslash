@@ -10,7 +10,7 @@ function Services() {
     const { data } = useRouteData()
 
     return (
-        <Section bg='white' flexDirection='column' my={3} px={[0,4,6]}>
+        <Section bg='white' flexDirection='column' my={3} px={[3,4,6]}>
             <BrandedMainHeading textAlign='center' alignSelf='center' fontSize={[4,5]} my={4}>Wordpress Workshop with 501 Commons</BrandedMainHeading>
             <StyledBrandedSubHeading fontSize={[3, 4]}>The overview</StyledBrandedSubHeading>
             <Box>
@@ -34,13 +34,12 @@ function Services() {
                     src='/images/uploads/Plugins_Which_one.png'
                     width={[1, 0.4]}/>
             </FlexContent>
-            <FlexContent flexDirection='column'>
-                <Text py={[3,4]}>The second hour became a working session where the
-                    attendees could ask us specific questions related to their WordPress installations.</Text>
-                <Image
-                    src='/images/uploads/marianne-wp-workshop.jpg'
-                    width={1}/>
-            </FlexContent>
+
+            <Text py={[3,4]}>The second hour became a working session where the
+                attendees could ask us specific questions related to their WordPress installations.</Text>
+            <Image
+                src='/images/uploads/marianne-wp-workshop.jpg'
+                width={1}/>
             {data.sections.map((section) => {
                 return <WorkshopSection {...section} />
             })}
