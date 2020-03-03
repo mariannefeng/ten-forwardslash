@@ -72,7 +72,6 @@ export default {
 
     getRoutes: async () => {
         const fields = await getPageFields()
-        console.log('fields', fields)
         //iterates over all site content and hooks up yml data to paths defined in site.yaml's content block
          let routes = [
              ...siteConfig.content.map((page) => {
@@ -82,7 +81,7 @@ export default {
                 }
              }),
              {
-                 path: 'portfolio',
+                 path: '/portfolio',
                  getData: () => ({data: fields['portfolio']}),
                  children: fields.portfolio.singlePortfolio.map(post => {
                      return {
@@ -93,7 +92,6 @@ export default {
                  })
              }
          ]
-        console.log("all routes", routes)
         return routes
     },
 

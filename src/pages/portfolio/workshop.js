@@ -13,7 +13,6 @@ function Services() {
         <Section bg='white' flexDirection='column' my={3} px={[3,4,6]}>
             <BrandedMainHeading textAlign='center' alignSelf='center' fontSize={[4,5]} my={4}>{data.title}</BrandedMainHeading>
 
-
             <StyledBrandedSubHeading fontSize={[3, 4]}>{data.overview.title}</StyledBrandedSubHeading>
             <Box>
                 <ReactMarkdown source={data.overview.description} />

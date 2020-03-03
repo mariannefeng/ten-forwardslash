@@ -3,29 +3,25 @@ import { useRouteData } from 'react-static'
 import { Box } from 'rebass'
 
 import { BrandedMainHeading, Section, StyledBrandedSubHeading } from '../components/rebass'
-import {LinkRenderer, HeaderRenderer} from "../components/Markdown"
-import styled from "styled-components";
-import ReactMarkdown from "react-markdown"
-
-
-const PortfolioContainer = styled(Box)`
-img {
-  width: 100%;
-  object-fit: contain;
-}
-`
+import {LinkRenderer, ImageRenderer, BlockquoteRenderer} from "../components/Markdown"
+import ReactMarkdown from "react-markdown/with-html"
 
 function PortfolioItem() {
     const { data } = useRouteData()
     return (
         <Section bg='white' flexDirection='column' my={3} px={[3,4,6]}>
             <BrandedMainHeading textAlign='center' alignSelf='center' fontSize={[4,5]} my={4}>{data.title}</BrandedMainHeading>
-            <PortfolioContainer><ReactMarkdown
+            <Box>
+                <ReactMarkdown
                 renderers={{
                     link: LinkRenderer,
-                    heading: StyledBrandedSubHeading
+                    heading: StyledBrandedSubHeading,
+                    image: ImageRenderer,
+                    blockquote: BlockquoteRenderer
                 }}
-                source={data.content}/></PortfolioContainer>
+                escapeHtml={false}
+                source={data.content}/>
+            </Box>
         </Section>
 )
 }

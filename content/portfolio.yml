@@ -5,10 +5,10 @@ singlePortfolio:
       ### THE OVERVIEW
 
       In November 2019, Ten-Forward presented a 2-hour workshop as a part of 501
-      Commons’ 501 Talks Tech series on selecting WordPress plugins. We
+      Commons’ [501 Talks Tech](https://www.501commons.org/services/our-events-and-trainings/techtalk) series on selecting WordPress plugins. We
       developed this workshop with an understanding that many nonprofits use
       WordPress for their sites, and most are extended with various plugins - of
-      which there are over 50,000 overwhelming options.
+      which there are over [50,000](https://wordpress.org/plugins/) overwhelming options.
 
 
       The first hour of this session focused on understanding use cases and
@@ -18,20 +18,16 @@ singlePortfolio:
       nonprofit employees to understand the value of use cases in requirements -
       a skill not limited to plugins.
 
-
-      ![plugins - getting started](/images/uploads/Plugins_When.png)
-
-
-      ![plugins - budget overview](/images/uploads/Plugins_Which_one.png)
+      <div class='flex-content'>
+        <img class='one-half' src='/images/uploads/Plugins_When.png' alt='plugins - getting started' />
+        <img class='one-half' src='/images/uploads/Plugins_Which_one.png' alt='plugins - budget overview' />
+      </div>
 
 
       The second hour became a working session where the attendees could ask us
       specific questions related to their WordPress installations.
 
-
-      ![helping workshop attendee at computer
-      ](/images/uploads/marianne-wp-workshop.jpg)
-
+      ![helping workshop attendee at computer](/images/uploads/marianne-wp-workshop.jpg)
 
       ### THE TOPICS
 
@@ -59,3 +55,113 @@ singlePortfolio:
       learned within the next six months, all but one responded that they would.
 
     title: WordPress workshop with 501 commons
+  - name: cp
+    title: Cancer Pathways - storing and visualizing survey data
+    content: >+
+      ### THE OVERVIEW
+
+      [Cancer Happens](https://cancerpathways.org/education/cancer-happens/) is a cancer
+      education and risk reduction program provided free of charge to middle schools
+      and high schools nationwide. Student surveys are handed out before and after
+      presentations to classrooms testing the students’ knowledge across a wide
+      variety of cancer-related topics.
+
+
+      The goal of this collaboration is to help [Cancer Pathways](https://cancerpathways.org/)
+      better organize and leverage student survey results for the Cancer Happens program
+      to get both a clearer understanding of program impact as well as identify potential areas
+      of program improvement.
+
+
+      Over the course of 6 weeks, Ten-Forward built a data processing pipeline on
+      top of G Suite. The *input* - raw student survey results, the *output* - live dashboards
+      dissecting various aspects of the program, from cancer prevention actions
+      the students will do as a direct result of the presentations to finding
+      knowledge gaps across various cancer topics.
+
+      ### 1: design
+
+      The first deliverable: a process map clearly outlining activities that all involved parties perform
+      in successful program implementation - from Cancer Pathways employees to the students. This is
+      a crucial step in identifying necessary data to track in the new system as well as ensuring
+      that both parties have a shared understanding of the program.
+
+      We firmly believe that nonprofits understand their problem spaces the best - building the
+      process map is a key piece in making sure that we have the right context before we dive
+      into building solutions.
+
+      ![group photo with Cancer Happens program director](/images/uploads/us-and-mary-cropped.png "Cancer Pathways Program Director - Mary - and us on the first day of project kickoff")
+
+      Working alongside Cancer Pathways’ program director, we were able to identify 5 key use cases
+      for the visualizations. Clear understanding of key processes coupled with vital visualization
+      use cases formed the basis for a solid foundation in designing what data should be stored and
+      how it is best structured.
+
+      ![planning database schema on whiteboard](/images/uploads/planning-db-schema.png "The first pass (of many) at how data might be best stored to support Cancer Pathways’ use cases")
+
+
+      ### 2: build
+
+      Clear data definitions are the precursor to determining inputs and outputs of the data
+      processing pipeline. As raw student survey data is entered into Google Sheets, completed
+      sets of survey results are moved into a Google Drive folder, where every night, all the
+      raw survey responses are processed and transformed/aggregated as needed across 6 different
+      resulting spreadsheets. These final spreadsheets were designed to fulfill the specific use
+      cases that were discussed in the previous phase.
+
+      ![screenshot example of student survey sheet headers](/images/uploads/raw-survey-headers.png "An example of headers from the raw survey response spreadsheet")
+
+      With data correctly flowing into the right places thanks to the data processing pipeline,
+      the final piece of build was creating up-to-date, interactive, and mobile-friendly visualizations.
+
+
+      There are many different data visualization tools, and picking the right one is highly dependent
+      on the use cases of the organization and the current toolkit they are employing. In the case of
+      the Cancer Happens program, the cost of the tool, ease of use, integration with Google Suite,
+      and their stage of data maturity led us to recommend Google Data Studio.
+
+      <div class='flex-content'>
+        <img class='four-fifths' src='/images/uploads/where-ch-is-in-schools.png#fullwidth' alt='one of the example visualizations Cancer Pathways asked for' />
+        <img class='one-fifth' src='/images/uploads/ch-mobile.png#fullwidth' alt='one of the example visualizations Cancer Pathways asked for - mobile version' />
+      </div>
+
+      ### 3: support
+
+      Changing processes isn’t always easy, and in the month following the program, we provided
+       a month of free support to aid in a smooth transition.
+
+      In addition to general support, we also hosted a 2-hour workshop on Google Data Studio
+      for the Cancer Pathways employees. This was a mixture of building example visualizations
+      from scratch as well as sitting down with them and helping them explore visualizations
+      they’ve had in mind for the latter half of the workshop. In-person training in the
+      visualization tool is to ensure that they can continue to build on top of the
+      framework we’ve laid out.
+
+
+      A completely new system also meant a completely new workflow -- with this in mind, we
+      created a documentation site using Google Sites with explanations of all the sheets,
+      tutorials for common patterns, and guides for troubleshooting issues.
+
+      ![screenshot of internal cancer happens documentation site](/images/uploads/cancer-happens-docs.png "Documentation surrounding the new workflow, accessible only to users with cancerpathways.org emails")
+
+
+      ### the impact
+
+      The effects of a new workflow (especially one that introduces new tools) aren't
+      always immediate. We'll be taking follow-up surveys every 6 months asking about the
+      long-term effects of changes in internal program evaluations. Check back (or [subscribe
+      to our mailing list](/contact#subscribe)!) as we update this page with results from our impact survey. In
+      the meantime, here are some quotes we've gotten from the Cancer Happens team in our
+      post-consult satisfaction survey:
+
+
+      > “very well built database, great communication and response”
+
+
+      > “you have helped us elevate our data entry process and analysis, which has enhanced our entire program!”
+
+
+      > “Jessi and Marianne are incredibly skilled at what they do. They are also easy to work with and go above and beyond.”
+
+
+      > “I have never had a higher level (or speed!) of comprehensive customer support from any vendor or partner than we have received from Ten Forward.  Hands down the best, most innovative, supportive, and genuine vendor I have ever worked with. Can't thank Ten Forward enough for their work that transformed our program and enabled us to elevate it to the next level.”

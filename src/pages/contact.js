@@ -111,7 +111,7 @@ function Contact(siteData) {
                     </GrayLink>
                     <SimpleMap />
                 </FlexContent>
-                <Section bg='yellow'>
+                <Section bg='yellow' id='subscribe'>
                     <NewsletterSignup cta='want updates?'/>
                 </Section>
         </Section>
