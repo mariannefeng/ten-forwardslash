@@ -7449,9 +7449,9 @@ react-static-plugin-styled-components@^7.0.10:
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/react-static-plugin-styled-components/-/react-static-plugin-styled-components-7.2.2.tgz#17b71a448780005e1f5fbb0432a440d994144b5d"
 
-react-static@^7.0.0:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/react-static/-/react-static-7.2.2.tgz#09c43fd73d0c4201a3d21d8d1609d6afd578447a"
+react-static@^7.2.2:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/react-static/-/react-static-7.2.3.tgz#bdc94206e7cc812d767d027a4315202f1eafdf2e"
   dependencies:
     "@babel/cli" "^7.5.5"
     "@babel/core" "^7.5.5"

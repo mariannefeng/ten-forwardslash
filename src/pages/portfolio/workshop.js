@@ -11,37 +11,29 @@ function Services() {
 
     return (
         <Section bg='white' flexDirection='column' my={3} px={[3,4,6]}>
-            <BrandedMainHeading textAlign='center' alignSelf='center' fontSize={[4,5]} my={4}>Wordpress Workshop with 501 Commons</BrandedMainHeading>
-            <StyledBrandedSubHeading fontSize={[3, 4]}>The overview</StyledBrandedSubHeading>
+            <BrandedMainHeading textAlign='center' alignSelf='center' fontSize={[4,5]} my={4}>{data.title}</BrandedMainHeading>
+
+            <StyledBrandedSubHeading fontSize={[3, 4]}>{data.overview.title}</StyledBrandedSubHeading>
             <Box>
-                <p>In November 2019, Ten-Forward presented a 2-hour workshop as a part of 501 Commons’ 501 Talks
-                    Tech series on selecting WordPress plugins. We developed this workshop with an understanding
-                    that many nonprofits use WordPress for their sites, and most are extended with various plugins
-                    - of which there are over 50,000 overwhelming options.</p>
-                <p>The first hour of this session focused on understanding use cases and requirements as a
-                    function in plugin selection, as well as some common research practices to employ when
-                    deciding between ones with similar functionality. By talking through the plugin selection
-                    process, we helped nonprofit employees to understand the value of use cases in requirements
-                    - a skill not limited to plugins. </p>
+                <ReactMarkdown source={data.overview.description} />
+                <p>{data.overview.firstSession.description}</p>
             </Box>
             <FlexContent flexDirection={['column','row']} alignItems='center' py={[3,4]}>
-                <Image
-                    mx='auto'
-                    src='/images/uploads/Plugins_When.png'
-                    width={[1, 0.4]}/>
-                <Image
-                    mx='auto'
-                    src='/images/uploads/Plugins_Which_one.png'
-                    width={[1, 0.4]}/>
+                {data.overview.firstSession.slideScreenshots.map((screenshot, i) => {
+                    return <Image
+                        key={`screenshot-${i}`}
+                        mx='auto'
+                        src={screenshot.image}
+                        width={[1, 0.4]}/>
+                })}
             </FlexContent>
 
-            <Text py={[3,4]}>The second hour became a working session where the
-                attendees could ask us specific questions related to their WordPress installations.</Text>
+            <Text py={[3,4]}>{data.overview.secondSession.description}</Text>
             <Image
-                src='/images/uploads/marianne-wp-workshop.jpg'
+                src={data.overview.secondSession.image}
                 width={1}/>
-            {data.sections.map((section) => {
-                return <WorkshopSection {...section} />
+            {data.sections.map((section, i) => {
+                return <WorkshopSection key={`workshop-section-${i}`} {...section} />
             })}
         </Section>
     )

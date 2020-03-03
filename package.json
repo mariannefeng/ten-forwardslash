@@ -23,7 +23,7 @@
     "react": "^16.8.2",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-markdown": "^4.0.8",
-    "react-static": "^7.0.0",
+    "react-static": "^7.2.2",
     "react-static-plugin-reach-router": "^7.0.0",
     "react-static-plugin-sitemap": "^7.0.0",
     "react-static-plugin-source-filesystem": "^7.0.0",

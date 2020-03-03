@@ -3,10 +3,10 @@ overview:
   title: The overview
   description: >-
     In November 2019, Ten-Forward presented a 2-hour workshop as a part of 501
-    Commons’ 501 Talks Tech series on selecting WordPress plugins. We developed
+    Commons’ [501 Talks Tech](https://www.501commons.org/services/our-events-and-trainings/techtalk) series on selecting WordPress plugins. We developed
     this workshop with an understanding that many nonprofits use WordPress for
     their sites, and most are extended with various plugins - of which there are
-    over 50,000 overwhelming options.
+    over [50,000](https://wordpress.org/plugins/) overwhelming options.
   firstSession:
     description: >-
       The first hour of this session focused on understanding use cases and
@@ -14,9 +14,7 @@ overview:
       research practices to employ when deciding between ones with similar
       functionality. By talking through the plugin selection process, we helped
       nonprofit employees to understand the value of use cases in requirements -
-      a skill not limited to plugins. The second hour became a working session
-      where the attendees could ask us specific questions related to their
-      WordPress installations.
+      a skill not limited to plugins.
     slideScreenshots:
       - image: /images/uploads/Plugins_When.png
       - image: /images/uploads/Plugins_Which_one.png

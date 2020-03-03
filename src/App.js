@@ -34,6 +34,38 @@ const GlobalStyles = createGlobalStyle`
     a:hover {
         text-decoration: underline;
     }
+    div.flex-content {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-bottom: ${theme.space[4]}px;
+        
+        @media (max-width: ${theme.breakpoints[0]}) {
+            margin-bottom: ${theme.space[3]}px;
+        }
+    }
+    div.flex-content .four-fifths {
+        width: 79%;
+    }
+    div.flex-content .one-fifth {
+        width: 19%;
+    }
+    div.flex-content .one-half {
+        width: 49%;
+    }
+    div.flex-content > * {
+        @media (max-width: ${theme.breakpoints[0]}) {
+            padding: ${theme.space[2]}px 0px;
+            width: 100% !important;
+        }
+    }
+    blockquote {
+        background: #f9f9f9;
+        font-family: ${theme.fonts.submono};
+        padding: ${theme.space[3]}px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
 `
 
 function App(siteData) {

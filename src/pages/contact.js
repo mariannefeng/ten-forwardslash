@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteData, withSiteData } from 'react-static'
 import ReactMarkdown from 'react-markdown'
 import { Heading, Box, Flex, Text, Link, Button } from 'rebass'
-
+import { LinkRenderer } from "../components/Markdown"
 import {
     Label,
     Input,
@@ -38,10 +38,6 @@ const SocialBox = props =>
             textAlign: 'left',
         }}
     />
-
-function LinkRenderer(props) {
-    return <a href={props.href} target="_blank">{props.children}</a>
-}
 
 function Contact(siteData) {
     const { data } = useRouteData()
@@ -115,7 +111,7 @@ function Contact(siteData) {
                     </GrayLink>
                     <SimpleMap />
                 </FlexContent>
-                <Section bg='yellow'>
+                <Section bg='yellow' id='subscribe'>
                     <NewsletterSignup cta='want updates?'/>
                 </Section>
         </Section>
