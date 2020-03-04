@@ -78,7 +78,7 @@ class Menu extends React.Component {
                         {this.state.showMobileMenu && this.props.content.map((c, i) => {
                                 if (c.showInNav) {
                                     return (<Box key={i} css={{ textAlign: 'right' }} pb={3}>
-                                        <Link to={c.path} key={'desktopMenu' + i} className='styled-nav-link' getProps={isActive}>{c.label}</Link>
+                                        <Link to={c.path} key={'desktopMenu' + i} className='styled-nav-link' getProps={c.showWhenActive ? isActive : () => {}}  onClick={this.onClick}>{c.label}</Link>
                                     </Box>)
                                 }
                             }
