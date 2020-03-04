@@ -49,7 +49,7 @@ class Menu extends React.Component {
                         px={2}
                         py={1}
                         alignItems='center'>
-                        <Link to='/' className='styled-nav-link'>
+                        <Link to='/'>
                             <Image
                                 width={[2 / 10, 3/10, 0.18 ]}
                                 src={this.props.logos.white}
