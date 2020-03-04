@@ -1,9 +1,9 @@
 content:
-  - { path: /, key: homepage, label: Home, showInNav: true }
-  - { path: /about, key: about, label: About, showInNav: true }
-  - { path: /services, key: services, label: Services, showInNav: true }
-  - { path: /contact, key: contact, label: Contact, showInNav: true }
-  - { path: /donate, key: donate, label: Donate, showInNav: true }
+  - { path: /, key: homepage, label: Home, showInNav: true, showWhenActive: false }
+  - { path: /about, key: about, label: About, showInNav: true, showWhenActive: true }
+  - { path: /services, key: services, label: Services, showInNav: true, showWhenActive: true }
+  - { path: /contact, key: contact, label: Contact, showInNav: true, showWhenActive: true }
+  - { path: /donate, key: donate, label: Donate, showInNav: true, showWhenActive: true }
   - { path: /credits, key: credits, label: Credits, showInNav: false }
 #  - { path: /portfolio, key: portfolio, label: Portfolio, showInNav: false }
 #  - { path: /portfolio/workshop, key: workshop, label: Workshop, showInNav: false}

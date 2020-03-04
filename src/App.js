@@ -4,7 +4,7 @@ import theme, { colors } from './theme'
 
 import { Root, Routes, addPrefetchExcludes, withSiteData } from 'react-static'
 
-import { Router } from 'components/Router'
+import { Router, Link } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
@@ -66,12 +66,15 @@ const GlobalStyles = createGlobalStyle`
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
+    a.text-decoration-none:hover {
+        text-decoration: none;
+    }
 `
 
 function App(siteData) {
     return (
-        <ThemeProvider theme={theme}>
-            <Root>
+        <Root>
+            <ThemeProvider theme={theme}>
                 <GlobalStyles/>
 
                 <Menu content={siteData.content} logos={siteData.logos} theme='black'/>
@@ -86,8 +89,8 @@ function App(siteData) {
                 </div>
 
                 <Footer social={siteData.social} do={siteData.digitalOcean}/>
-            </Root>
-        </ThemeProvider>
+            </ThemeProvider>
+        </Root>
     )
 }
 
