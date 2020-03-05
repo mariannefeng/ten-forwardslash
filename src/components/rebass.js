@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Flex, Button, Text, Link, Heading, Card, Image } from 'rebass'
+import { Box, Flex, Button, Text, Heading, Card, Image } from 'rebass'
+import { Link } from './Router'
 import styled from "styled-components"
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import ReactMarkdown from 'react-markdown'
@@ -210,15 +211,20 @@ p:first-child {
 }
 `
 
-const ClickableLink = styled(Link)`
-    text-decoration: none;
-    cursor: pointer;
-    color: ${colors.darkgray};
-    :hover {
-        color: ${colors.mediumgray};
+const ClickableLinkContainer = styled(Box)`
+    a {
         text-decoration: none;
+        cursor: pointer;
+        color: ${colors.darkgray};
+        :hover {
+            color: ${colors.mediumgray};
+            text-decoration: none;
+        }
     }
 `
+const ClickableLink = (props) => {
+    return <ClickableLinkContainer><Link to={props.href}>{props.children}</Link></ClickableLinkContainer>
+}
 
 const PrettyInput = styled.input`
     font-size: 18px;
