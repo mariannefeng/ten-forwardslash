@@ -33,10 +33,10 @@ collections:
             name: blocks
             widget: list
             fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Text, name: text, widget: text}
-              - {label: Image, name: image, widget: image}
-              - {label: Path, name: path, widget: text}
+              - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: text}
+              - {label: Icon, name: icon, widget: image}
+              - {label: URL, name: url, widget: text}
           - {label: CTA Two, name: ctaTwo, widget: string}
       - label: "About Page"
         name: "about"
@@ -45,6 +45,7 @@ collections:
           - {label: Title, name: title, widget: string}
           - {label: Mission, name: mission, widget: markdown}
           - {label: Vision, name: vision, widget: markdown}
+          - {label: Philosophy, name: philosophy, widget: markdown}
           - {label: History, name: history, widget: markdown}
           - {label: About Title, name: aboutTitle, widget: string}
           - label: Team
@@ -99,16 +100,6 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Content, name: content, widget: markdown}
-      - label: "Workshop Portfolio Page"
-        name: "workshop"
-        file: "content/workshop.yml"
-        fields:
-          - label: Sections
-            name: sections
-            widget: list
-            fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Content, name: content, widget: markdown}
       - label: "Portfolio"
         name: "portfolio"
         file: "content/portfolio.yml"
@@ -122,4 +113,8 @@ collections:
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Title, name: title, widget: string}
+              - {label: Description, name: description, widget: markdown}
+              - {label: Icon, name: icon, widget: image}
+              - {label: External, name: external, widget: boolean, default: false}
+              - {label: URL, name: url, widget: string}
               - {label: Content, name: content, widget: markdown}

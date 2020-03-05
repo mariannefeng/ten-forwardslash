@@ -1,9 +1,8 @@
 import React from 'react'
 import { useRouteData } from "react-static";
 import ReactMarkdown from "react-markdown"
-import { Box, Flex, Heading, Image, Text } from 'rebass'
-import { MEASURE_OF_A_MAN } from 'components/text-overlay-filler'
-import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading, GrayLink, Email} from 'components/rebass';
+import { Box, Flex, Image, Text } from 'rebass'
+import { Section, FullHeightFlexContent, TextNoFirstMarginP, PageTitle, BrandedMainHeading, BrandedSubHeading, Email} from '../components/rebass';
 import styled from "styled-components";
 import theme, {colors} from "../theme";
 
@@ -26,6 +25,7 @@ const AboutBlurb = props =>
         py={2}
         px={[2,3]}
         fontSize={3}
+        mb={[1, 2]}
         />
 
 const Founder = styled(Box)`
@@ -40,16 +40,17 @@ function About() {
     const { data } = useRouteData()
     return (
         <Section bg='white'>
-
                 <FullHeightFlexContent  px={4} flex={1} mt={3} color='black'>
                     <div style={{display: "flex", flexDirection: "column"}}>
                         <PageTitle color='black'>{`<${data.title}>`}</PageTitle>
+
                         <Flex py={[2,0]}>
                             <Flex width={[1, 1/3]} justifyContent='flex-start'>
                                 <AboutHeader>our mission</AboutHeader>
                             </Flex>
                         </Flex>
                         <AboutBlurb>{data.mission}</AboutBlurb>
+
                         <Flex py={[2,0]}>
                             <Box width={[0, 1/3]}/>
                             <Flex width={[1, 1/3]} justifyContent={['flex-start', 'center']}>
@@ -57,13 +58,14 @@ function About() {
                             </Flex>
                         </Flex>
                         <AboutBlurb>{data.vision}</AboutBlurb>
+
                         <Flex py={[2,0]}>
                             <Box width={[0, 2/3]}/>
                             <Flex width={[1, 1/3]} justifyContent={['flex-start', 'flex-end']}>
-                                <AboutHeader>our history</AboutHeader>
+                                <AboutHeader>our philosophy</AboutHeader>
                             </Flex>
                         </Flex>
-                        <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
+                        <AboutBlurb><ReactMarkdown source={data.philosophy}/></AboutBlurb>
 
                         <PageTitle alignSelf='center' fontSize={5} my={4} color='black'>{`<${data.aboutTitle}>`}</PageTitle>
                         <Flex flexWrap='wrap' justifyContent='space-around'>
@@ -93,6 +95,13 @@ function About() {
                                 )
                             })}
                         </Flex>
+
+                        <Flex py={[2,0]} mt={4}>
+                            <Flex width={1} justifyContent={['flex-start', 'center']}>
+                                <AboutHeader>our history</AboutHeader>
+                            </Flex>
+                        </Flex>
+                        <AboutBlurb><ReactMarkdown source={data.history}/></AboutBlurb>
 
                         <PageTitle alignSelf='center' fontSize={5} my={4} color='black'>{'<the board>'}</PageTitle>
                         <Flex flexWrap='wrap'>

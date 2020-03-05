@@ -1,6 +1,12 @@
 overview: examples of work
 singlePortfolio:
   - name: workshop
+    icon: /images/icons/presentation.png
+    url: /portfolio/workshop
+    description: >+
+      A 2-hour workshop as a part of 501 Commons' Talks Tech Series on selecting
+      WordPress plugins with an emphasis on understanding use cases and requirements
+      as well as common research practices for selecting the right plugin.
     content: >+
       ### THE OVERVIEW
 
@@ -60,7 +66,13 @@ singlePortfolio:
     title: WordPress workshop with 501 commons
   - name: cp
     title: Cancer Pathways - storing and visualizing survey data
-    content: >
+    url: /portfolio/cp
+    description: >+
+      Building a data processing pipeline on top of G Suite for converting
+      raw student surveys into measurable program metrics, visualized with
+      live dashboards in Google Data Studio.
+    icon: /images/icons/dashboard.png
+    content: >+
       ### THE OVERVIEW
 
       [Cancer Happens](https://cancerpathways.org/education/cancer-happens/) is

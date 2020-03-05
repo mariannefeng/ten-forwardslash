@@ -66,6 +66,8 @@ const GlobalStyles = createGlobalStyle`
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }
+    a.external-link::after {
+        content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
     a.text-decoration-none:hover {
         text-decoration: none;
     }

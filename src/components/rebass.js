@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Box, Flex, Button, Text, Link, Heading } from 'rebass'
+import { Box, Flex, Button, Text, Heading, Card, Image } from 'rebass'
+import { Link } from './Router'
 import styled from "styled-components"
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import ReactMarkdown from 'react-markdown'
 
 import theme, { colors } from '../theme'
@@ -11,7 +12,8 @@ const BrandedMainHeading = styled(Heading)`
     font-family: "OCR A Extended", monospace;
 `
 
-const PageTitle = props => <BrandedMainHeading {...props} textAlign='center' alignSelf='center' fontSize={[5,6]} mb={4} />
+const PageTitle = props => <BrandedMainHeading {...props} textAlign='center' alignSelf='center' fontSize={[5, 6]}
+                                               mb={4}/>
 
 const BrandedSubHeading = styled(Heading)`
     text-transform: uppercase;
@@ -19,7 +21,7 @@ const BrandedSubHeading = styled(Heading)`
     letter-spacing: 1.5px;
 `
 
-const PageSubtitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4} />
+const PageSubtitle = props => <BrandedSubHeading {...props} alignSelf='center' fontSize={5} mb={4}/>
 
 // wow this name is absolutely awful.
 const StyledBrandedSubHeading = styled(BrandedSubHeading)`
@@ -29,10 +31,10 @@ const StyledBrandedSubHeading = styled(BrandedSubHeading)`
 
 function string_as_unicode_escape(input) {
     //https://stackoverflow.com/questions/5786483/char-to-hex-in-javascript
-    var output = '';
+    var output = ''
     for (var i = 0, l = input.length; i < l; i++)
-        output += '\\' + input.charCodeAt(i).toString(16);
-    return output;
+        output += '\\' + input.charCodeAt(i).toString(16)
+    return output
 }
 
 //fixme: since changing to using psuedoelements, can't get the full script to work for measure of a man.
@@ -64,8 +66,8 @@ const Section = props => {
     let css = checkProps(props, {minHeight: '450px'})
 
     return < Flex
-        py = {[1, 2]}
-        css = {css}
+        py={[1, 2]}
+        css={css}
         {...props}
     />
 
@@ -75,8 +77,8 @@ const FullHeightSection = props => {
     let css = checkProps(props, {minHeight: '100vh'})
 
     return <Section
-        py = {[2, 4]} //TODO: if this inherits from Section, do we need to set py?
-        css = {css}
+        py={[2, 4]} //TODO: if this inherits from Section, do we need to set py?
+        css={css}
         {...props}
     />
 
@@ -87,7 +89,7 @@ const FlexContent = props => {
 
     return <Flex
         m='auto'
-        px={[3,2,1]}
+        px={[3, 2, 1]}
         css={css}
         {...props}
 
@@ -108,7 +110,7 @@ const ClickableButton = props => {
         cursor: 'pointer',
         fontFamily: '"Ubuntu Mono", monospace',
         textTransform: "uppercase",
-        ':focus':  {
+        ':focus': {
             outline: 'none'
         }
     })
@@ -123,27 +125,33 @@ const ClickableButton = props => {
  * Slashes will, if props.hovered is true, return ///> that have increasing opacity and a transition delay
  * (for buttons)
  */
-const Slashes = (props) =>  {
+const Slashes = (props) => {
     return (<TransitionGroup style={{display: 'flex'}}>
-                {props.hovered ? ['0.5', '0.65', '0.85', '1'].map((opacity, index) => (
-                    <CSSTransition
-                        key={index}
-                        timeout={500}
-                        classNames="fade"
-                    >
-                        <Text color={props.color} style={{marginLeft: index === 0 ? "3px" : "-2px", marginTop: "-1px", opacity: opacity}} fontFamily={'mono'}>{index === 3 ? '>' : '/'}</Text>
-                    </CSSTransition>
-                )) : <CSSTransition timeout={0}><Text color={props.color} style={{marginLeft: "3px", marginTop: "-1px", opacity: "1"}} fontFamily={'mono'}>{'>'}</Text></CSSTransition>}
-            </TransitionGroup>)
+        {props.hovered ? ['0.5', '0.65', '0.85', '1'].map((opacity, index) => (
+            <CSSTransition
+                key={index}
+                timeout={500}
+                classNames="fade"
+            >
+                <Text color={props.color}
+                      style={{marginLeft: index === 0 ? "3px" : "-2px", marginTop: "-1px", opacity: opacity}}
+                      fontFamily={'mono'}>{index === 3 ? '>' : '/'}</Text>
+            </CSSTransition>
+        )) : <CSSTransition timeout={0}><Text color={props.color}
+                                              style={{marginLeft: "3px", marginTop: "-1px", opacity: "1"}}
+                                              fontFamily={'mono'}>{'>'}</Text></CSSTransition>}
+    </TransitionGroup>)
 }
 
 
 const ArrowClickableButton = props => {
-    const [hovered, setHovered] = useState(false);
-    const toggleHover = () => setHovered(!hovered);
+    const [hovered, setHovered] = useState(false)
+    const toggleHover = () => setHovered(!hovered)
     return (
         <ClickableButton {...props} onMouseEnter={toggleHover} onMouseLeave={toggleHover}>
-            <Text color={props.color} fontSize={props.fontSize} style={{"display": "flex"}}><span style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color} hovered={hovered} /></Text>
+            <Text color={props.color} fontSize={props.fontSize} style={{"display": "flex"}}><span
+                style={{marginRight: "3px"}}>{props.buttonText}</span><Slashes color={props.color}
+                                                                               hovered={hovered}/></Text>
         </ClickableButton>
     )
 }
@@ -156,19 +164,20 @@ const Email = (props) => {
 }
 
 const PageHero = (props) => {
-    let heroContent = (<FlexContent flexDirection='column' px={[2, 4]} flex={1} style={{position: 'relative', height: "100%"}}
-                                    alignItems='center' justifyContent='center'>
-        <FlexContent flexDirection='column'>
-            <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} pt={[2,0]} color='green'
-                                textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
-            <TextNoFirstMarginP fontSize={3} px={[2, 5]} color='white'>
-                <ReactMarkdown
-                    source={props.blurb}
-                    renderers={{link: (props) => <a href={props.href} target="_blank">{props.children}</a>}}
-                />
-            </TextNoFirstMarginP>
-        </FlexContent>
-    </FlexContent>);
+    let heroContent = (
+        <FlexContent flexDirection='column' px={[2, 4]} flex={1} style={{position: 'relative', height: "100%"}}
+                     alignItems='center' justifyContent='center'>
+            <FlexContent flexDirection='column'>
+                <BrandedMainHeading fontSize={[5, 6]} mb={[3, 4]} pt={[2, 0]} color='green'
+                                    textAlign='center'> {'<' + props.title + '>'}</BrandedMainHeading>
+                <TextNoFirstMarginP fontSize={3} px={[2, 5]} color='white'>
+                    <ReactMarkdown
+                        source={props.blurb}
+                        renderers={{link: (props) => <a href={props.href} target="_blank">{props.children}</a>}}
+                    />
+                </TextNoFirstMarginP>
+            </FlexContent>
+        </FlexContent>)
     if (props.overlay) {
         return (<Section bg={props.bg} color={props.color}>
             <OverlayText color='blue' content={props.overlay} mx='auto' my={4} overlayFontSize={props.overlayFontSize}>
@@ -186,7 +195,7 @@ PageHero.defaultProps = {
     overlayFontSize: '12px',
 }
 
-function checkProps (props, css) {
+function checkProps(props, css) {
     if (props.hasOwnProperty('css')) {
         css = {...css, ...props.css}
         delete props.css
@@ -202,15 +211,20 @@ p:first-child {
 }
 `
 
-const ClickableLink = styled(Link)`
-    text-decoration: none;
-    cursor: pointer;
-    color: ${colors.darkgray};
-    :hover {
-        color: ${colors.mediumgray};
+const ClickableLinkContainer = styled(Box)`
+    a {
         text-decoration: none;
+        cursor: pointer;
+        color: ${colors.darkgray};
+        :hover {
+            color: ${colors.mediumgray};
+            text-decoration: none;
+        }
     }
 `
+const ClickableLink = (props) => {
+    return <ClickableLinkContainer {...props}><Link to={props.href}>{props.children}</Link></ClickableLinkContainer>
+}
 
 const PrettyInput = styled.input`
     font-size: 18px;
@@ -237,6 +251,8 @@ const GrayLink = styled(Text)`
 `
 
 
-export { Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
+export {
+    Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
     ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle, Email,
-    BrandedMainHeading, BrandedSubHeading, StyledBrandedSubHeading, OverlayText, GrayLink};
+    BrandedMainHeading, BrandedSubHeading, StyledBrandedSubHeading, OverlayText, GrayLink
+}
