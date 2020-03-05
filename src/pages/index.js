@@ -1,9 +1,18 @@
 import React from 'react'
 import { useRouteData } from 'react-static'
 import { Box, Flex, Image, Card, Text, Link } from 'rebass'
-import { Section, FlexContent, FullHeightFlexContent, ClickableLink, BrandedMainHeading, BrandedSubHeading, ArrowClickableButton, OverlayText, PageSubtitle } from '../components/rebass';
+import {
+    Section,
+    FlexContent,
+    FullHeightFlexContent,
+    BrandedMainHeading,
+    BrandedSubHeading,
+    ArrowClickableButton,
+    OverlayText,
+} from '../components/rebass'
 import ReactMarkdown from 'react-markdown'
 import NewsletterSignup from '../components/NewsletterSignup'
+import GreyBlocksWithIcon from '../components/GreyBlocksWithIcon'
 import styled from "styled-components";
 import { colors } from "../theme"
 import { MEASURE_OF_A_MAN } from '../components/text-overlay-filler'
@@ -64,34 +73,10 @@ function Homepage() {
             <ReactMarkdown source={data.elevatorPitch}/>
         </Text>
     </FlexContent>)
-    const ServiceCard = styled(Card)`
-        :hover h2 {
-            color: ${colors.red};
-        }
-    `
+
     const Services = (<FlexContent flexDirection='column' alignItems='center' justifyContent='space-around' mb={5}>
         <BrandedSubHeading m={4} color='black' fontSize={5}>{data.ctaOne}</BrandedSubHeading>
-        <Flex flexWrap='wrap' justifyContent='space-around'>
-            {/*todo: if this is ever gonna be more than 3, we should do a length check*/}
-            {data.blocks.map((block, i) => {
-                return (
-                    <ClickableLink
-                        key={i}
-                        href={block.path}
-                        color='black'>
-                        <ServiceCard width={1}
-                              p={4}
-                              my={4}
-                              color='black'
-                              bg='lightgray'
-                        >
-                            <BrandedMainHeading mb={4} fontSize={3}>{ block.name + ' /'}</BrandedMainHeading>
-                            <Text lineHeight={4 / 3} fontSize={2} pb={3} fontWeight='400' fontFamily='sans'>{block.text}</Text>
-                        </ServiceCard>
-                    </ClickableLink>
-                )
-            })}
-        </Flex>
+        <GreyBlocksWithIcon data={data.blocks}/>
     </FlexContent>)
 
 

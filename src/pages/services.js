@@ -41,7 +41,7 @@ function Services() {
                 <FlexContent flexDirection='column' my={3} px={[0,4]} pt={4}>
                     {data.serviceSections.map((service, i) => {
                         return (
-                            <Flex color='black' key={i} p={[4, 5]} mb={4} mx={1} flexDirection='column'>
+                            <Flex color='black' key={i} p={[4, 5]} mx={1} flexDirection='column'>
                                 <ServiceSection>
                                     <BrandedMainHeading fontSize={[5, 6]} mb={3} id={service.anchorId}>{service.name}</BrandedMainHeading>
                                     <BrandedSubHeading fontSize={2} fontFamily='mono'>{service.tagline}</BrandedSubHeading>

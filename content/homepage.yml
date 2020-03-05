@@ -15,24 +15,24 @@ elevatorPitchImage: /images/no_drop_business.svg
 ctaImage: /images/homepage_white_stars.svg
 ctaOne: What We Do
 blocks:
-  - image: /images/uploads/pinball.jpg
-    name: Consulting
-    path: '/services#consulting'
-    text: >-
+  - icon: /images/icons/consulting.png
+    title: Consulting
+    url: '/services#consulting'
+    description: >-
       If your tech question feels too big to handle, we’re equipped to help you
       find custom answers to your most pressing problems. We work alongside your
       team to support your mission through software solutions.
-  - image: /images/uploads/pinball.jpg
-    name: Workshops
-    path: '/services#workshops'
-    text: >-
+  - icon: /images/icons/meeting.png
+    title: Workshops
+    url: '/services#workshops'
+    description: >-
       The learning curve for new or new-to-you technologies shouldn’t be a
       barrier to your mission. If you want to make the most of the tools you
       already have, we can show you how.
-  - image: /images/uploads/moneyplease.gif
-    name: Product R&D
-    path: '/services#product'
-    text: >-
+  - icon: /images/icons/analysis.png
+    title: Product R&D
+    url: '/services#product'
+    description: >-
       Tools for your nonprofit should be designed with your nonprofit in mind.
       When you need juuuuust the right solution, use software for nonprofits by
       a nonprofit.
