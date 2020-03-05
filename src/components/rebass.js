@@ -254,5 +254,5 @@ const GrayLink = styled(Text)`
 export {
     Section, FlexContent, FullHeightFlexContent, ClickableButton, ArrowClickableButton, TextNoFirstMarginP,
     ClickableLink, PrettyInput, FullHeightSection, PageTitle, PageHero, PageSubtitle, Email,
-    BrandedMainHeading, BrandedSubHeading, StyledBrandedSubHeading, OverlayText, GrayLink
+    BrandedMainHeading, BrandedSubHeading, StyledBrandedSubHeading, OverlayText, GrayLink, ClickableLinkContainer
 }

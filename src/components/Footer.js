@@ -1,7 +1,6 @@
-import { FlexContent, ClickableLink} from "./rebass";
+import { FlexContent, ClickableLinkContainer, ClickableLink } from "./rebass";
 import { Flex, Link, Image } from "rebass";
 import React from "react";
-import { Root } from "react-static";
 
 function Footer(props) {
     return (
@@ -19,12 +18,11 @@ function Footer(props) {
             <Flex>
                 {
                     Object.keys(props.social).map(key =>
-                        <ClickableLink href={props.social[key].url}
-                                       p={2}
-                                       key={key}
-                                       target='_blank'>
-                            <i className={`fab fa-${props.social[key].faIcon}`}></i>
-                        </ClickableLink>
+                        <ClickableLinkContainer p={2} key={key}>
+                            <a target='_blank' href={props.social[key].url}>
+                                <i className={`fab fa-${props.social[key].faIcon}`}></i>
+                            </a>
+                        </ClickableLinkContainer>
 
                     )
                 }
