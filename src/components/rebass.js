@@ -223,7 +223,7 @@ const ClickableLinkContainer = styled(Box)`
     }
 `
 const ClickableLink = (props) => {
-    return <ClickableLinkContainer><Link to={props.href}>{props.children}</Link></ClickableLinkContainer>
+    return <ClickableLinkContainer {...props}><Link to={props.href}>{props.children}</Link></ClickableLinkContainer>
 }
 
 const PrettyInput = styled.input`
