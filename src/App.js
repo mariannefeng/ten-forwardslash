@@ -4,7 +4,7 @@ import theme, { colors } from './theme'
 
 import { Root, Routes, addPrefetchExcludes, withSiteData } from 'react-static'
 
-import { Router } from 'components/Router'
+import { Router, Link } from 'components/Router'
 import Dynamic from 'containers/Dynamic'
 import Menu from "./components/Menu";
 import Footer from "./components/Footer";
@@ -68,13 +68,15 @@ const GlobalStyles = createGlobalStyle`
     }
     a.external-link::after {
         content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    a.text-decoration-none:hover {
+        text-decoration: none;
     }
 `
 
 function App(siteData) {
     return (
-        <ThemeProvider theme={theme}>
-            <Root>
+        <Root>
+            <ThemeProvider theme={theme}>
                 <GlobalStyles/>
 
                 <Menu content={siteData.content} logos={siteData.logos} theme='black'/>
@@ -89,8 +91,8 @@ function App(siteData) {
                 </div>
 
                 <Footer social={siteData.social} do={siteData.digitalOcean}/>
-            </Root>
-        </ThemeProvider>
+            </ThemeProvider>
+        </Root>
     )
 }
 
