@@ -18,7 +18,7 @@
     "google-map-react": "^1.1.4",
     "js-yaml": "^3.13.1",
     "klaw": "^3.0.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "netlify-cms": "^2.9.1",
     "react": "^16.8.2",
     "react-mailchimp-subscribe": "^2.1.0",
